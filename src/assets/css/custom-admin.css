@@ -1,0 +1,867 @@
+.sidebar-user-profile-img img {
+    width: 80px;
+    background: #1F2F98;
+    width: 100px;
+    border-radius: 100px;
+    height: 100px;
+    border: 3px solid #fff;
+    box-shadow: 0 0rem 0.23em 0 rgba(58,59,69,.5)!important;
+}
+.input-group-append .fas{
+  color: #1F2F98;
+}
+.admin-header-profile-username-custom{
+  display: grid;
+}
+.admin-header-profile-username-custom .admin-username-custom{
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  color: #444444;
+}
+.admin-header-profile-username-custom .admin-mail-id-custom{
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  color: #9F9F9F;
+}
+.sidebar{
+    width: 180px!important;
+    box-shadow: 4px 0px 10px 0px #7babec26;
+    margin-right: 8px;
+}
+.admin-profile-img {
+    background: #1F2F98;
+    Width: 35px !important;
+    Height: 35px !important;
+    font-size: 21px;
+    line-height: 34px;
+    text-align: center;
+}
+.card-box-heading-text{
+  color: #444444;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+.dashbord-main-heading-text{
+  font-size: 18px !important;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #444444;
+}
+.custom-recent-university-signups-main-bg{
+    background: rgba(31, 47, 152, 0.05);
+    border-radius: 15px;
+    max-height: 440px;
+    overflow-y: scroll;
+}
+.custom-recent-university-ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 10px 20px 10px;
+    border-bottom: 0.5px solid #DADADA;
+    margin-bottom: 0px;
+}
+.university-text-normal{
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  color: #444444;
+}
+.university-text-bold{
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0em;
+  color: #444444;
+  font-weight: 700;
+}
+
+.custom-recent-university-date{
+    flex: 0 0 10%;
+    max-width: 10%;
+}
+.custom-recent-university{
+    flex: 0 0 19%;
+    max-width: 19%;
+}
+.custom-recent-university-contact{
+    flex: 0 0 32%;
+    max-width: 32%;
+}
+.custom-recent-manage{
+    flex: 0 0 14%;
+    max-width: 14%;
+}
+.custom-recent-subscription{
+    flex: 0 0 18%;
+    max-width: 18%;
+}
+.custom-recent-copy-icon{
+    flex: 0 0 7%;
+    max-width: 7%;
+    text-align: right;
+    display: grid;
+    align-items: center;
+}
+.university-text-normal-two{
+  color: #1F2F98;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+
+}
+.custom-recent-copy-icon img{
+  width: 28px;
+}
+.custom-latest-updates-box-main{
+    background: rgba(31, 47, 152, 0.05);
+    border-radius: 15px;
+    padding: 12px 15px;
+    height: 130px;
+}
+.text-custom-one{
+    background: #AAB6FB;
+    color: #AAB6FB;
+    border-radius: 50px;
+    font-size: 13px;
+}
+.custom-latest-updates-box-main span{
+    font-size: 13px;
+}
+.custom-download-report-btn{
+    background: rgba(31, 47, 152, 0.05);
+    border-radius: 15px;
+    padding: 12px 15px;
+}
+.custom-download-report-btn h3{
+    font-size: 24px;
+    line-height: 31px;
+    letter-spacing: 0em;
+    margin-bottom: 0px;
+}
+.inner-student-page-heading{
+    border-bottom: 1px solid #DADADA;
+    padding-bottom: 13px;
+}
+.inner-student-page-heading span {
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0em;
+    padding-bottom: 8px;
+    color: #1F2F98;
+    border-bottom: 5px solid #FDC827;
+}
+
+.table-search-filter-custom-style{
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.table-search-filter-custom-style .search-icon-custom{
+    flex: 0 0 6%;
+    max-width: 6%;
+}
+.table-search-filter-custom-style .search-icon-custom button{
+    border: 0px;
+    border-radius: 8px;
+    padding: 10px;
+    background: rgba(31, 47, 152, 0.05);
+}
+.table-search-filter-custom-style .search-box-custom{
+    flex: 0 0 64%;
+    max-width: 64%;
+}
+.table-search-filter-custom-style .search-box-custom input{
+    border-top: 0px solid;
+    border-right: 0PX;
+    border-left: 0px;
+    width: 100%;
+    border-bottom: 1px solid #DADADA;
+    padding: 8px 10px;
+}
+.table-search-filter-custom-style .search-plus-btn-custom{
+    flex: 0 0 8%;
+    max-width: 8%;
+    text-align: center;
+}
+.table-search-filter-custom-style .search-plus-btn-custom button{
+    border: 0px solid;
+    padding: 10px;
+    border-radius: 100px;
+    background: rgba(31, 47, 152, 0.05);
+}
+.table-search-filter-custom-style .search-import-btn-custom{
+    flex: 0 0 12%;
+    max-width: 12%;
+}
+.table-search-filter-custom-style .search-import-btn-custom button{
+    border: 0px solid;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background: rgba(31, 47, 152, 0.05);
+    color: #979797;
+    font-size: 12px;
+}
+.table-search-filter-custom-style .search-export-btn-custom{
+    flex: 0 0 10%;
+    max-width: 10%;
+    text-align: right;
+}
+.table-search-filter-custom-style .search-export-btn-custom button{
+    border: 0px solid;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background: rgba(31, 47, 152, 0.05);
+    color: #979797;
+    font-size: 12px;
+}
+
+.custom-student-table-main tr{
+    display: flex;
+    flex-wrap: wrap;
+}
+.table-box-checkbox{
+    flex: 0 0 5%;
+    max-width: 5%;
+}
+.table-box-text-one-filter{
+    flex: 0 0 81%;
+    max-width: 81%;
+}
+.table-box-controls{
+    flex: 0 0 7%;
+    max-width: 7%;
+}
+.table-box-controls button{
+    background: transparent;
+    border: 0px solid;
+    padding: 0px;
+}
+.table-box-filter{
+    flex: 0 0 7%;
+    max-width: 7%;
+}
+.table-box-filter button{
+    background: transparent;
+    border: 0px solid;
+    padding: 0px;
+}
+
+
+.table-bold{
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    color: #444444;
+    font-weight: 800;
+    font-style: normal;
+}
+.table-text-normal{
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    color: #6d6d6d;
+}
+.table-box-checkbox-text {
+    flex: 0 0 5%;
+    max-width: 5%;
+    align-items: center;
+    display: flex;
+}
+.table-box-text-one{
+    flex: 0 0 18%;
+    max-width: 18%;
+}
+.table-box-text-two{
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.table-box-text-three{
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+.table-box-status-text{
+    flex: 0 0 12%;
+    max-width: 12%;
+    align-items: center;
+    display: flex;
+}
+.table-box-delete-btn{
+    flex: 0 0 5%;
+    max-width: 5%;
+    text-align: right;
+    align-items: center;
+    display: flex;
+}
+.table-box-copy-btn{
+    flex: 0 0 5%;
+    max-width: 5%;
+    text-align: right;
+    align-items: center;
+    display: flex;
+}
+.table-box-status-text .table-status-pending{
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: center;
+    background: rgba(249, 149, 171, 0.15);
+    border-radius: 20px;
+    color: #F995AB;
+    padding: 12px 0px;
+    width: 100%;
+    text-align: center;
+}
+.table-box-status-text .table-status-complete{
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: center;
+    background: rgba(253, 200, 39, 0.15);
+    border-radius: 20px;
+    color: #FDC827;
+    padding: 12px 0px;
+    width: 100%;
+    text-align: center;
+}
+.table-box-status-text .table-status-na{
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: center;
+    background: rgba(31, 47, 152, 0.05);
+    border-radius: 20px;
+    color: #979797;
+    padding: 12px 0px;
+    width: 100%;
+    text-align: center;
+}
+.table-box-delete-btn button{
+    border: 0px solid;
+    background-color: transparent;
+}
+.table-box-copy-btn button{
+    border: 0px solid;
+    background-color: transparent;
+}
+.table .table-filter-main-class td {
+    border-top: 0px solid #e3e6f0 !important;
+}
+.custom-add-student-btn{
+    background: #1F2F98;
+    color: #fff;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: 100%;
+    border: 0px solid;
+    padding: 10px 0px;
+    border-radius: 5px;
+
+}
+
+
+.modal-footer {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-top: 1px solid #e3e6f0;
+    border-bottom-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+}
+.modal-header {
+    padding: 0.5rem 1rem;
+    border-bottom: 0px solid #e3e6f0;
+}
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 80%;
+}
+}
+
+
+
+.student-name{
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0em;
+    color: #444444;
+    font-weight: 600;
+}
+.edit-student-details-btn{
+    border: 0px solid;
+    background: rgba(31, 47, 152, 0.05);
+    border-radius: 10px;
+    padding: 6px 6px;
+}
+.student-details-text-custom p{
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    color: #444444;
+    font-weight: 400;
+    margin-bottom: 0px;
+}
+.details-sub-title{
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: #444444;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+.toggle {
+    margin: 10px 0 20px;
+    position: relative;
+    clear: both;
+}
+.toggle {
+    margin: 10px 0 20px;
+    position: relative;
+    clear: both;
+}
+.toggle.toggle-minimal .toggle {
+    margin: 0;
+}
+.toggle > label {
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+    border-left: -9px solid #CCC;
+    display: block;
+    min-height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+html .toggle-primary .toggle label {
+    border-right-color: #0088cc;
+}
+.toggle.toggle-minimal .toggle > label {
+    background: transparent;
+    color: #777;
+    border-left: 0;
+    border-bottom: 1px solid #CCCC;
+    border-radius: 0;
+    margin: 0;
+    padding: 12px 20px 12px 0;
+    font-weight: 600;
+}
+.toggle > label:before {
+    content: " ";
+    position: absolute;
+    top: calc(50% + 1px);
+    right: 14px;
+    border-color: #CCC;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    width: 8px;
+    height: 8px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: top 0.3s, -webkit-transform 0.3s;
+    transition: top 0.3s, -webkit-transform 0.3s;
+    transition: transform 0.3s, top 0.3s;
+    transition: transform 0.3s, top 0.3s, -webkit-transform 0.3s;
+    -webkit-transform: rotate(-45deg) translate3d(0, -50%, 0);
+    transform: rotate(-45deg) translate3d(0, -50%, 0);
+    -webkit-transform-origin: 35%;
+    transform-origin: 35%;
+}
+.toggle > .toggle-content > p {
+    margin-bottom: 0;
+    padding: 10px 0;
+}
+
+
+.table-box-roles-text {
+    flex: 0 0 12%;
+    max-width: 12%;
+    align-items: center;
+}
+.tabcontent:nth-child(3) {
+  display: none;
+}
+.tabcontent:nth-child(4) {
+  display: none;
+}
+.tab{
+    padding-bottom: 0px;
+}
+.tablinks {
+    border: 0px solid;
+    background: transparent;
+    border-bottom: 5px solid transparent;
+    padding-bottom: 10px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1F2F98;
+}
+.tablinks.active {
+    border: 0px solid;
+    background: transparent;
+    border-bottom: 5px solid #FDC827;
+    padding-bottom: 10px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1F2F98;
+}
+
+button:focus {
+    outline: 0px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+
+.select-roles-check-box label{
+    display: flex;
+}
+.select-roles-check-box input{
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+.university-details-addres-text{
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #444444;
+    margin-bottom: 0px;
+}
+.university-details-bold-text{
+    font-size: 14px !important;
+    color: #444444 !important;
+    font-weight: 600 !important;
+}
+
+.available-forms-ul-main{
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid #DADADA;
+    padding-bottom: 10px;
+}
+
+.available-forms-ul-main .available-forms-icon{
+    flex: 0 0 6%;
+    max-width: 6%;
+}
+.available-forms-ul-main .available-forms-text{
+    flex: 0 0 84%;
+    max-width: 84%;
+    font-size: 14px;
+    color: #444444;
+    font-weight: 500;
+}
+.available-forms-ul-main .available-forms-btn{
+    flex: 0 0 10%;
+    max-width: 10%;
+    text-align: right;
+}
+.available-forms-ul-main .available-forms-btn button{
+    border: 0px solid;
+    background: transparent;
+    padding: 0px;
+}
+.student-name span{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    color: #444444;
+    padding-left: 10px;
+}
+.plans-account-totail-main{
+    box-shadow: 2px 4px 15px 0px #7BABEC26;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px 12px 10px 12px;
+}
+.plans-account-totail-counting{
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: #979797;
+}
+
+.plans-account-totail-icon-ul{
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    position: relative;
+    margin: 0px;
+    height: 56px;
+}
+.plans-account-totail-img-one{
+    position: absolute;
+    right: 59px;
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    box-shadow: 2px 4px 15px 0px #7babec26;
+    border: 3px solid #FFFFFF;
+    overflow: hidden;
+}
+.plans-account-totail-img-one img{
+    width: 50px;
+    height: 50px;
+}
+.plans-account-totail-img-two{
+    position: absolute;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    box-shadow: 2px 4px 15px 0px #7babec26;
+    border: 3px solid #FFFFFF;
+    overflow: hidden;
+}
+.plans-account-totail-img-two img{
+    width: 50px;
+    height: 50px;
+}
+.plans-account-totail-img-text{
+    position: absolute;
+    right: 2px;
+    font-size: 22px;
+    background: #1F2F98;
+    box-shadow: 2px 4px 15px 0px #7babec26;
+    border: 3px solid #FFFFFF;
+    color: #FFFFFF;
+    border-radius: 100px;
+    padding-top: 5px;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+}
+.plans-account-totail-text-one{
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0em;
+    color: #444444;
+    font-weight: 600;
+}
+.plans-account-totail-edit p{
+    margin-bottom: 0px;
+    color: #1F2F98;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0em;
+    padding-top: 5px;
+}
+.plans-account-totail-edit button{
+    border: 0px solid;
+    background: transparent;
+}
+
+.create-new-plan-btn-custom{
+    border: 0px solid;
+    background: transparent;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #444444;
+    font-weight: 600;
+}
+.create-new-plan-btn-custom img{
+    padding: 15px;
+    border-radius: 100px;
+    background: rgba(31, 47, 152, 0.05);
+    width: 52px;
+    margin-bottom: 10px;
+}
+.create-new-plan-btn-center{
+    align-items: center;
+    display: flex;
+}
+
+.modal-content {
+    padding: 20px 20px 0px 20px;
+}
+.close-create-plan-header .modal-title{
+    width: 12%;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0em;
+    color: #444444;
+}
+.close-create-plan-header input{
+    width: 40%;
+    padding: 4px 10px;
+    height: auto;
+    font-size: 14px;
+}
+.create-plan-list-checkbox ul{
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.create-plan-list-checkbox li{
+    flex: 0 0 13%;
+    max-width: 13%;
+    text-align: center;
+}
+.create-plan-list-checkbox p{
+    font-size: 11px;
+    line-height: 12px;
+    letter-spacing: 0em;
+    color: #444444;
+    font-weight: 600;
+}
+.select-roles-check-box label {
+    color: #444444;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .mat-expansion-indicator::after {
+    position: absolute;
+    right: 30px;
+} */

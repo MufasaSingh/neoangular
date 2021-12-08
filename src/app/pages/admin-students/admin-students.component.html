@@ -1,0 +1,680 @@
+<div class="container-fluid">
+
+    <div class="row">
+      <div class="col-xl-12 col-lg-12">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <span class="dashbord-main-heading-text">Student</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12">
+  
+        <div class="inner-student-page-heading">
+          <span>Student Signups</span>
+        </div>
+  
+      </div>
+  
+      <div class="col-lg-12 mt-4 pt-3">
+        <ul class="table-search-filter-custom-style">
+          <li class="search-icon-custom">
+            <button><img src="../../../assets/img/search.svg"></button>
+          </li>
+          <li class="search-box-custom">
+            <input type="text" id="search" placeholder="Search" name="search" required>
+          </li>
+          <li class="search-plus-btn-custom">
+            <button (click)="open(content)" ><img src="../../../assets/img/plus.svg"></button>
+          </li>
+          <li class="search-import-btn-custom">
+            <button><img src="../../../assets/img/import.svg"> IMPORT</button>
+          </li>
+          <li class="search-export-btn-custom">
+            <button><img src="../../../assets/img/export.svg"> EXPORT</button>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="col-lg-12 pt-3">
+  
+        <table class="table">
+          <tbody class="custom-student-table-main">
+  
+            <tr class="table-filter-main-class">
+              <td class="table-box-checkbox">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+              <td class="table-box-text-one-filter">
+                Showing 37 of 37 entries
+              </td>
+              <td class="table-box-controls">
+                <button><img src="../../../assets/img/controls.svg" width="32px"></button>
+              </td>
+              <td class="table-box-filter">
+                <button><img src="../../../assets/img/filter.svg" width="32px"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-pending">
+                  Form Pending
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button  ><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-complete">
+                  Form Complete
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-na">
+                  NA
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-pending">
+                  Form Pending
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-pending">
+                  Form Pending
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-pending">
+                  Form Pending
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-pending">
+                  Form Pending
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-pending">
+                  Form Pending
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-pending">
+                  Form Pending
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-pending">
+                  Form Pending
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-pending">
+                  Form Pending
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="table-box-checkbox-text">
+                <div class="checkbox">
+                  <input type="checkbox" value="">
+                </div>
+              </td>
+  
+              <td class="table-box-text-one">
+                <span class="table-bold">Michael Jameson</span>
+                <br>
+                <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                <br>
+                <span class="table-text-normal">University of Toronto</span>
+              </td>
+  
+              <td class="table-box-text-two">
+                <span class="table-bold">Contact:</span> <span class="table-text-normal">+011 5643 7901</span>
+                <br>
+                <span class="table-bold">Email ID:</span> <span class="table-text-normal">michaeljameson@ymail.com</span>
+              </td>
+  
+              <td class="table-box-text-three">
+                <span class="table-bold">Address:</span>
+                <br>
+                <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+              </td>
+  
+              <td class="table-box-status-text">
+                <span class="table-status-pending">
+                  Form Pending
+                </span>
+              </td>
+  
+              <td class="table-box-delete-btn">
+                <button><img src="../../../assets/img/delete.svg"></button>
+              </td>
+  
+              <td class="table-box-copy-btn">
+                <button><img src="../../../assets/img/copy-icon.svg"></button>
+              </td>
+            </tr>
+  
+          
+  
+  
+  
+          </tbody>
+        </table>
+  
+      </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    </div>
+  
+  </div>
+  <!-- /.container-fluid -->
+
+
+  
+
+<!------- Modal Start ----------->
+<div class="custom-add-student-modal">
+ <ng-template #content let-modal>
+ 
+      <div class="modal-header">
+        <h4 class="modal-title" id="defaultModalLabel">Add Student</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="contactForm" class="contact-form appear-animation" action="php/contact-form.php" method="POST" data-appear-animation="fadeIn" data-appear-animation-delay="600">               
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <input type="text" value="" placeholder="First Name" class="form-control" name="name" id="name" required>
+            </div>
+            <div class="form-group col-lg-6">
+              <input type="text" value="" placeholder="Last Name" class="form-control" name="name" id="name" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <input id="phone" type="tel" placeholder="Mobile Number" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="phone" required>
+            </div>
+            <div class="form-group col-lg-6">
+              <input type="email" value="" placeholder="Email Id" maxlength="100" class="form-control" name="email" id="email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <input type="date" value="" placeholder="Date Of Birth" class="form-control" name="date" id="date" required>
+            </div>
+          </div>
+
+          <div class="form-row mt-4">
+            <div class="form-group col-lg-12">
+              <input type="address" value="" placeholder="Address" class="form-control" name="address" id="address" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <select class="form-control">
+                <option>Country</option>
+                <option>Country 2</option>
+                <option>Country 3</option>
+              </select>
+            </div>
+            <div class="form-group col-lg-6">
+              <select class="form-control">
+                <option>City</option>
+                <option>City 2</option>
+                <option>City 3</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-lg-12">
+              <select class="form-control mb-3">
+                <option>Select University</option>
+                <option>University 2</option>
+                <option>University 3</option>
+              </select>
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <button type="button" class="custom-add-student-btn"  (click)="modal.close('Save click')" >ADD STUDENT</button>
+          </div>
+        </div>
+        
+      </div>
+    </ng-template>
+    </div>
+     
+<!------- Modal End ----------->

@@ -1,0 +1,1394 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <span class="dashbord-main-heading-text">University</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="inner-student-page-heading tab">
+                <button class="tablinks active" onclick="openCity(event, 'All_Universities')">All Universities</button>
+                <button class="tablinks" onclick="openCity(event, 'Plans')">Plans</button>
+                <button class="tablinks" onclick="openCity(event, 'Roles')">Roles</button>
+
+            </div>
+
+
+            <div id="All_Universities" class="tabcontent">
+                <div class="row">
+                    <div class="col-lg-12 mt-4 pt-3">
+                        <ul class="table-search-filter-custom-style">
+                            <li class="search-icon-custom">
+                                <button><img src="../../../assets/img/search.svg"></button>
+                            </li>
+                            <li class="search-box-custom">
+                                <input type="text" id="search" placeholder="Search" name="search" required>
+                            </li>
+                            <li class="search-plus-btn-custom">
+                                <button (click)="open(content2)"><img src="../../../assets/img/plus.svg"></button>
+                            </li>
+                            <li class="search-import-btn-custom">
+                                <button><img src="../../../assets/../../../assets/img/import.svg"> IMPORT</button>
+                            </li>
+                            <li class="search-export-btn-custom">
+                                <button><img src="../../../assets/img/export.svg"> EXPORT</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-12 pt-3">
+
+                        <table class="table">
+                            <tbody class="custom-student-table-main">
+
+                                <tr class="table-filter-main-class">
+                                    <td class="table-box-checkbox">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+                                    <td class="table-box-text-one-filter">
+                                        Showing 16 of 16 entries
+                                    </td>
+                                    <td class="table-box-controls">
+                                        <button><img src="../../../assets/img/controls.svg" width="32px"></button>
+                                    </td>
+                                    <td class="table-box-filter">
+                                        <button><img src="../../../assets/img/filter.svg" width="32px"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table-box-checkbox-text">
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="">
+                                        </div>
+                                    </td>
+
+                                    <td class="table-box-text-one">
+                                        <span class="table-bold">Michael Jameson</span>
+                                        <br>
+                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
+                                        <br>
+                                        <span class="table-text-normal">University of Toronto</span>
+                                    </td>
+
+                                    <td class="table-box-text-two">
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
+                                            5643 7901</span>
+                                        <br>
+                                        <span class="table-bold">Email ID:</span> <span
+                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                    </td>
+
+                                    <td class="table-box-text-three">
+                                        <span class="table-bold">Address:</span>
+                                        <br>
+                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        </span>
+                                    </td>
+
+                                    <td class="table-box-roles-text">
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                    </td>
+
+                                    <td class="table-box-delete-btn">
+                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                    </td>
+
+                                    <td class="table-box-copy-btn">
+                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                    </td>
+                                </tr>
+
+
+
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="Plans" class="tabcontent mt-4">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class="plans-account-totail-main">
+                            <div class="plans-account-totail-counting">
+                                12 ACCOUNTS
+                            </div>
+
+                            <div class="plans-account-totail-icon">
+                                <ul class="plans-account-totail-icon-ul">
+                                    <li class="plans-account-totail-img-one">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-two">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-text">
+                                        A
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="plans-account-totail-text-one">
+                                PLAN 1
+                            </div>
+                            <div class="row mt-3 plans-account-totail-edit">
+                                <div class="col-md-8">
+                                    <p>Name of Plan</p>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <button><img src="../../../assets/img/Edit-1.svg"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="plans-account-totail-main">
+                            <div class="plans-account-totail-counting">
+                                30 ACCOUNTS
+                            </div>
+
+                            <div class="plans-account-totail-icon">
+                                <ul class="plans-account-totail-icon-ul">
+                                    <li class="plans-account-totail-img-one">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-two">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-text">
+                                        A
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="plans-account-totail-text-one">
+                                PLAN 2
+                            </div>
+                            <div class="row mt-3 plans-account-totail-edit">
+                                <div class="col-md-8">
+                                    <p>Name of Plan</p>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <button><img src="../../../assets/img/Edit-1.svg"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="plans-account-totail-main">
+                            <div class="plans-account-totail-counting">
+                                17 ACCOUNTS
+                            </div>
+
+                            <div class="plans-account-totail-icon">
+                                <ul class="plans-account-totail-icon-ul">
+                                    <li class="plans-account-totail-img-one">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-two">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-text">
+                                        A
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="plans-account-totail-text-one">
+                                PLAN 3
+                            </div>
+                            <div class="row mt-3 plans-account-totail-edit">
+                                <div class="col-md-8">
+                                    <p>Name of Plan</p>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <button><img src="../../../assets/img/Edit-1.svg"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 create-new-plan-btn-center">
+                        <button class="create-new-plan-btn-custom" (click)="open(content3)">
+                            <img src="../../../assets/img/plus.svg">
+                            <br>
+                            CREATE <br>NEW PLAN
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <div id="Roles" class="tabcontent mt-4">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class="plans-account-totail-main">
+                            <div class="plans-account-totail-counting">
+                                112 ACCOUNTS
+                            </div>
+
+                            <div class="plans-account-totail-icon">
+                                <ul class="plans-account-totail-icon-ul">
+                                    <li class="plans-account-totail-img-one">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-two">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-text">
+                                        A
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="plans-account-totail-text-one">
+                                ROLE 1
+                            </div>
+                            <div class="row mt-3 plans-account-totail-edit">
+                                <div class="col-md-8">
+                                    <p>Name of Role</p>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <button><img src="../../../assets/img/Edit-1.svg"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="plans-account-totail-main">
+                            <div class="plans-account-totail-counting">
+                                50 ACCOUNTS
+                            </div>
+
+                            <div class="plans-account-totail-icon">
+                                <ul class="plans-account-totail-icon-ul">
+                                    <li class="plans-account-totail-img-one">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-two">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-text">
+                                        A
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="plans-account-totail-text-one">
+                                ROLE 2
+                            </div>
+                            <div class="row mt-3 plans-account-totail-edit">
+                                <div class="col-md-8">
+                                    <p>Name of Role</p>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <button><img src="../../../assets/img/Edit-1.svg"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="plans-account-totail-main">
+                            <div class="plans-account-totail-counting">
+                                172 ACCOUNTS
+                            </div>
+
+                            <div class="plans-account-totail-icon">
+                                <ul class="plans-account-totail-icon-ul">
+                                    <li class="plans-account-totail-img-one">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-two">
+                                        <img src="../../../assets/img/tree-736885.jpeg">
+                                    </li>
+                                    <li class="plans-account-totail-img-text">
+                                        A
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="plans-account-totail-text-one">
+                                ROLE 3
+                            </div>
+                            <div class="row mt-3 plans-account-totail-edit">
+                                <div class="col-md-8">
+                                    <p>Name of Role</p>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <button><img src="../../../assets/img/Edit-1.svg"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 create-new-plan-btn-center">
+                        <button class="create-new-plan-btn-custom"  (click)="open(content3)"  >
+                            <img src="../../../assets/img/plus.svg">
+                            <br>
+                            CREATE <br>NEW ROLE
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /.container-fluid -->
+
+
+
+
+<!------- CREATE NEW PLAN Modal Start ----------->
+<div class="custom-add-student-modal">
+    <ng-template #content let-modal> 
+
+        <div class="modal-header close-create-plan-header">
+            <h4 class="modal-title" id="defaultModalLabel">Plan 1</h4>
+            <input type="text" value="" placeholder="Plan Name" class="form-control" name="name" id="name" required>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="modal.dismiss('Cross click')" ><img
+                    src="../../../assets/img/delete.svg"></button>
+        </div>
+        <div class="modal-body">
+
+
+            <form id="contactForm" class="contact-form appear-animation" action="php/contact-form.php" method="POST"
+                data-appear-animation="fadeIn" data-appear-animation-delay="600">
+
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               University Profile
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        
+                        <div class="col-lg-11 create-plan-list-checkbox mt-3">
+
+                            <ul>
+                                <li>
+                                    <p>Overview</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Courses</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Contact University</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>FAQ</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Apply</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                            </ul>
+    
+    
+                        </div>
+                        
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               University Updates
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        <div class="col-lg-11 create-plan-list-checkbox mt-3">
+
+                            <ul>
+                                <li>
+                                    <p>Service Update</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Health And Safety</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Latest News</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Student Life</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                            </ul>
+    
+    
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               Arrival Form
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        <div class="col-lg-11 create-plan-list-checkbox mt-3">
+
+                            <ul>
+                                <li>
+                                    <p>Terms and Conditon</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>First Name</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Last Name</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Email</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Mobile Number</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Gender</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Date of Birth</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Permanent Address</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>State</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>City</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Post Code</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Current Address</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                            </ul>
+    
+    
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               Chat
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        <p>I'm visible because I am open</p>
+                    </mat-expansion-panel>
+
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               Contact Support
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        <p>I'm visible because I am open</p>
+                    </mat-expansion-panel>
+
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               Send Alert
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        <p>I'm visible because I am open</p>
+                    </mat-expansion-panel>
+                </mat-accordion>
+ 
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <button type="button" class="custom-add-student-btn">APPLY CHANGES</button>
+                </div>
+            </div>
+
+        </div>
+
+    </ng-template>
+</div>
+<!------- CREATE NEW PLAN Modal End ----------->
+
+<!------- CREATE NEW ROLE Modal Start ----------->
+<div class="custom-add-student-modal">
+    <ng-template #content3 let-modal> 
+
+        <div class="modal-header close-create-plan-header">
+            <h4 class="modal-title" id="defaultModalLabel">NEW ROLES</h4>
+            <input type="text" value="" placeholder="Plan Name" class="form-control" name="name" id="name" required>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="modal.dismiss('Cross click')"  ><img
+                    src="../../../assets/img/delete.svg"></button>
+        </div>
+        <div class="modal-body">
+
+
+            <form id="contactForm" class="contact-form appear-animation" action="php/contact-form.php" method="POST"
+                data-appear-animation="fadeIn" data-appear-animation-delay="600">
+
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               University Profile
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        
+                        <div class="col-lg-11 create-plan-list-checkbox mt-3">
+
+                            <ul>
+                                <li>
+                                    <p>Overview</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Courses</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Contact University</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>FAQ</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Apply</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                            </ul>
+    
+    
+                        </div>
+                        
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               University Updates
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        <div class="col-lg-11 create-plan-list-checkbox mt-3">
+
+                            <ul>
+                                <li>
+                                    <p>Service Update</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Health And Safety</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Latest News</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Student Life</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                            </ul>
+    
+    
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               Arrival Form
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        <div class="col-lg-11 create-plan-list-checkbox mt-3">
+
+                            <ul>
+                                <li>
+                                    <p>Terms and Conditon</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>First Name</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Last Name</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>Email</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Mobile Number</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Gender</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Date of Birth</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Permanent Address</p>
+                                    <input type="checkbox" value="" class="">
+                                </li>
+                                <li>
+                                    <p>State</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>City</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Post Code</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                                <li>
+                                    <p>Current Address</p>
+                                    <input type="checkbox" value="" class="">
+                                </li> 
+                            </ul>
+    
+    
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               Chat
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        <p>I'm visible because I am open</p>
+                    </mat-expansion-panel>
+
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               Contact Support
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        <p>I'm visible because I am open</p>
+                    </mat-expansion-panel>
+
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               Send Alert
+                            </mat-panel-title> 
+                        </mat-expansion-panel-header>
+                        <p>I'm visible because I am open</p>
+                    </mat-expansion-panel>
+                </mat-accordion>
+ 
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <button type="button" class="custom-add-student-btn">APPLY CHANGES</button>
+                </div>
+            </div>
+
+        </div>
+
+    </ng-template>
+</div>
+<!------- CREATE NEW ROLE Modal End ----------->
+
+
+<!------- Add Student Modal Start ----------->
+<div class="custom-add-student-modal">
+    <ng-template #content2 let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="defaultModalLabel">Add University</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  (click)="modal.dismiss('Cross click')"  >&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="contactForm" class="contact-form appear-animation" action="php/contact-form.php" method="POST"
+                data-appear-animation="fadeIn" data-appear-animation-delay="600">
+                <div class="form-row">
+                    <div class="form-group col-lg-12">
+                        <input type="text" value="" placeholder="University Name" class="form-control" name="name"
+                            id="name" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-lg-6">
+                        <input id="phoneuniversity" type="tel" placeholder="Mobile Number" value=""
+                            data-msg-required="Please enter your name." maxlength="100" class="form-control"
+                            name="phone" required>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <input type="email" value="" placeholder="Email Id" maxlength="100" class="form-control"
+                            name="email" id="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-lg-6">
+                        <input type="date" value="" placeholder="Date Of Birth" class="form-control" name="date"
+                            id="date" required>
+                    </div>
+                </div>
+
+                <div class="form-row mt-4">
+                    <div class="form-group col-lg-12">
+                        <input type="address" value="" placeholder="Address" class="form-control" name="address"
+                            id="address" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-lg-6">
+                        <select class="form-control">
+                            <option>Country</option>
+                            <option>Country 2</option>
+                            <option>Country 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <select class="form-control">
+                            <option>City</option>
+                            <option>City 2</option>
+                            <option>City 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-lg-12">
+                        <select class="form-control mb-3">
+                            <option>Select Plan</option>
+                            <option>Plan 2</option>
+                            <option>Plan 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row justify-content-center">
+                    <div class="col-lg-12">
+                        <p>Select Roles</p>
+                    </div>
+
+                    <div class="col-lg-10">
+
+                        <div class="row m-0">
+                            <div class="col-lg-12">
+                                <div class="checkbox select-roles-check-box">
+                                    <label>
+                                        <input type="checkbox" value="" class="">
+                                        Director
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
+                            <div class="col-lg-9">
+                                <input class="form-control mb-3" type="text" placeholder="Enter email ID">
+                            </div>
+                        </div>
+
+
+                        <div class="row m-0">
+                            <div class="col-lg-12">
+                                <div class="checkbox select-roles-check-box">
+                                    <label>
+                                        <input type="checkbox" value="" class="">
+                                        Manager
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
+                            <div class="col-lg-9">
+                                <input class="form-control mb-3" type="text" placeholder="Enter email ID">
+                            </div>
+                        </div>
+
+
+                        <div class="row m-0">
+                            <div class="col-lg-12">
+                                <div class="checkbox select-roles-check-box">
+                                    <label>
+                                        <input type="checkbox" value="" class="">
+                                        Asisstant Manager
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
+                            <div class="col-lg-9">
+                                <input class="form-control mb-3" type="text" placeholder="Enter email ID">
+                            </div>
+                        </div>
+
+
+                        <div class="row m-0">
+                            <div class="col-lg-12">
+                                <div class="checkbox select-roles-check-box">
+                                    <label>
+                                        <input type="checkbox" value="" class="">
+                                        Team Lead
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
+                            <div class="col-lg-9">
+                                <input class="form-control mb-3" type="text" placeholder="Enter email ID">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <button type="button" class="custom-add-student-btn">ADD UNIVERSITY</button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>
+<!------- Add Student Modal End ----------->
