@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngFor="let items of form" >
 
     <div class="row">
         <div class="col-xl-12 col-lg-12">
@@ -21,7 +21,7 @@
 
     <div class="row mt-4">
         <div class="col-md-6">
-            <h3 class="student-name">Michael Jameson</h3>
+            <h3 class="student-name">{{items.s_fname}} {{items.s_lname}} </h3>
         </div>
         <div class="col-md-6 text-right">
             <button class="edit-student-details-btn"><img src="../../../assets/img/Edit.svg"></button>
@@ -36,42 +36,42 @@
             <p>Name: </p>
         </div>
         <div class="col-md-9">
-            <p>Michael Jameson</p>
+            <p> {{items.s_fname}} {{items.s_lname}} </p>
         </div>
 
         <div class="col-md-3">
             <p>Email : </p>
         </div>
         <div class="col-md-9">
-            <p>michaeljameson@ymail.com</p>
+            <p>{{items.s_email}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Phone: </p>
         </div>
         <div class="col-md-9">
-            <p>+ 11 6784 3679 88</p>
+            <p>{{items.s_country_code}} {{items.s_mobile}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Arrival: </p>
         </div>
         <div class="col-md-9">
-            <p>03/05/2021</p>
+            <p>{{items.arrival_date}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Gender: </p>
         </div>
         <div class="col-md-9">
-            <p>Male</p>
+            <p>{{items.s_gender}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Date of Birth:</p>
         </div>
         <div class="col-md-9">
-            <p>16/08/1993</p>
+            <p>{{items.s_dob}}</p>
         </div>
 
         <div class="col-md-3">

@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BasicComponent } from './layouts/basic/basic.component'; 
 import { BlankComponent } from './layouts/blank/blank.component';
 
+import { AuthGuard } from "./guard/auth.guard";
+
 const routes: Routes = [
   {
     path: "admin",
@@ -25,19 +27,23 @@ const routes: Routes = [
     children: [ 
         {
           path: "dashboard",
-          loadChildren: ()=> import("./pages/admindashboard/admindashboard.module").then(m=> m.AdmindashboardModule)
+          loadChildren: ()=> import("./pages/admindashboard/admindashboard.module").then(m=> m.AdmindashboardModule), canActivate: [AuthGuard]
         },{
           path: "students",
-          loadChildren: ()=> import("./pages/admin-students/admin-students.module").then(m=> m.AdminStudentsModule)
+          loadChildren: ()=> import("./pages/admin-students/admin-students.module").then(m=> m.AdminStudentsModule),
+          canActivate: [AuthGuard]
         },{
-          path: "studentdetails",
-          loadChildren: ()=> import("./pages/adminstudentdetails/adminstudentdetails.module").then(m=> m.AdminstudentdetailsModule)
+          path: "studentdetails/:formid",
+          loadChildren: ()=> import("./pages/adminstudentdetails/adminstudentdetails.module").then(m=> m.AdminstudentdetailsModule),
+          canActivate: [AuthGuard]
         },{
           path: "universities",
-          loadChildren: ()=> import("./pages/admin-universities/admin-universities.module").then(m=> m.AdminUniversitiesModule)
+          loadChildren: ()=> import("./pages/admin-universities/admin-universities.module").then(m=> m.AdminUniversitiesModule),
+          canActivate: [AuthGuard]
         },{
           path: "universitydetails",
-          loadChildren: ()=> import("./pages/adminuniversitydetails/adminuniversitydetails.module").then(m=> m.AdminuniversitydetailsModule)
+          loadChildren: ()=> import("./pages/adminuniversitydetails/adminuniversitydetails.module").then(m=> m.AdminuniversitydetailsModule),
+          canActivate: [AuthGuard]
         } 
     ]
   }

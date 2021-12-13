@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminloginComponent } from './adminlogin.component';
 import { AdminloginRoutingModule } from './adminlogin-routing.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,8 @@ import { AdminloginRoutingModule } from './adminlogin-routing.module';
   ],
   imports: [
     CommonModule,
-    AdminloginRoutingModule
+    AdminloginRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminloginModule { }

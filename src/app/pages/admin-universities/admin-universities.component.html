@@ -63,7 +63,7 @@
                                     </td>
                                 </tr>
 
-                                <tr>
+                                <tr *ngFor="let item of list let i=index" >
                                     <td class="table-box-checkbox-text">
                                         <div class="checkbox">
                                             <input type="checkbox" value="">
@@ -71,7 +71,7 @@
                                     </td>
 
                                     <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
+                                        <span class="table-bold">{{item.university_name}}</span>
                                         <br>
                                         <span class="table-text-normal">Biochemistry (Bachelor)</span>
                                         <br>
@@ -83,7 +83,7 @@
                                             5643 7901</span>
                                         <br>
                                         <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
+                                            class="table-text-normal">{{item.university_email}}</span>
                                     </td>
 
                                     <td class="table-box-text-three">
@@ -106,482 +106,7 @@
                                     </td>
                                 </tr>
 
-                                <tr>
-                                    <td class="table-box-checkbox-text">
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="">
-                                        </div>
-                                    </td>
-
-                                    <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
-                                    </td>
-
-                                    <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
-                                        <br>
-                                        <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
-                                    </td>
-
-                                    <td class="table-box-text-three">
-                                        <span class="table-bold">Address:</span>
-                                        <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
-                                        </span>
-                                    </td>
-
-                                    <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
-                                    </td>
-
-                                    <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
-                                    </td>
-
-                                    <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="table-box-checkbox-text">
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="">
-                                        </div>
-                                    </td>
-
-                                    <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
-                                    </td>
-
-                                    <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
-                                        <br>
-                                        <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
-                                    </td>
-
-                                    <td class="table-box-text-three">
-                                        <span class="table-bold">Address:</span>
-                                        <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
-                                        </span>
-                                    </td>
-
-                                    <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
-                                    </td>
-
-                                    <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
-                                    </td>
-
-                                    <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="table-box-checkbox-text">
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="">
-                                        </div>
-                                    </td>
-
-                                    <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
-                                    </td>
-
-                                    <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
-                                        <br>
-                                        <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
-                                    </td>
-
-                                    <td class="table-box-text-three">
-                                        <span class="table-bold">Address:</span>
-                                        <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
-                                        </span>
-                                    </td>
-
-                                    <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
-                                    </td>
-
-                                    <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
-                                    </td>
-
-                                    <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="table-box-checkbox-text">
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="">
-                                        </div>
-                                    </td>
-
-                                    <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
-                                    </td>
-
-                                    <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
-                                        <br>
-                                        <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
-                                    </td>
-
-                                    <td class="table-box-text-three">
-                                        <span class="table-bold">Address:</span>
-                                        <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
-                                        </span>
-                                    </td>
-
-                                    <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
-                                    </td>
-
-                                    <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
-                                    </td>
-
-                                    <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="table-box-checkbox-text">
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="">
-                                        </div>
-                                    </td>
-
-                                    <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
-                                    </td>
-
-                                    <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
-                                        <br>
-                                        <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
-                                    </td>
-
-                                    <td class="table-box-text-three">
-                                        <span class="table-bold">Address:</span>
-                                        <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
-                                        </span>
-                                    </td>
-
-                                    <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
-                                    </td>
-
-                                    <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
-                                    </td>
-
-                                    <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="table-box-checkbox-text">
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="">
-                                        </div>
-                                    </td>
-
-                                    <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
-                                    </td>
-
-                                    <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
-                                        <br>
-                                        <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
-                                    </td>
-
-                                    <td class="table-box-text-three">
-                                        <span class="table-bold">Address:</span>
-                                        <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
-                                        </span>
-                                    </td>
-
-                                    <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
-                                    </td>
-
-                                    <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
-                                    </td>
-
-                                    <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="table-box-checkbox-text">
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="">
-                                        </div>
-                                    </td>
-
-                                    <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
-                                    </td>
-
-                                    <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
-                                        <br>
-                                        <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
-                                    </td>
-
-                                    <td class="table-box-text-three">
-                                        <span class="table-bold">Address:</span>
-                                        <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
-                                        </span>
-                                    </td>
-
-                                    <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
-                                    </td>
-
-                                    <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
-                                    </td>
-
-                                    <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="table-box-checkbox-text">
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="">
-                                        </div>
-                                    </td>
-
-                                    <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
-                                    </td>
-
-                                    <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
-                                        <br>
-                                        <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
-                                    </td>
-
-                                    <td class="table-box-text-three">
-                                        <span class="table-bold">Address:</span>
-                                        <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
-                                        </span>
-                                    </td>
-
-                                    <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
-                                    </td>
-
-                                    <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
-                                    </td>
-
-                                    <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="table-box-checkbox-text">
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="">
-                                        </div>
-                                    </td>
-
-                                    <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
-                                    </td>
-
-                                    <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
-                                        <br>
-                                        <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
-                                    </td>
-
-                                    <td class="table-box-text-three">
-                                        <span class="table-bold">Address:</span>
-                                        <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
-                                        </span>
-                                    </td>
-
-                                    <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
-                                    </td>
-
-                                    <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
-                                    </td>
-
-                                    <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="table-box-checkbox-text">
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="">
-                                        </div>
-                                    </td>
-
-                                    <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
-                                    </td>
-
-                                    <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
-                                        <br>
-                                        <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
-                                    </td>
-
-                                    <td class="table-box-text-three">
-                                        <span class="table-bold">Address:</span>
-                                        <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
-                                        </span>
-                                    </td>
-
-                                    <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
-                                    </td>
-
-                                    <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
-                                    </td>
-
-                                    <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="table-box-checkbox-text">
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="">
-                                        </div>
-                                    </td>
-
-                                    <td class="table-box-text-one">
-                                        <span class="table-bold">Michael Jameson</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
-                                    </td>
-
-                                    <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
-                                        <br>
-                                        <span class="table-bold">Email ID:</span> <span
-                                            class="table-text-normal">michaeljameson@ymail.com</span>
-                                    </td>
-
-                                    <td class="table-box-text-three">
-                                        <span class="table-bold">Address:</span>
-                                        <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
-                                        </span>
-                                    </td>
-
-                                    <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
-                                    </td>
-
-                                    <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
-                                    </td>
-
-                                    <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
-                                    </td>
-                                </tr>
-
-
-
-
+ 
 
                             </tbody>
                         </table>
@@ -1230,17 +755,17 @@
 <!------- Add Student Modal Start ----------->
 <div class="custom-add-student-modal">
     <ng-template #content2 let-modal>
+        <form id="contactForm" class="contact-form appear-animation" [formGroup]="form" (submit)="addUniversity()"  data-appear-animation="fadeIn" data-appear-animation-delay="600">
+
         <div class="modal-header">
             <h4 class="modal-title" id="defaultModalLabel">Add University</h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  (click)="modal.dismiss('Cross click')"  >&times;</button>
         </div>
         <div class="modal-body">
-            <form id="contactForm" class="contact-form appear-animation" action="php/contact-form.php" method="POST"
-                data-appear-animation="fadeIn" data-appear-animation-delay="600">
                 <div class="form-row">
                     <div class="form-group col-lg-12">
                         <input type="text" value="" placeholder="University Name" class="form-control" name="name"
-                            id="name" required>
+                            id="name" formControlName="name">
                     </div>
                 </div>
 
@@ -1248,48 +773,40 @@
                     <div class="form-group col-lg-6">
                         <input id="phoneuniversity" type="tel" placeholder="Mobile Number" value=""
                             data-msg-required="Please enter your name." maxlength="100" class="form-control"
-                            name="phone" required>
+                            name="phone" formControlName="mobile">
                     </div>
                     <div class="form-group col-lg-6">
                         <input type="email" value="" placeholder="Email Id" maxlength="100" class="form-control"
-                            name="email" id="email" required>
+                            name="email" id="email" formControlName="email">
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group col-lg-6">
-                        <input type="date" value="" placeholder="Date Of Birth" class="form-control" name="date"
-                            id="date" required>
-                    </div>
-                </div>
-
+               
+                
                 <div class="form-row mt-4">
                     <div class="form-group col-lg-12">
                         <input type="address" value="" placeholder="Address" class="form-control" name="address"
-                            id="address" required>
+                            id="address" formControlName="address">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-lg-6">
-                        <select class="form-control">
-                            <option>Country</option>
-                            <option>Country 2</option>
-                            <option>Country 3</option>
+                        <select class="form-control" #country_id formControlName="country" (change)="onchnage(country_id.value)" >
+                            <option   *ngFor="let items of country" [value]="items.id" >{{items.name}}</option> 
                         </select>
                     </div>
                     <div class="form-group col-lg-6">
-                        <select class="form-control">
-                            <option>City</option>
-                            <option>City 2</option>
-                            <option>City 3</option>
+                        <select class="form-control" formControlName="city">
+                            <option *ngFor="let items of states" value="{{items.id }}" >{{items.name}}</option>
+                             
                         </select>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-lg-12">
-                        <select class="form-control mb-3">
+                        <select class="form-control mb-3" formControlName="plans">
                             <option>Select Plan</option>
                             <option>Plan 2</option>
                             <option>Plan 3</option>
@@ -1308,7 +825,7 @@
                             <div class="col-lg-12">
                                 <div class="checkbox select-roles-check-box">
                                     <label>
-                                        <input type="checkbox" value="" class="">
+                                        <input type="checkbox" value="" class="" >
                                         Director
                                     </label>
                                 </div>
@@ -1318,7 +835,7 @@
                         <div class="form-group row">
                             <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
                             <div class="col-lg-9">
-                                <input class="form-control mb-3" type="text" placeholder="Enter email ID">
+                                <input class="form-control mb-3" type="text" placeholder="Enter email ID" formControlName="director_email">
                             </div>
                         </div>
 
@@ -1327,7 +844,7 @@
                             <div class="col-lg-12">
                                 <div class="checkbox select-roles-check-box">
                                     <label>
-                                        <input type="checkbox" value="" class="">
+                                        <input type="checkbox" value="" class="" >
                                         Manager
                                     </label>
                                 </div>
@@ -1337,7 +854,7 @@
                         <div class="form-group row">
                             <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
                             <div class="col-lg-9">
-                                <input class="form-control mb-3" type="text" placeholder="Enter email ID">
+                                <input class="form-control mb-3" type="text" placeholder="Enter email ID" formControlName="manager_email">
                             </div>
                         </div>
 
@@ -1346,7 +863,7 @@
                             <div class="col-lg-12">
                                 <div class="checkbox select-roles-check-box">
                                     <label>
-                                        <input type="checkbox" value="" class="">
+                                        <input type="checkbox" value="" class="" >
                                         Asisstant Manager
                                     </label>
                                 </div>
@@ -1356,7 +873,7 @@
                         <div class="form-group row">
                             <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
                             <div class="col-lg-9">
-                                <input class="form-control mb-3" type="text" placeholder="Enter email ID">
+                                <input class="form-control mb-3" type="text" placeholder="Enter email ID" formControlName="assistant_email">
                             </div>
                         </div>
 
@@ -1365,7 +882,7 @@
                             <div class="col-lg-12">
                                 <div class="checkbox select-roles-check-box">
                                     <label>
-                                        <input type="checkbox" value="" class="">
+                                        <input type="checkbox" value="" class="" >
                                         Team Lead
                                     </label>
                                 </div>
@@ -1375,20 +892,21 @@
                         <div class="form-group row">
                             <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
                             <div class="col-lg-9">
-                                <input class="form-control mb-3" type="text" placeholder="Enter email ID">
+                                <input class="form-control mb-3" type="text" placeholder="Enter email ID" formControlName="team_email">
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            
         </div>
         <div class="modal-footer">
             <div class="row justify-content-center">
                 <div class="col-md-4">
-                    <button type="button" class="custom-add-student-btn">ADD UNIVERSITY</button>
+                    <button type="submit" class="custom-add-student-btn">ADD UNIVERSITY</button>
                 </div>
             </div>
         </div>
+        </form>
     </ng-template>
 </div>
 <!------- Add Student Modal End ----------->
