@@ -4,12 +4,15 @@ import { countries } from './interfaces/country.modal';
 import { cities } from './interfaces/city.modal';
 import { states } from './interfaces/states.modal';
 
+import { environment } from "src/environments/environment"
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class RegionsService {
 
-  private url = "http://103.43.153.37:4200/apis/regions/"
+  private url = `${environment.api_url}/regions/`
 
   constructor(private http: HttpClient) { }
 

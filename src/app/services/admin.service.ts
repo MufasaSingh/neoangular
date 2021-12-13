@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
+import { environment } from "src/environments/environment"
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +9,10 @@ import { HttpClient } from "@angular/common/http"
 export class AdminService {
 
   private isAuthencated: boolean = false;
+  private url = `${environment.api_url}/admin` ;
 
-  private url = "http://103.43.153.37:4200/apis/admin"
 
+  
   constructor(private http: HttpClient) { }
 
   login(data: any){

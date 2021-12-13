@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { formlist } from './interfaces/formlist.modal';
 
+import { environment } from "src/environments/environment"
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class StudentsService {
 
-  private url: string = "http://103.43.153.37:4200/apis/students";
+  private url: string = `${environment.api_url}/students`;
 
   constructor(private http: HttpClient) { }
 

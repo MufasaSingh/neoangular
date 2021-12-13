@@ -610,7 +610,7 @@ button:focus {
     letter-spacing: 0em;
     color: #979797;
 }
-
+ 
 .plans-account-totail-icon-ul{
     list-style: none;
     padding: 0px;
@@ -740,7 +740,104 @@ button:focus {
 .select-roles-check-box label {
     color: #444444;
 }
+.student-ssers-heading-text{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    color: #444444;
+}
+.non-enrolled-students{
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+    color: #444444;
+    position: relative;
+    margin-left: 32px;
+}
+.non-enrolled-students:before {
+    width: 22px;
+    height: 4px;
+    background: #1f2f98;
+    content: ',';
+    position: absolute;
+    border-radius: 10px;
+    top: 4px;
+    left: -32px;
+}
 
+.enrolled-students{
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+    color: #444444;
+    position: relative;
+    margin-left: 32px;
+}
+.enrolled-students:before {
+    width: 22px;
+    height: 4px;
+    background: #aab6fb;
+    content: ',';
+    position: absolute;
+    border-radius: 10px;
+    top: 4px;
+    left: -32px;
+}
+.reviews-box-main-section{
+    background: rgba(31, 47, 152, 0.05);
+    border-radius: 16.65px;
+    position: relative;
+}
+.reviews-box-main-section ul{
+    list-style: none;
+    padding: 15px 21px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 270px;
+    margin-bottom: 0px;
+    overflow-y: scroll;
+}
+.reviews-box-main-section li{
+    width: 100%;
+    border-bottom: 1px solid #DADADA;
+    padding: 15px 0px 10px;
+}
+.reviews-box-main-section li .reviews-box-text{
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #444444;
+    margin-bottom: 0px;
+    font-weight: 600;
+}
+.reviews-box-main-section li .reviews-box-date{
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: #444444;
+    margin-bottom: 0px;
+}
+.reviews-box-main-section .reviews-box-download-btn{
+    border: 0px solid;
+    position: absolute;
+    top: 6px;
+    right: 12px;
+    background: transparent;
+}
+.reviews-box-main-section .reviews-box-download-btn img{
+    width: 20px;
+}
 
 
 
