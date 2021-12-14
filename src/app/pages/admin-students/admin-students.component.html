@@ -260,7 +260,7 @@
           </div>
           <div class="form-group col-lg-6">
             <select class="form-control" formControlName="city">
-              <option>City</option>
+              <option selected >City</option>
               <option  *ngFor="let item of states" [value]="item.id"  >{{item.name}}</option>
              
             </select>

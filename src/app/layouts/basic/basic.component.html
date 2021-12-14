@@ -14,8 +14,8 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/admin/dashboard">
+      <li ngClass="nav-item " routerLinkActive="active"  >
+        <a class="nav-link"  routerLink="/admin/dashboard" >
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -24,14 +24,14 @@
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item"  routerLinkActive="active"  >
         <a class="nav-link" routerLink="/admin/students">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Student</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
+      <li class="nav-item" routerLinkActive="active" >
         <a class="nav-link" routerLink="/admin/universities">
           <i class="fas fa-fw fa-table"></i>
           <span>University</span></a>
