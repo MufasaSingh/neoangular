@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { plans } from './interfaces/plan.modal';
 
 @Injectable({
   providedIn: 'root',
@@ -89,4 +90,14 @@ export class AdminService {
       userId: userId,
     };
   }
+
+  addPlan(data: any){
+    return this.http.post<{error: string, error_msg: string, plan_id: string}>(`${this.url}/plan/create`, data) 
+  }
+
+  listPlan(){
+    return this.http.get<{error: string, error_msg: string, data: plans[] }>(`${this.url}/plan/list`)
+  }
+
+
 }
