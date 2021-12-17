@@ -67,7 +67,7 @@
             </td>
 
             <td class="table-box-text-one">
-              <span class="table-bold">{{item.s_fname}} {{item.s_lname}}</span>
+              <span class="table-bold">{{item.student_name }}</span>
               <br>
               <span class="table-text-normal">Biochemistry (Bachelor)</span>
               <br>
@@ -75,7 +75,7 @@
             </td>
 
             <td class="table-box-text-two">
-              <span class="table-bold">Contact:</span> <span class="table-text-normal">{{item.s_country_code}} {{item.s_mobile}}</span>
+              <span class="table-bold">Contact:</span> <span class="table-text-normal">{{item.contact }}</span>
               <br>
               <span class="table-bold">Email ID:</span> <span class="table-text-normal">{{item.s_email}}</span>
             </td>
@@ -83,21 +83,34 @@
             <td class="table-box-text-three">
               <span class="table-bold">Address:</span>
               <br>
-              <span class="table-text-normal"> {{item.s_p_address}}</span>
+              <span class="table-text-normal"> {{item.Address}}</span>
             </td>
 
-            <td class="table-box-status-text" >
+            <td class="table-box-status-text" *ngIf="item.form_status == 'Pending' " >
               <span class="table-status-pending">
                 Form {{item.form_status}}
               </span>
             </td>
+
+            <td class="table-box-status-text" *ngIf="item.form_status == 'Complete' " >
+              <span class="table-status-complete">
+                Form Complete
+              </span>
+            </td>
+
+            <td class="table-box-status-text"  *ngIf="item.form_status != 'Pending' && item.form_status != 'Complete'  " >
+              <span class="table-status-na">
+                NA
+              </span>
+            </td>
+            
 
             <td class="table-box-delete-btn">
               <button><img src="../../../assets/img/delete.svg"></button>
             </td>
 
             <td class="table-box-copy-btn">
-              <button><img src="../../../assets/img/copy-icon.svg" [routerLink]='["/admin/studentdetails",item.form_id]' ></button>
+              <button><img src="../../../assets/img/copy-icon.svg" [routerLink]='["/admin/studentdetails",item.student_id]' ></button>
             </td>
           </tr>
 <!-- 

@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { plans } from './interfaces/plan.modal';
+import { roles } from './interfaces/roles.modal';
 
 @Injectable({
   providedIn: 'root',
@@ -97,6 +98,22 @@ export class AdminService {
 
   listPlan(){
     return this.http.get<{error: string, error_msg: string, data: plans[] }>(`${this.url}/plan/list`)
+  }
+
+  listRole(){
+    return this.http.get<{error: string, error_msg: string, data: roles[]}>(`${this.url}/role/list`)
+  }
+
+  addRole(data: any){
+    return this.http.post<{error: string, error_msg: string, role_id: string}>(`${this.url}/role/create`, data)
+  }
+
+  PlanbyId(id: number){
+    return this.http.get<{error: string, error_msg: string, data: plans}>(`${this.url}/plan/${id}`)
+  }
+
+  RolebyId(id: number){
+    return this.http.get<{error: string, error_msg: string, data: roles}>(`${this.url}/role/${id}`)
   }
 
 

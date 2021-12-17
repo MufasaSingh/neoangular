@@ -1,5 +1,5 @@
 export interface plans {
-  plan_id: string,
+  plan_id: number,
   plan_name: string,
   un_profile: string,
   un_updates: string,
