@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { UniversityList } from './interfaces/universitylist.modal';
 
+import { environment } from "src/environments/environment"
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class UniversityService {
 
-  private url: string = "http://103.43.153.37:4200/apis/university";
+  private url: string = `${environment.api_url}/university`;
 
 
   constructor(private http: HttpClient) { }

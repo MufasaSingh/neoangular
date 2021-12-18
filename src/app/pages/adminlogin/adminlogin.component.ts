@@ -34,16 +34,7 @@ export class AdminloginComponent implements OnInit {
       "pass": this.form.value.password
     }
 
-    this.service.login(values).subscribe(data=>{        
-
-      if (data.error == 1) {  
-        this.service.setIsAuth();
-        this.router.navigate(["/admin/dashboard"])
-
-      }else{
-
-      }
-    })
+    this.service.login(values);
   }
 
 }

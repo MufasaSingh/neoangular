@@ -253,14 +253,15 @@
         <div class="form-row">
           <div class="form-group col-lg-6">
             <select class="form-control" #country_id formControlName="country" (change)="onchnage(country_id.value)" >
-              <option>Country</option>
+              <option  [ngValue]="null"  >Country</option>
               <option *ngFor="let item of country" [value]="item.id" >{{item.name}}</option>
               
             </select>
           </div>
           <div class="form-group col-lg-6">
-            <select class="form-control" formControlName="city">
-              <option selected >City</option>
+            <select class="form-control" formControlName="city"> 
+              
+              <option  [ngValue]="null"  >City</option> 
               <option  *ngFor="let item of states" [value]="item.id"  >{{item.name}}</option>
              
             </select>
@@ -270,7 +271,7 @@
         <div class="form-row">
           <div class="form-group col-lg-12">
             <select class="form-control mb-3" formControlName="university">
-              <option>Select University</option>
+              <option  [ngValue]="null"  >Select University</option>
               <option *ngFor="let item of university" [value]="item.university_id" >{{item.university_name}}</option>
              
             </select>

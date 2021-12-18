@@ -41,10 +41,14 @@ const routes: Routes = [
           loadChildren: ()=> import("./pages/admin-universities/admin-universities.module").then(m=> m.AdminUniversitiesModule),
           canActivate: [AuthGuard]
         },{
-          path: "universitydetails",
+          path: "universitydetails/:u_id",
           loadChildren: ()=> import("./pages/adminuniversitydetails/adminuniversitydetails.module").then(m=> m.AdminuniversitydetailsModule),
           canActivate: [AuthGuard]
-        } 
+        },{
+          path: "reports",
+          loadChildren: ()=> import("./pages/admin-reports/admin-reports.module").then(m=> m.AdminReportsModule),
+          canActivate: [AuthGuard]
+        }
     ]
   }
 ];
