@@ -91,6 +91,7 @@ export class AdminStudentsComponent implements OnInit {
   }
 
   onSaveStudent() {
+ 
     if (this.form.invalid) return;
     this.modalService.dismissAll('saved');
 
@@ -128,6 +129,10 @@ export class AdminStudentsComponent implements OnInit {
       this.states = data.data
     })
 
+  }
+
+  deletestudent(id: number){
+    this.service.deleteStudent(id)
   }
 
 }

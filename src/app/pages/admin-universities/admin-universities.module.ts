@@ -7,7 +7,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AdminUniversitiesRoutingModule } from './admin-universities-routing.module';
 import { AdminUniversitiesComponent } from './admin-universities.component';
-import {MatExpansionModule} from '@angular/material/expansion';
+import {MatExpansionModule} from '@angular/material/expansion'; 
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     AdminUniversitiesRoutingModule,
     MatExpansionModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule ,
+    MatCheckboxModule
   ]
 })
 export class AdminUniversitiesModule { }

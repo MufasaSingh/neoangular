@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { UniversityService } from '../../services/university.service';
 import { RegionsService } from '../../services/regions.service';
+import { AdminService } from '../../services/admin.service';
 
 import {
   MatSnackBar,
@@ -14,6 +15,8 @@ import {
 import { UniversityList } from 'src/app/services/interfaces/universitylist.modal';
 import { countries } from 'src/app/services/interfaces/country.modal';
 import { states } from 'src/app/services/interfaces/states.modal';
+import { plans } from 'src/app/services/interfaces/plan.modal';
+import { roles } from 'src/app/services/interfaces/roles.modal';
 
 @Component({
   selector: 'app-admin-universities',
@@ -21,13 +24,24 @@ import { states } from 'src/app/services/interfaces/states.modal';
   styleUrls: ['./admin-universities.component.css'],
 })
 export class AdminUniversitiesComponent implements OnInit {
+
   closeResult = '';
+
+  mode: string;
 
   list: UniversityList[] = [];
   country: countries[] = [];
   states: states[] = [];
+  roles: roles[] = [];
+  plans: plans[] = [];
+
+  role_id:number;
+  plan_id:number;
 
   form: FormGroup;
+  roleform: FormGroup; //this is plan
+  rolesform: FormGroup;
+
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
@@ -35,17 +49,30 @@ export class AdminUniversitiesComponent implements OnInit {
     private modalService: NgbModal,
     private service: UniversityService,
     private _snackBar: MatSnackBar,
-    private Rservice: RegionsService
+    private Rservice: RegionsService,
+    private Aservice: AdminService
   ) {}
 
   ngOnInit(): void {
 
-    this.Rservice.getCountry().subscribe(data=>{
-      this.country = data.data
-    })
+    this.Rservice.getCountry().subscribe((data) => {
+      this.country = data.data;
+    });
 
     this.service.universityList().subscribe((data) => {
       this.list = data.data;
+    });
+
+    this.Aservice.listPlan().subscribe((data) => {
+      this.plans = data.data;
+    });
+
+    this.Aservice.listRole().subscribe((data) => {
+      this.roles = data.data;
+    });
+
+    this.rolesform = new FormGroup({
+      name: new FormControl(null, { validators: Validators.required }),
     });
 
     this.form = new FormGroup({
@@ -60,6 +87,71 @@ export class AdminUniversitiesComponent implements OnInit {
       manager_email: new FormControl(null),
       assistant_email: new FormControl(null),
       team_email: new FormControl(null),
+    });
+
+    this.roleform = new FormGroup({
+      plan_name: new FormControl(null),
+      un_profile: new FormControl(null),
+      un_updates: new FormControl(null),
+      arrival_form: new FormControl(null),
+      chat: new FormControl(null),
+      contact_support: new FormControl(null),
+      send_alert: new FormControl(null),
+      un_pro_overview: new FormControl(null),
+      un_pro_course: new FormControl(null),
+      un_pro_contactun: new FormControl(null),
+      un_pro_faq: new FormControl(null),
+      un_pro_apply: new FormControl(null),
+      un_up_service: new FormControl(null),
+      un_up_health: new FormControl(null),
+      un_up_news: new FormControl(null),
+      un_up_life: new FormControl(null),
+      fm_terms: new FormControl(null),
+      fm_first_name: new FormControl(null),
+      fm_last_name: new FormControl(null),
+      fm_email: new FormControl(null),
+      fm_mobile: new FormControl(null),
+      fm_gender: new FormControl(null),
+      fm_dob: new FormControl(null),
+      fm_per_add: new FormControl(null),
+      fm_per_state: new FormControl(null),
+      fm_per_city: new FormControl(null),
+      fm_per_postcode: new FormControl(null),
+      fm_cur_add: new FormControl(null),
+      fm_cur_state: new FormControl(null),
+      fm_cur_city: new FormControl(null),
+      fm_cur_postcode: new FormControl(null),
+      fm_campus: new FormControl(null),
+      fm_progappliedto: new FormControl(null),
+      fm_intake: new FormControl(null),
+      fm_studentno: new FormControl(null),
+      fm_visa_issudate: new FormControl(null),
+      fm_traveltodiffcounty: new FormControl(null),
+      fm_travelbyself: new FormControl(null),
+      fm_acc_byfamily: new FormControl(null),
+      fm_familyno: new FormControl(null),
+      fm_specialaccomo: new FormControl(null),
+      fm_modeoftransport: new FormControl(null),
+      fm_airline: new FormControl(null),
+      fm_dptcountry: new FormControl(null),
+      fm_dptcity: new FormControl(null),
+      fm_dptdate: new FormControl(null),
+      fm_dpttime: new FormControl(null),
+      fm_connectflight: new FormControl(null),
+      fm_connectflightno: new FormControl(null),
+      fm_arri_country: new FormControl(null),
+      fm_arri_city: new FormControl(null),
+      fm_hotal_name: new FormControl(null),
+      fm_hotal_roomno: new FormControl(null),
+      fm_hotal_address: new FormControl(null),
+      fm_hotal_countycode: new FormControl(null),
+      fm_hotal_no: new FormControl(null),
+      fm_city_of_un: new FormControl(null),
+      fm_finaltransportmode: new FormControl(null),
+      fm_transportno: new FormControl(null),
+      fm_arri_date: new FormControl(null),
+      fm_arri_time: new FormControl(null),
+      fm_addtionalinfo: new FormControl(null),
     });
   }
 
@@ -108,20 +200,203 @@ export class AdminUniversitiesComponent implements OnInit {
     this.service.createUniversity(values).subscribe((dta) => {
       this.openSnackBar(dta.error_msg);
     });
-
-  
   }
 
-  onchnage(id: any){
+  addPlan() {
+    if (this.roleform.invalid) return;
 
+    const plan = {
+      plan_name: this.roleform.value.plan_name,
+      un_profile: this.roleform.value.un_profile,
+      un_updates: this.roleform.value.un_updates,
+      arrival_form: this.roleform.value.arrival_form,
+      chat: this.roleform.value.chat,
+      contact_support: this.roleform.value.contact_support,
+      send_alert: this.roleform.value.send_alert,
+      un_pro_overview: this.roleform.value.un_pro_overview,
+      un_pro_course: this.roleform.value.un_pro_course,
+      un_pro_contactun: this.roleform.value.un_pro_contactun,
+      un_pro_faq: this.roleform.value.un_pro_faq,
+      un_pro_apply: this.roleform.value.un_pro_apply,
+      un_up_service: this.roleform.value.un_up_service,
+      un_up_health: this.roleform.value.un_up_health,
+      un_up_news: this.roleform.value.un_up_news,
+      un_up_life: this.roleform.value.un_up_life,
+      fm_terms: this.roleform.value.fm_terms,
+      fm_first_name: this.roleform.value.fm_first_name,
+      fm_last_name: this.roleform.value.fm_last_name,
+      fm_email: this.roleform.value.fm_email,
+      fm_mobile: this.roleform.value.fm_mobile,
+      fm_gender: this.roleform.value.fm_gender,
+      fm_dob: this.roleform.value.fm_dob,
+      fm_per_add: this.roleform.value.fm_per_add,
+      fm_per_state: this.roleform.value.fm_per_state,
+      fm_per_city: this.roleform.value.fm_per_city,
+      fm_per_postcode: this.roleform.value.fm_per_postcode,
+      fm_cur_add: this.roleform.value.fm_cur_add,
+      fm_cur_state: this.roleform.value.fm_cur_state,
+      fm_cur_city: this.roleform.value.fm_cur_city,
+      fm_cur_postcode: this.roleform.value.fm_cur_postcode,
+      fm_campus: this.roleform.value.fm_campus,
+      fm_progappliedto: this.roleform.value.fm_progappliedto,
+      fm_intake: this.roleform.value.fm_intake,
+      fm_studentno: this.roleform.value.fm_studentno,
+      fm_visa_issudate: this.roleform.value.fm_visa_issudate,
+      fm_traveltodiffcounty: this.roleform.value.fm_traveltodiffcounty,
+      fm_travelbyself: this.roleform.value.fm_travelbyself,
+      fm_acc_byfamily: this.roleform.value.fm_acc_byfamily,
+      fm_familyno: this.roleform.value.fm_familyno,
+      fm_specialaccomo: this.roleform.value.fm_specialaccomo,
+      fm_modeoftransport: this.roleform.value.fm_modeoftransport,
+      fm_airline: this.roleform.value.fm_airline,
+      fm_dptcountry: this.roleform.value.fm_dptcountry,
+      fm_dptcity: this.roleform.value.fm_dptcity,
+      fm_dptdate: this.roleform.value.fm_dptdate,
+      fm_dpttime: this.roleform.value.fm_dpttime,
+      fm_connectflight: this.roleform.value.fm_connectflight,
+      fm_connectflightno: this.roleform.value.fm_connectflightno,
+      fm_arri_country: this.roleform.value.fm_arri_country,
+      fm_arri_city: this.roleform.value.fm_arri_city,
+      fm_hotal_name: this.roleform.value.fm_hotal_name,
+      fm_hotal_roomno: this.roleform.value.fm_hotal_roomno,
+      fm_hotal_address: this.roleform.value.fm_hotal_address,
+      fm_hotal_countycode: this.roleform.value.fm_hotal_countycode,
+      fm_hotal_no: this.roleform.value.fm_hotal_no,
+      fm_city_of_un: this.roleform.value.fm_city_of_un,
+      fm_finaltransportmode: this.roleform.value.fm_finaltransportmode,
+      fm_transportno: this.roleform.value.fm_transportno,
+      fm_arri_date: this.roleform.value.fm_arri_date,
+      fm_arri_time: this.roleform.value.fm_arri_time,
+      fm_addtionalinfo: this.roleform.value.fm_addtionalinfo,
+    };
+
+    this.Aservice.addPlan(plan).subscribe((data) => {
+      this.modalService.dismissAll('saved');
+      this.openSnackBar(data.error_msg);
+      this.roleform.reset();
+    });
+  }
+
+  addRole() {
+    if (this.rolesform.invalid) return;
+
+    const role = {
+      name: this.rolesform.value.name,
+    };
+
+    this.Aservice.addRole(role).subscribe((data) => {
+      this.modalService.dismissAll('ok');
+      this.openSnackBar(data.error_msg);
+    });
+  }
+
+  onchnage(id: any) {
     const values = {
-      "country_id": id
-    }    
+      country_id: id,
+    };
 
-    this.Rservice.getState(values).subscribe(data=>{
-      this.states = data.data
-    })
+    this.Rservice.getState(values).subscribe((data) => {
+      this.states = data.data;
+    });
+  }
+
+  editPlan(id: number, content: any) {
+    this.plan_id = id;
+    this.Aservice.PlanbyId(id).subscribe((data) => {
+      this.roleform.setValue({
+        plan_name: data.data.plan_name,
+        un_profile: data.data.un_profile,
+        un_updates: data.data.un_updates,
+        arrival_form: data.data.arrival_form,
+        chat: data.data.chat,
+        contact_support: data.data.contact_support,
+        send_alert: data.data.send_alert,
+        un_pro_overview: data.data.un_pro_overview,
+        un_pro_course: data.data.un_pro_course,
+        un_pro_contactun: data.data.un_pro_contactun,
+        un_pro_faq: data.data.un_pro_faq,
+        un_pro_apply: data.data.un_pro_apply,
+        un_up_service: data.data.un_up_service,
+        un_up_health: data.data.un_up_health,
+        un_up_news: data.data.un_up_news,
+        un_up_life: data.data.un_up_life,
+        fm_terms: data.data.fm_terms,
+        fm_first_name: data.data.fm_first_name,
+        fm_last_name: data.data.fm_last_name,
+        fm_email: data.data.fm_email,
+        fm_mobile: data.data.fm_mobile,
+        fm_gender: data.data.fm_gender,
+        fm_dob: data.data.fm_dob,
+        fm_per_add: data.data.fm_per_add,
+        fm_per_state: data.data.fm_per_state,
+        fm_per_city: data.data.fm_per_city,
+        fm_per_postcode: data.data.fm_per_postcode,
+        fm_cur_add: data.data.fm_cur_add,
+        fm_cur_state: data.data.fm_cur_state,
+        fm_cur_city: data.data.fm_cur_city,
+        fm_cur_postcode: data.data.fm_cur_postcode,
+        fm_campus: data.data.fm_campus,
+        fm_progappliedto: data.data.fm_progappliedto,
+        fm_intake: data.data.fm_intake,
+        fm_studentno: data.data.fm_studentno,
+        fm_visa_issudate: data.data.fm_visa_issudate,
+        fm_traveltodiffcounty: data.data.fm_traveltodiffcounty,
+        fm_travelbyself: data.data.fm_travelbyself,
+        fm_acc_byfamily: data.data.fm_acc_byfamily,
+        fm_familyno: data.data.fm_familyno,
+        fm_specialaccomo: data.data.fm_specialaccomo,
+        fm_modeoftransport: data.data.fm_modeoftransport,
+        fm_airline: data.data.fm_airline,
+        fm_dptcountry: data.data.fm_dptcountry,
+        fm_dptcity: data.data.fm_dptcity,
+        fm_dptdate: data.data.fm_dptdate,
+        fm_dpttime: data.data.fm_dpttime,
+        fm_connectflight: data.data.fm_connectflight,
+        fm_connectflightno: data.data.fm_connectflightno,
+        fm_arri_country: data.data.fm_arri_country,
+        fm_arri_city: data.data.fm_arri_city,
+        fm_hotal_name: data.data.fm_hotal_name,
+        fm_hotal_roomno: data.data.fm_hotal_roomno,
+        fm_hotal_address: data.data.fm_hotal_address,
+        fm_hotal_countycode: data.data.fm_hotal_countycode,
+        fm_hotal_no: data.data.fm_hotal_no,
+        fm_city_of_un: data.data.fm_city_of_un,
+        fm_finaltransportmode: data.data.fm_finaltransportmode,
+        fm_transportno: data.data.fm_transportno,
+        fm_arri_date: data.data.fm_arri_date,
+        fm_arri_time: data.data.fm_arri_time,
+        fm_addtionalinfo: data.data.fm_addtionalinfo,
+      });
+
+      this.open(content);
+    });
+  }
+
+  editRole(id: number, content: any) {
+    this.role_id = id;
+    this.Aservice.RolebyId(id).subscribe((data) => {  
+      
+      this.rolesform.setValue({
+        name: data.data.role_name,
+      });
+
+      
+    this.open(content);
+
+    });
 
   }
 
+
+  deleteUniversity(id: number){ 
+    this.service.deleteUniversity(id)
+  }
+
+  deleteRole(id: number){
+    this.Aservice.deleteRole(id);
+  }
+
+  deletePlan(id: number){
+    this.Aservice.deletePlan(id);
+  }
 }

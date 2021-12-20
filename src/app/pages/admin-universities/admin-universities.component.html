@@ -11,6 +11,8 @@
     <div class="row">
         <div class="col-md-12">
 
+
+
             <div class="inner-student-page-heading tab">
                 <button class="tablinks active" onclick="openCity(event, 'All_Universities')">All Universities</button>
                 <button class="tablinks" onclick="openCity(event, 'Plans')">Plans</button>
@@ -63,7 +65,7 @@
                                     </td>
                                 </tr>
 
-                                <tr *ngFor="let item of list let i=index" >
+                                <tr *ngFor="let item of list let i=index">
                                     <td class="table-box-checkbox-text">
                                         <div class="checkbox">
                                             <input type="checkbox" value="">
@@ -98,15 +100,16 @@
                                     </td>
 
                                     <td class="table-box-delete-btn">
-                                        <button><img src="../../../assets/img/delete.svg"></button>
+                                        <button><img src="../../../assets/img/delete.svg" (click)="deleteUniversity(item.university_id)" ></button>
                                     </td>
 
                                     <td class="table-box-copy-btn">
-                                        <button><img src="../../../assets/img/not-alloud.svg"></button>
+                                        <button><img src="../../../assets/img/Edit.svg"
+                                                [routerLink]="['/admin/universitydetails',item.university_id]"></button>
                                     </td>
                                 </tr>
 
- 
+
 
                             </tbody>
                         </table>
@@ -120,7 +123,7 @@
             <div id="Plans" class="tabcontent mt-4">
                 <div class="row">
 
-                    <div class="col-md-3">
+                    <div class="col-md-3" *ngFor="let item of plans; index as i">
                         <div class="plans-account-totail-main">
                             <div class="plans-account-totail-counting">
                                 12 ACCOUNTS
@@ -141,19 +144,19 @@
                             </div>
 
                             <div class="plans-account-totail-text-one">
-                                PLAN 1
+                                PLAN {{i+1}}
                             </div>
                             <div class="row mt-3 plans-account-totail-edit">
                                 <div class="col-md-8">
-                                    <p>Name of Plan</p>
+                                    <p>{{item.plan_name}}</p>
                                 </div>
                                 <div class="col-md-4 text-right">
-                                    <button><img src="../../../assets/img/Edit-1.svg"></button>
+                                    <button type="button"  (click)="editPlan(item.plan_id, content3)"  ><img src="../../../assets/img/Edit-1.svg"></button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <!-- 
                     <div class="col-md-3">
                         <div class="plans-account-totail-main">
                             <div class="plans-account-totail-counting">
@@ -220,7 +223,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <div class="col-md-3 create-new-plan-btn-center">
@@ -240,7 +243,7 @@
             <div id="Roles" class="tabcontent mt-4">
                 <div class="row">
 
-                    <div class="col-md-3">
+                    <div class="col-md-3" *ngFor="let item of roles">
                         <div class="plans-account-totail-main">
                             <div class="plans-account-totail-counting">
                                 112 ACCOUNTS
@@ -265,15 +268,15 @@
                             </div>
                             <div class="row mt-3 plans-account-totail-edit">
                                 <div class="col-md-8">
-                                    <p>Name of Role</p>
+                                    <p>{{item.role_name}}</p>
                                 </div>
                                 <div class="col-md-4 text-right">
-                                    <button><img src="../../../assets/img/Edit-1.svg"></button>
+                                    <button type="button" (click)="editRole(item.role_id, content)" ><img src="../../../assets/img/Edit-1.svg"></button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <!-- 
                     <div class="col-md-3">
                         <div class="plans-account-totail-main">
                             <div class="plans-account-totail-counting">
@@ -341,10 +344,10 @@
                             </div>
                         </div>
                     </div>
-
+ -->
 
                     <div class="col-md-3 create-new-plan-btn-center">
-                        <button class="create-new-plan-btn-custom"  (click)="open(content3)"  >
+                        <button class="create-new-plan-btn-custom" (click)="open(content)">
                             <img src="../../../assets/img/plus.svg">
                             <br>
                             CREATE <br>NEW ROLE
@@ -365,28 +368,28 @@
 
 <!------- CREATE NEW PLAN Modal Start ----------->
 <div class="custom-add-student-modal">
-    <ng-template #content let-modal> 
+    <ng-template #content let-modal>
+        <form id="contactForm" class="contact-form appear-animation" [formGroup]="rolesform" (submit)="addRole()"  method="POST"
+            data-appear-animation="fadeIn" data-appear-animation-delay="600">
+            <div class="modal-header close-create-plan-header">
+                <h4 class="modal-title" id="defaultModalLabel"> NEW ROLE </h4>
+                <input type="text" value="" placeholder="Plan Name" class="form-control" name="name" id="name" formControlName="name">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                    (click)="deleteRole(plan_id)"><img src="../../../assets/img/delete.svg"></button>
+            </div>
+            <div class="modal-body">
 
-        <div class="modal-header close-create-plan-header">
-            <h4 class="modal-title" id="defaultModalLabel">Plan 1</h4>
-            <input type="text" value="" placeholder="Plan Name" class="form-control" name="name" id="name" required>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="modal.dismiss('Cross click')" ><img
-                    src="../../../assets/img/delete.svg"></button>
-        </div>
-        <div class="modal-body">
 
 
-            <form id="contactForm" class="contact-form appear-animation" action="php/contact-form.php" method="POST"
-                data-appear-animation="fadeIn" data-appear-animation-delay="600">
 
                 <mat-accordion>
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               University Profile
-                            </mat-panel-title> 
+                                University Profile
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
-                        
+
                         <div class="col-lg-11 create-plan-list-checkbox mt-3">
 
                             <ul>
@@ -411,17 +414,17 @@
                                     <input type="checkbox" value="" class="">
                                 </li>
                             </ul>
-    
-    
+
+
                         </div>
-                        
+
                     </mat-expansion-panel>
 
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               University Updates
-                            </mat-panel-title> 
+                                University Updates
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
                         <div class="col-lg-11 create-plan-list-checkbox mt-3">
 
@@ -441,18 +444,18 @@
                                 <li>
                                     <p>Student Life</p>
                                     <input type="checkbox" value="" class="">
-                                </li> 
+                                </li>
                             </ul>
-    
-    
+
+
                         </div>
                     </mat-expansion-panel>
 
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               Arrival Form
-                            </mat-panel-title> 
+                                Arrival Form
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
                         <div class="col-lg-11 create-plan-list-checkbox mt-3">
 
@@ -472,19 +475,19 @@
                                 <li>
                                     <p>Email</p>
                                     <input type="checkbox" value="" class="">
-                                </li> 
+                                </li>
                                 <li>
                                     <p>Mobile Number</p>
                                     <input type="checkbox" value="" class="">
-                                </li> 
+                                </li>
                                 <li>
                                     <p>Gender</p>
                                     <input type="checkbox" value="" class="">
-                                </li> 
+                                </li>
                                 <li>
                                     <p>Date of Birth</p>
                                     <input type="checkbox" value="" class="">
-                                </li> 
+                                </li>
                                 <li>
                                     <p>Permanent Address</p>
                                     <input type="checkbox" value="" class="">
@@ -492,30 +495,30 @@
                                 <li>
                                     <p>State</p>
                                     <input type="checkbox" value="" class="">
-                                </li> 
+                                </li>
                                 <li>
                                     <p>City</p>
                                     <input type="checkbox" value="" class="">
-                                </li> 
+                                </li>
                                 <li>
                                     <p>Post Code</p>
                                     <input type="checkbox" value="" class="">
-                                </li> 
+                                </li>
                                 <li>
                                     <p>Current Address</p>
                                     <input type="checkbox" value="" class="">
-                                </li> 
+                                </li>
                             </ul>
-    
-    
+
+
                         </div>
                     </mat-expansion-panel>
 
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               Chat
-                            </mat-panel-title> 
+                                Chat
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
                         <p>I'm visible because I am open</p>
                     </mat-expansion-panel>
@@ -524,8 +527,8 @@
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               Contact Support
-                            </mat-panel-title> 
+                                Contact Support
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
                         <p>I'm visible because I am open</p>
                     </mat-expansion-panel>
@@ -534,234 +537,329 @@
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               Send Alert
-                            </mat-panel-title> 
+                                Send Alert
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
                         <p>I'm visible because I am open</p>
                     </mat-expansion-panel>
                 </mat-accordion>
- 
 
-            </form>
-        </div>
-        <div class="modal-footer">
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <button type="button" class="custom-add-student-btn">APPLY CHANGES</button>
-                </div>
             </div>
+            <div class="modal-footer">
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <button type="submit" class="custom-add-student-btn">APPLY CHANGES</button>
+                    </div>
+                </div>
 
-        </div>
-
+            </div>
+        </form>
     </ng-template>
 </div>
 <!------- CREATE NEW PLAN Modal End ----------->
 
 <!------- CREATE NEW ROLE Modal Start ----------->
 <div class="custom-add-student-modal">
-    <ng-template #content3 let-modal> 
-
-        <div class="modal-header close-create-plan-header">
-            <h4 class="modal-title" id="defaultModalLabel">NEW ROLES</h4>
-            <input type="text" value="" placeholder="Plan Name" class="form-control" name="name" id="name" required>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="modal.dismiss('Cross click')"  ><img
-                    src="../../../assets/img/delete.svg"></button>
-        </div>
-        <div class="modal-body">
+    <ng-template #content3 let-modal>
 
 
-            <form id="contactForm" class="contact-form appear-animation" action="php/contact-form.php" method="POST"
-                data-appear-animation="fadeIn" data-appear-animation-delay="600">
+        <form id="contactForm" [formGroup]="roleform" (submit)="addPlan()" class="contact-form appear-animation"
+            method="POST" data-appear-animation="fadeIn" data-appear-animation-delay="600">
+
+            <div class="modal-header close-create-plan-header">
+                <h4 class="modal-title" id="defaultModalLabel">NEW PLAN</h4>
+                <input type="text" value="" placeholder="Plan Name" class="form-control" name="name" id="name"
+                    formControlName="plan_name">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                    (click)="deletePlan(plan_id)"><img src="../../../assets/img/delete.svg"></button>
+            </div>
+            <div class="modal-body">
 
                 <mat-accordion>
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               University Profile
-                            </mat-panel-title> 
+                                <mat-checkbox formControlName="un_profile"> University Profile</mat-checkbox>
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
-                        
+
                         <div class="col-lg-11 create-plan-list-checkbox mt-3">
 
                             <ul>
                                 <li>
                                     <p>Overview</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="un_pro_overview">
                                 </li>
                                 <li>
                                     <p>Courses</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="un_pro_course">
                                 </li>
                                 <li>
                                     <p>Contact University</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="un_pro_contactun">
                                 </li>
                                 <li>
                                     <p>FAQ</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="un_pro_faq">
                                 </li>
                                 <li>
                                     <p>Apply</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="un_pro_apply">
                                 </li>
                             </ul>
-    
-    
+
+
                         </div>
-                        
+
                     </mat-expansion-panel>
 
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               University Updates
-                            </mat-panel-title> 
+                                <mat-checkbox formControlName="un_updates">University Updates</mat-checkbox>
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
                         <div class="col-lg-11 create-plan-list-checkbox mt-3">
 
                             <ul>
                                 <li>
                                     <p>Service Update</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="un_up_service">
                                 </li>
                                 <li>
                                     <p>Health And Safety</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="un_up_health">
                                 </li>
                                 <li>
                                     <p>Latest News</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="un_up_news">
                                 </li>
                                 <li>
                                     <p>Student Life</p>
-                                    <input type="checkbox" value="" class="">
-                                </li> 
+                                    <input type="checkbox" value="" class="" formControlName="un_up_life">
+                                </li>
                             </ul>
-    
-    
+
+
                         </div>
                     </mat-expansion-panel>
 
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               Arrival Form
-                            </mat-panel-title> 
+                                <mat-checkbox formControlName="arrival_form">Arrival Form</mat-checkbox>
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
                         <div class="col-lg-11 create-plan-list-checkbox mt-3">
 
                             <ul>
                                 <li>
                                     <p>Terms and Conditon</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="fm_terms">
                                 </li>
                                 <li>
                                     <p>First Name</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="fm_first_name">
                                 </li>
                                 <li>
                                     <p>Last Name</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="fm_last_name">
                                 </li>
                                 <li>
                                     <p>Email</p>
-                                    <input type="checkbox" value="" class="">
-                                </li> 
+                                    <input type="checkbox" value="" class="" formControlName="fm_email">
+                                </li>
                                 <li>
                                     <p>Mobile Number</p>
-                                    <input type="checkbox" value="" class="">
-                                </li> 
+                                    <input type="checkbox" value="" class="" formControlName="fm_mobile">
+                                </li>
                                 <li>
                                     <p>Gender</p>
-                                    <input type="checkbox" value="" class="">
-                                </li> 
+                                    <input type="checkbox" value="" class="" formControlName="fm_gender">
+                                </li>
                                 <li>
                                     <p>Date of Birth</p>
-                                    <input type="checkbox" value="" class="">
-                                </li> 
+                                    <input type="checkbox" value="" class="" formControlName="fm_dob">
+                                </li>
                                 <li>
                                     <p>Permanent Address</p>
-                                    <input type="checkbox" value="" class="">
+                                    <input type="checkbox" value="" class="" formControlName="fm_per_add">
                                 </li>
                                 <li>
                                     <p>State</p>
-                                    <input type="checkbox" value="" class="">
-                                </li> 
+                                    <input type="checkbox" value="" class="" formControlName="fm_per_state">
+                                </li>
                                 <li>
                                     <p>City</p>
-                                    <input type="checkbox" value="" class="">
-                                </li> 
+                                    <input type="checkbox" value="" class="" formControlName="fm_per_city">
+                                </li>
                                 <li>
                                     <p>Post Code</p>
-                                    <input type="checkbox" value="" class="">
-                                </li> 
+                                    <input type="checkbox" value="" class="" formControlName="fm_per_postcode">
+                                </li>
                                 <li>
                                     <p>Current Address</p>
-                                    <input type="checkbox" value="" class="">
-                                </li> 
+                                    <input type="checkbox" value="" class="" formControlName="fm_cur_add">
+                                </li>
+                                <li>
+                                    <p>State</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_cur_state">
+                                </li>
+                                <li>
+                                    <p>City</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_cur_city">
+                                </li>
+                                <li>
+                                    <p>Post Code</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_cur_postcode">
+                                </li>
+                                <li>
+                                    <p>University Campus Address</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_campus">
+                                </li>
+                                <li>
+                                    <p>Program Applied To</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_progappliedto">
+                                </li>
+                                <li>
+                                    <p>Program Intake</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_intake">
+                                </li>
+                                <li>
+                                    <p>Student Number</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_studentno">
+                                </li>
+                                <li>
+                                    <p>Visa Issuance Date</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_visa_issudate">
+                                </li>
+                                <li>
+                                    <p>Travel To Diff Country</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_traveltodiffcounty">
+                                </li>
+                                <li>
+                                    <p>Travel By Self</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_travelbyself">
+                                </li>
+                                <li>
+                                    <p>Accompanied by Family Member</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_acc_byfamily">
+                                </li>
+                                <li>
+                                    <p>Number Of Member</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_familyno">
+                                </li>
+                                <li>
+                                    <p>Disability</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_specialaccomo">
+                                </li>
+                                <li>
+                                    <p>Arrival Country</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_arri_country">
+                                </li>
+                                <li>
+                                    <p>Arrival City</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_arri_city">
+                                </li>
+                                <li>
+                                    <p>Hotal Name</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_hotal_name">
+                                </li>
+                                <li>
+                                    <p>Room Number</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_hotal_roomno">
+                                </li>
+                                <li>
+                                    <p>Hotal Address</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_hotal_address">
+                                </li>
+                                <li>
+                                    <p>City of University</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_city_of_un">
+                                </li>
+                                <li>
+                                    <p>Transport Mode</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_finaltransportmode">
+                                </li>
+                                <li>
+                                    <p>Transport Number</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_transportno">
+                                </li>
+                                <li>
+                                    <p>Arrival Date</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_arri_date">
+                                </li>
+                                <li>
+                                    <p>Arrival Time</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_arri_time">
+                                </li>
+                                <li>
+                                    <p>Addtional Information</p>
+                                    <input type="checkbox" value="" class="" formControlName="fm_addtionalinfo">
+                                </li>
                             </ul>
-    
-    
+
+
                         </div>
                     </mat-expansion-panel>
 
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               Chat
-                            </mat-panel-title> 
+                                <mat-checkbox formControlName="chat">Chat</mat-checkbox>
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
-                        <p>I'm visible because I am open</p>
                     </mat-expansion-panel>
 
 
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               Contact Support
-                            </mat-panel-title> 
+                                <mat-checkbox formControlName="contact_support"> Contact Support</mat-checkbox>
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
-                        <p>I'm visible because I am open</p>
                     </mat-expansion-panel>
 
 
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               Send Alert
-                            </mat-panel-title> 
+                                <mat-checkbox formControlName="send_alert"> Send Alert</mat-checkbox>
+                            </mat-panel-title>
                         </mat-expansion-panel-header>
-                        <p>I'm visible because I am open</p>
                     </mat-expansion-panel>
                 </mat-accordion>
- 
 
-            </form>
-        </div>
-        <div class="modal-footer">
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <button type="button" class="custom-add-student-btn">APPLY CHANGES</button>
-                </div>
+
+
             </div>
+            <div class="modal-footer">
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <button type="submit" class="custom-add-student-btn">APPLY CHANGES</button>
+                    </div>
+                </div>
 
-        </div>
+            </div>
+        </form>
 
     </ng-template>
 </div>
 <!------- CREATE NEW ROLE Modal End ----------->
 
 
-<!------- Add Student Modal Start ----------->
+<!------- Add university Modal Start ----------->
 <div class="custom-add-student-modal">
     <ng-template #content2 let-modal>
-        <form id="contactForm" class="contact-form appear-animation" [formGroup]="form" (submit)="addUniversity()"  data-appear-animation="fadeIn" data-appear-animation-delay="600">
+        <form id="contactForm" class="contact-form appear-animation" [formGroup]="form" (submit)="addUniversity()"
+            data-appear-animation="fadeIn" data-appear-animation-delay="600">
 
-        <div class="modal-header">
-            <h4 class="modal-title" id="defaultModalLabel">Add University</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  (click)="modal.dismiss('Cross click')"  >&times;</button>
-        </div>
-        <div class="modal-body">
+            <div class="modal-header">
+                <h4 class="modal-title" id="defaultModalLabel">Add University</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                    (click)="modal.dismiss('Cross click')">&times;</button>
+            </div>
+            <div class="modal-body">
                 <div class="form-row">
                     <div class="form-group col-lg-12">
                         <input type="text" value="" placeholder="University Name" class="form-control" name="name"
@@ -781,8 +879,8 @@
                     </div>
                 </div>
 
-               
-                
+
+
                 <div class="form-row mt-4">
                     <div class="form-group col-lg-12">
                         <input type="address" value="" placeholder="Address" class="form-control" name="address"
@@ -792,16 +890,17 @@
 
                 <div class="form-row">
                     <div class="form-group col-lg-6">
-                        <select class="form-control" #country_id formControlName="country" (change)="onchnage(country_id.value)" >
+                        <select class="form-control" #country_id formControlName="country"
+                            (change)="onchnage(country_id.value)">
                             <option [ngValue]="null">Select Country</option>
-                            <option   *ngFor="let items of country" [value]="items.id" >{{items.name}}</option> 
+                            <option *ngFor="let items of country" [value]="items.id">{{items.name}}</option>
                         </select>
                     </div>
                     <div class="form-group col-lg-6">
                         <select class="form-control" formControlName="city">
-                            <option [ngValue]="null" >Select State</option>
-                            <option *ngFor="let items of states" value="{{items.id }}" >{{items.name}}</option>
-                             
+                            <option [ngValue]="null">Select State</option>
+                            <option *ngFor="let items of states" value="{{items.id }}">{{items.name}}</option>
+
                         </select>
                     </div>
                 </div>
@@ -809,9 +908,8 @@
                 <div class="form-row">
                     <div class="form-group col-lg-12">
                         <select class="form-control mb-3" formControlName="plans">
-                            <option  [ngValue]="null" >Select Plan</option>
-                            <option>Plan 2</option>
-                            <option>Plan 3</option>
+                            <option [ngValue]="null">Select Plan</option>
+                            <option *ngFor="let item of plans" value="{{item.plan_id}}" >{{item.plan_name}}</option> 
                         </select>
                     </div>
                 </div>
@@ -821,14 +919,14 @@
                         <p>Select Roles</p>
                     </div>
 
-                    <div class="col-lg-10">
+                    <div class="col-lg-10" *ngFor="let item of roles" >
 
                         <div class="row m-0">
                             <div class="col-lg-12">
                                 <div class="checkbox select-roles-check-box">
                                     <label>
-                                        <input type="checkbox" value="" class="" >
-                                        Director
+                                        <input type="checkbox" value="" class="">
+                                        {{item.role_name}}
                                     </label>
                                 </div>
                             </div>
@@ -837,77 +935,24 @@
                         <div class="form-group row">
                             <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
                             <div class="col-lg-9">
-                                <input class="form-control mb-3" type="text" placeholder="Enter email ID" formControlName="director_email">
+                                <input class="form-control mb-3" type="text" placeholder="Enter email ID"
+                                    formControlName="director_email">
                             </div>
                         </div>
 
 
-                        <div class="row m-0">
-                            <div class="col-lg-12">
-                                <div class="checkbox select-roles-check-box">
-                                    <label>
-                                        <input type="checkbox" value="" class="" >
-                                        Manager
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
-                            <div class="col-lg-9">
-                                <input class="form-control mb-3" type="text" placeholder="Enter email ID" formControlName="manager_email">
-                            </div>
-                        </div>
-
-
-                        <div class="row m-0">
-                            <div class="col-lg-12">
-                                <div class="checkbox select-roles-check-box">
-                                    <label>
-                                        <input type="checkbox" value="" class="" >
-                                        Asisstant Manager
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
-                            <div class="col-lg-9">
-                                <input class="form-control mb-3" type="text" placeholder="Enter email ID" formControlName="assistant_email">
-                            </div>
-                        </div>
-
-
-                        <div class="row m-0">
-                            <div class="col-lg-12">
-                                <div class="checkbox select-roles-check-box">
-                                    <label>
-                                        <input type="checkbox" value="" class="" >
-                                        Team Lead
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
-                            <div class="col-lg-9">
-                                <input class="form-control mb-3" type="text" placeholder="Enter email ID" formControlName="team_email">
-                            </div>
-                        </div>
+                         
                     </div>
                 </div>
-            
-        </div>
-        <div class="modal-footer">
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <button type="submit" class="custom-add-student-btn">ADD UNIVERSITY</button>
+
+            </div>
+            <div class="modal-footer">
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <button type="submit" class="custom-add-student-btn">ADD UNIVERSITY</button>
+                    </div>
                 </div>
             </div>
-        </div>
         </form>
     </ng-template>
 </div>

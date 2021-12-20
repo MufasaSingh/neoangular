@@ -19,11 +19,15 @@ export class StudentsService {
   }
 
   formlist(){
-    return this.http.post<{error: number, error_msg: string, data: any}>(this.url + "/getformall","");
+    return this.http.post<{error: number, error_msg: string, data: any}>(this.url + "/formlist","");
   }
 
   formdetail(data: any){
     return this.http.post<{error: number, error_msg: string, data: formlist[]}>(`${this.url}/getform`, data)
+  }
+
+  deleteStudent(id: number){
+    return this.http.delete(`${this.url}/${id}`).subscribe();
   }
 
 }

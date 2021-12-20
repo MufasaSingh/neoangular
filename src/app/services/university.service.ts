@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { UniversityList } from './interfaces/universitylist.modal';
 
-import { environment } from "src/environments/environment"
+import { environment } from "src/environments/environment" 
 
 
 @Injectable({
@@ -23,4 +23,7 @@ export class UniversityService {
     return this.http.post<{ error: number, error_msg: string, data: UniversityList[] }>(`${this.url}/list`,"");
   }
 
+  deleteUniversity(id: number){ 
+    this.http.delete(`${this.url}/${id}`).subscribe();
+  }
 }

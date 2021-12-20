@@ -1,5 +1,5 @@
 export interface UniversityList {
-  university_id : string,
+  university_id : number,
   university_name : string,
   university_email : string,
   fcm_token : string,
