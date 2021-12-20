@@ -86,7 +86,7 @@ export class AdminUniversitiesComponent implements OnInit {
         const control = <FormArray>this.form.controls['universityRoles'];
         const roles = <FormGroup>this._fb.group({ 
           role_active: [''],
-          role_id: [''],
+          role_id: [`${this.roles[index]['role_id']}`],
           role_email: ['']
         }); 
         control.push(roles);
@@ -206,17 +206,27 @@ export class AdminUniversitiesComponent implements OnInit {
   addUniversity() {
     if (this.form.invalid) return;
 
-    console.log(this.form.value);
-    return false;
-
+  
     this.modalService.dismissAll('saved');
     const data = this.form.value;
 
-    const values = {
-      name: data.name,
-      email: data.email,
-    };
+    
 
+    const stt  = <{role_active: boolean, role_id: number, role_email: string}[]>data.universityRoles
+
+    let rolarr =  stt.filter((items: any)=>{
+      if (items.role_active === true) return items
+    })
+
+    const values = {
+      "name": data.name,
+      "email": data.email,
+      "country_id": data.country,
+      "state_id": data.city,
+      "plan_id": data.plans,
+      "roles": rolarr
+    }; 
+    
     this.service.createUniversity(values).subscribe((dta) => {
       this.openSnackBar(dta.error_msg);
     });
