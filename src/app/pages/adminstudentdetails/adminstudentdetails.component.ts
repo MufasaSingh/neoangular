@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, ParamMap } from "@angular/router"
-import { formlist  } from "src/app/services/interfaces/formlist.modal"
+import { ActivatedRoute, Router, ParamMap } from "@angular/router" 
+import { studentform } from 'src/app/services/interfaces/studentform.modal';
 import { StudentsService } from 'src/app/services/students.service';
 
 
@@ -11,7 +11,7 @@ import { StudentsService } from 'src/app/services/students.service';
 })
 export class AdminstudentdetailsComponent implements OnInit {
  
-  form: formlist[]; 
+  form: studentform[]; 
   form_id  : any;
 
   constructor(private activeRouter: ActivatedRoute, private service: StudentsService) { }
@@ -30,8 +30,7 @@ export class AdminstudentdetailsComponent implements OnInit {
         
         this.service.formdetail(values).subscribe(data=>{
           this.form = data.data; 
-          console.log();
-          
+         
         })
       }
     })

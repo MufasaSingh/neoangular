@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 import { UniversityService } from '../../services/university.service';
 import { RegionsService } from '../../services/regions.service';
@@ -50,10 +50,22 @@ export class AdminUniversitiesComponent implements OnInit {
     private service: UniversityService,
     private _snackBar: MatSnackBar,
     private Rservice: RegionsService,
-    private Aservice: AdminService
+    private Aservice: AdminService,
+    private _fb: FormBuilder
   ) {}
 
   ngOnInit(): void {
+
+    this.form = this._fb.group({
+      name: [""],
+      email: [""],
+      mobile: [""],
+      address: [""],
+      country: [""],
+      city: [""],
+      plans: [""],
+      universityRoles:  this._fb.array([])
+    });
 
     this.Rservice.getCountry().subscribe((data) => {
       this.country = data.data;
@@ -68,26 +80,24 @@ export class AdminUniversitiesComponent implements OnInit {
     });
 
     this.Aservice.listRole().subscribe((data) => {
-      this.roles = data.data;
+      this.roles = data.data; 
+
+      for (let index = 0; index < this.roles.length; index++) {
+        const control = <FormArray>this.form.controls['universityRoles'];
+        const roles = <FormGroup>this._fb.group({ 
+          role_active: [''],
+          role_id: [''],
+          role_email: ['']
+        }); 
+        control.push(roles);
+      }
     });
 
     this.rolesform = new FormGroup({
       name: new FormControl(null, { validators: Validators.required }),
     });
 
-    this.form = new FormGroup({
-      name: new FormControl(null),
-      email: new FormControl(null),
-      mobile: new FormControl(null),
-      address: new FormControl(null),
-      country: new FormControl(null),
-      city: new FormControl(null),
-      plans: new FormControl(null),
-      director_email: new FormControl(null),
-      manager_email: new FormControl(null),
-      assistant_email: new FormControl(null),
-      team_email: new FormControl(null),
-    });
+   
 
     this.roleform = new FormGroup({
       plan_name: new FormControl(null),
@@ -186,8 +196,18 @@ export class AdminUniversitiesComponent implements OnInit {
     }
   }
 
+  getRoles(): FormArray{
+    
+    return this.form.get("universityRoles") as FormArray
+    
+  }
+  
+
   addUniversity() {
     if (this.form.invalid) return;
+
+    console.log(this.form.value);
+    return false;
 
     this.modalService.dismissAll('saved');
     const data = this.form.value;

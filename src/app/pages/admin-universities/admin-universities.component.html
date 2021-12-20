@@ -378,171 +378,18 @@
                     (click)="deleteRole(plan_id)"><img src="../../../assets/img/delete.svg"></button>
             </div>
             <div class="modal-body">
-
-
-
-
-                <mat-accordion>
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                University Profile
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
-
-                        <div class="col-lg-11 create-plan-list-checkbox mt-3">
-
-                            <ul>
-                                <li>
-                                    <p>Overview</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Courses</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Contact University</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>FAQ</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Apply</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                            </ul>
-
-
-                        </div>
-
-                    </mat-expansion-panel>
-
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                University Updates
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
-                        <div class="col-lg-11 create-plan-list-checkbox mt-3">
-
-                            <ul>
-                                <li>
-                                    <p>Service Update</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Health And Safety</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Latest News</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Student Life</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                            </ul>
-
-
-                        </div>
-                    </mat-expansion-panel>
-
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                Arrival Form
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
-                        <div class="col-lg-11 create-plan-list-checkbox mt-3">
-
-                            <ul>
-                                <li>
-                                    <p>Terms and Conditon</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>First Name</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Last Name</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Email</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Mobile Number</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Gender</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Date of Birth</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Permanent Address</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>State</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>City</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Post Code</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                                <li>
-                                    <p>Current Address</p>
-                                    <input type="checkbox" value="" class="">
-                                </li>
-                            </ul>
-
-
-                        </div>
-                    </mat-expansion-panel>
-
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                Chat
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
-                        <p>I'm visible because I am open</p>
-                    </mat-expansion-panel>
-
-
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                Contact Support
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
-                        <p>I'm visible because I am open</p>
-                    </mat-expansion-panel>
-
-
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                Send Alert
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
-                        <p>I'm visible because I am open</p>
-                    </mat-expansion-panel>
-                </mat-accordion>
+                <div ngClass="row">
+                    <div class="col-md-2">
+                        <mat-checkbox>Student Add</mat-checkbox>
+                    </div>
+                    <div class="col-md-2">
+                        <mat-checkbox>Student Delete</mat-checkbox>
+                    </div>
+                    <div class="col-md-2">
+                        <mat-checkbox>Student Edit</mat-checkbox>
+                    </div>
+                     
+                </div>
 
             </div>
             <div class="modal-footer">
@@ -914,19 +761,22 @@
                     </div>
                 </div>
 
-                <div class="form-row justify-content-center">
+                <div class="form-row justify-content-center" >
                     <div class="col-lg-12">
                         <p>Select Roles</p>
                     </div>
 
-                    <div class="col-lg-10" *ngFor="let item of roles" >
+                    <div class="col-lg-10" formArrayName="universityRoles" >
 
+                        <div  *ngFor=" let items of getRoles().controls ; let i=index " >
+                            <div [formGroupName]="i" >
                         <div class="row m-0">
                             <div class="col-lg-12">
                                 <div class="checkbox select-roles-check-box">
                                     <label>
-                                        <input type="checkbox" value="" class="">
-                                        {{item.role_name}}
+                                        <input type="checkbox" value="" class="" formControlName="role_active" >
+                                        <input type="hidden" value="{{roles[i]['role_id']}}" formControlName="role_id">
+                                        {{roles[i]['role_name']}}
                                     </label>
                                 </div>
                             </div>
@@ -935,12 +785,11 @@
                         <div class="form-group row">
                             <label class="col-lg-3 control-label text-lg-right pt-2">Assign Role to</label>
                             <div class="col-lg-9">
-                                <input class="form-control mb-3" type="text" placeholder="Enter email ID"
-                                    formControlName="director_email">
+                                <input class="form-control mb-3" type="email" placeholder="Enter email ID" formControlName="role_email" >
                             </div>
                         </div>
-
-
+                        </div>
+                    </div>
                          
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http"
-import { formlist } from './interfaces/formlist.modal';
+import { HttpClient } from "@angular/common/http" 
 
 import { environment } from "src/environments/environment"
+import { studentform } from './interfaces/studentform.modal';
 
 
 @Injectable({
@@ -23,7 +23,7 @@ export class StudentsService {
   }
 
   formdetail(data: any){
-    return this.http.post<{error: number, error_msg: string, data: formlist[]}>(`${this.url}/getform`, data)
+    return this.http.post<{error: number, error_msg: string, data: studentform[]}>(`${this.url}/getform`, data)
   }
 
   deleteStudent(id: number){

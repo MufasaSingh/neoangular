@@ -21,7 +21,7 @@
 
     <div class="row mt-4">
         <div class="col-md-6">
-            <h3 class="student-name">XXXX </h3>
+            <h3 class="student-name">{{items.s_fname}} {{items.s_lname}} </h3>
         </div>
         <div class="col-md-6 text-right">
             <button class="edit-student-details-btn"><img src="../../../assets/img/Edit.svg"></button>
@@ -36,65 +36,65 @@
             <p>Name: </p>
         </div>
         <div class="col-md-9">
-            <p>  XXXX </p>
+            <p>  {{items.s_fname}} {{items.s_lname}}  </p>
         </div>
 
         <div class="col-md-3">
             <p>Email : </p>
         </div>
         <div class="col-md-9">
-            <p>XXXXX</p>
+            <p>{{items.s_email}} </p>
         </div>
 
         <div class="col-md-3">
             <p>Phone: </p>
         </div>
         <div class="col-md-9">
-            <p>XXXXX</p>
+            <p>{{items.s_country_code}}  {{items.s_mobile}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Arrival: </p>
         </div>
         <div class="col-md-9">
-            <p>XXXX</p>
+            <p>{{items.arrival_date}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Gender: </p>
         </div>
         <div class="col-md-9">
-            <p>XXXX</p>
+            <p>{{items.s_gender}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Date of Birth:</p>
         </div>
         <div class="col-md-9">
-            <p>XXXX</p>
+            <p>{{items.s_dob}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Country of Origin:</p>
         </div>
         <div class="col-md-9">
-            <p>Mexico</p>
+            <p>{{items.s_country}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Permanent Address:</p>
         </div>
         <div class="col-md-9">
-            <p>#12, Marywood Apts</p>
+            <p>{{items.s_p_address}}</p>
             <div class="row">
                 <div class="col-md-3">
-                    <p>State</p>
+                    <p>{{items.s_p_state}}</p>
                 </div>
                 <div class="col-md-3">
-                    <p>City</p>
+                    <p>{{items.s_p_city}}</p>
                 </div>
                 <div class="col-md-3">
-                    <p>Postal Code</p>
+                    <p>{{items.s_p_postcode}}</p>
                 </div>
             </div>
         </div>
@@ -103,16 +103,16 @@
             <p>Current Address:</p>
         </div>
         <div class="col-md-9">
-            <p>#103, Pink Willow Estate</p>
+            <p>{{items.s_c_address}}</p>
             <div class="row">
                 <div class="col-md-3">
-                    <p>State</p>
+                    <p>{{items.s_c_state}}</p>
                 </div>
                 <div class="col-md-3">
-                    <p>City</p>
+                    <p>{{items.s_c_city}}</p>
                 </div>
                 <div class="col-md-3">
-                    <p>Postal Code</p>
+                    <p>{{items.s_c_postcode}}</p>
                 </div>
             </div>
         </div>
@@ -125,28 +125,28 @@
             <p>Program Applied To:</p>
         </div>
         <div class="col-md-9">
-            <p>MS</p>
+            <p>{{items.campus_program}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Program Intake:</p>
         </div>
         <div class="col-md-9">
-            <p>Aug/Sept</p>
+            <p>{{items.campus_intake}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Student Number:</p>
         </div>
         <div class="col-md-9">
-            <p>118-003</p>
+            <p>{{items.student_number}}</p>
         </div>
 
         <div class="col-md-3">
             <p>Visa Issuance Date:</p>
         </div>
         <div class="col-md-9">
-            <p>04/02/2021</p>
+            <p>{{items.visa_issue}}</p>
         </div>
 
 
@@ -165,120 +165,155 @@
         
             <div class="row mt-4 student-details-text-custom">
                 <div class="col-md-3">
+                    <p>Are you travelling to a different country?:</p>
+                </div>
+                <div class="col-md-9">
+                    <p>{{items.travelling}}</p>
+                </div>
+        
+                <div class="col-md-3">
+                    <p>Are you travelling by 
+                        self? : </p>
+                </div>
+                <div class="col-md-9">
+                    <p>{{items.self_travelling}}</p>
+                </div>
+        
+                <div class="col-md-3">
+                    <p>Accompanied by family
+                        members?: </p>
+                </div>
+                <div class="col-md-9">
+                    <p>{{items.family_member}}</p>
+                </div>
+
+
+                <!-- partents details start -->
+                <div class="col-md-3">
+                    <p>Number of family 
+                        members: </p>
+                </div>
+                <div class="col-md-9">
+                    <p>2</p>
+                </div>
+                
+                <div class="col-md-3">
                     <p>Name: </p>
                 </div>
                 <div class="col-md-9">
-                    <p>Michael Jameson</p>
+                    <p>Jameson</p>
+                </div>
+                <!-- partents details end -->
+                
+                <div class="col-md-12">
+                    <p>Do you or any co-arriving members require any special accomodations to address a documented disability , functional limitation, or special need? {{items.disability}}:</p>
+                </div>
+                
+        
+                <div class="col-md-3">
+                    <p>Departure Country :</p>
+                </div>
+                <div class="col-md-9">
+                    <p>{{items.departure_contry}}</p>
+                </div>
+
+                <div class="col-md-3">
+                    <p>Departure City :</p>
+                </div>
+                <div class="col-md-9">
+                    <p>{{items.departure_city}}</p>
+                </div>
+         
+        
+                <div class="col-md-3">
+                    <p>Departure Date:</p>
+                </div>
+                <div class="col-md-9">
+                    <p>{{items.departure_date}}</p>
                 </div>
         
                 <div class="col-md-3">
-                    <p>Email : </p>
+                    <p>Departure Time:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>michaeljameson@ymail.com</p>
+                    <p>{{items.deaprture_time}}</p>
                 </div>
         
                 <div class="col-md-3">
-                    <p>Phone: </p>
+                    <p>Airlines:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>+ 11 6784 3679 88</p>
+                    <p>Vistara</p>
                 </div>
         
                 <div class="col-md-3">
-                    <p>Arrival: </p>
+                    <p>Number of Connecting Flights:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>03/05/2021</p>
+                    <p>{{items.no_of_flights}}</p>
                 </div>
-        
+
                 <div class="col-md-3">
-                    <p>Gender: </p>
+                    <p>Arrival Country:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>Male</p>
+                    <p>{{items.arrival_country}}</p>
                 </div>
-        
+
                 <div class="col-md-3">
-                    <p>Date of Birth:</p>
+                    <p>Arrival City:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>16/08/1993</p>
+                    <p>{{items.arrival_city}}</p>
                 </div>
-        
+
                 <div class="col-md-3">
-                    <p>Country of Origin:</p>
+                    <p>Arrival Date:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>Mexico</p>
+                    <p>{{items.arrival_date}}</p>
                 </div>
-        
+
                 <div class="col-md-3">
-                    <p>Permanent Address:</p>
+                    <p>Arrival Time:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>#12, Marywood Apts</p>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <p>State</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>City</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>Postal Code</p>
-                        </div>
-                    </div>
+                    <p>{{items.arrival_time}}</p>
                 </div>
-        
+
                 <div class="col-md-3">
-                    <p>Current Address:</p>
+                    <p>Airlines:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>#103, Pink Willow Estate</p>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <p>State</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>City</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>Postal Code</p>
-                        </div>
-                    </div>
+                    <p>Vistara</p>
                 </div>
-        
-                <div class="col-md-12 mt-3 mb-3">
-                    <h4 class="details-sub-title">Program Details</h4>
-                </div>
-        
+
                 <div class="col-md-3">
-                    <p>Program Applied To:</p>
+                    <p>Hotel Name:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>MS</p>
+                    <p>{{items.hotal_name}} </p>
                 </div>
-        
+
                 <div class="col-md-3">
-                    <p>Program Intake:</p>
+                    <p>Hotel Address:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>Aug/Sept</p>
+                    <p>{{items.hotal_address}}</p>
                 </div>
-        
+
                 <div class="col-md-3">
-                    <p>Student Number:</p>
+                    <p>Final Arrival City:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>118-003</p>
+                    <p>{{items.university_city}}  </p>
                 </div>
-        
+
                 <div class="col-md-3">
-                    <p>Visa Issuance Date:</p>
+                    <p>Final Transport Mode:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>04/02/2021</p>
+                    <p>{{items.final_transport}} </p>
                 </div>
         
         
