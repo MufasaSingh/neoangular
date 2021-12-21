@@ -95,6 +95,10 @@ export class AdminService {
   addPlan(data: any){
     return this.http.post<{error: string, error_msg: string, plan_id: string}>(`${this.url}/plan/create`, data) 
   }
+  
+  updatePlan(id: number, data: any){
+    return this.http.put<{error: string, error_msg: string }>(`${this.url}/plan/${id}`, data)
+  }
 
   listPlan(){
     return this.http.get<{error: string, error_msg: string, data: plans[] }>(`${this.url}/plan/list`)

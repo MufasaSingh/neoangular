@@ -26,8 +26,7 @@ import { roles } from 'src/app/services/interfaces/roles.modal';
 export class AdminUniversitiesComponent implements OnInit {
 
   closeResult = '';
-
-  mode: string;
+ 
 
   list: UniversityList[] = [];
   country: countries[] = [];
@@ -41,6 +40,8 @@ export class AdminUniversitiesComponent implements OnInit {
   form: FormGroup;
   roleform: FormGroup; //this is plan
   rolesform: FormGroup;
+
+  private planmode: string = "create"; 
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
@@ -101,67 +102,67 @@ export class AdminUniversitiesComponent implements OnInit {
 
     this.roleform = new FormGroup({
       plan_name: new FormControl(null),
-      un_profile: new FormControl(null),
-      un_updates: new FormControl(null),
-      arrival_form: new FormControl(null),
-      chat: new FormControl(null),
-      contact_support: new FormControl(null),
-      send_alert: new FormControl(null),
-      un_pro_overview: new FormControl(null),
-      un_pro_course: new FormControl(null),
-      un_pro_contactun: new FormControl(null),
-      un_pro_faq: new FormControl(null),
-      un_pro_apply: new FormControl(null),
-      un_up_service: new FormControl(null),
-      un_up_health: new FormControl(null),
-      un_up_news: new FormControl(null),
-      un_up_life: new FormControl(null),
-      fm_terms: new FormControl(null),
-      fm_first_name: new FormControl(null),
-      fm_last_name: new FormControl(null),
-      fm_email: new FormControl(null),
-      fm_mobile: new FormControl(null),
-      fm_gender: new FormControl(null),
-      fm_dob: new FormControl(null),
-      fm_per_add: new FormControl(null),
-      fm_per_state: new FormControl(null),
-      fm_per_city: new FormControl(null),
-      fm_per_postcode: new FormControl(null),
-      fm_cur_add: new FormControl(null),
-      fm_cur_state: new FormControl(null),
-      fm_cur_city: new FormControl(null),
-      fm_cur_postcode: new FormControl(null),
-      fm_campus: new FormControl(null),
-      fm_progappliedto: new FormControl(null),
-      fm_intake: new FormControl(null),
-      fm_studentno: new FormControl(null),
-      fm_visa_issudate: new FormControl(null),
-      fm_traveltodiffcounty: new FormControl(null),
-      fm_travelbyself: new FormControl(null),
-      fm_acc_byfamily: new FormControl(null),
-      fm_familyno: new FormControl(null),
-      fm_specialaccomo: new FormControl(null),
-      fm_modeoftransport: new FormControl(null),
-      fm_airline: new FormControl(null),
-      fm_dptcountry: new FormControl(null),
-      fm_dptcity: new FormControl(null),
-      fm_dptdate: new FormControl(null),
-      fm_dpttime: new FormControl(null),
-      fm_connectflight: new FormControl(null),
-      fm_connectflightno: new FormControl(null),
-      fm_arri_country: new FormControl(null),
-      fm_arri_city: new FormControl(null),
-      fm_hotal_name: new FormControl(null),
-      fm_hotal_roomno: new FormControl(null),
-      fm_hotal_address: new FormControl(null),
-      fm_hotal_countycode: new FormControl(null),
-      fm_hotal_no: new FormControl(null),
-      fm_city_of_un: new FormControl(null),
-      fm_finaltransportmode: new FormControl(null),
-      fm_transportno: new FormControl(null),
-      fm_arri_date: new FormControl(null),
-      fm_arri_time: new FormControl(null),
-      fm_addtionalinfo: new FormControl(null),
+      un_profile: new FormControl(false),
+      un_updates: new FormControl(false),
+      arrival_form: new FormControl(false),
+      chat: new FormControl(false),
+      contact_support: new FormControl(false),
+      send_alert: new FormControl(false),
+      un_pro_overview: new FormControl(false),
+      un_pro_course: new FormControl(false),
+      un_pro_contactun: new FormControl(false),
+      un_pro_faq: new FormControl(false),
+      un_pro_apply: new FormControl(false),
+      un_up_service: new FormControl(false),
+      un_up_health: new FormControl(false),
+      un_up_news: new FormControl(false),
+      un_up_life: new FormControl(false),
+      fm_terms: new FormControl(false),
+      fm_first_name: new FormControl(false),
+      fm_last_name: new FormControl(false),
+      fm_email: new FormControl(false),
+      fm_mobile: new FormControl(false),
+      fm_gender: new FormControl(false),
+      fm_dob: new FormControl(false),
+      fm_per_add: new FormControl(false),
+      fm_per_state: new FormControl(false),
+      fm_per_city: new FormControl(false),
+      fm_per_postcode: new FormControl(false),
+      fm_cur_add: new FormControl(false),
+      fm_cur_state: new FormControl(false),
+      fm_cur_city: new FormControl(false),
+      fm_cur_postcode: new FormControl(false),
+      fm_campus: new FormControl(false),
+      fm_progappliedto: new FormControl(false),
+      fm_intake: new FormControl(false),
+      fm_studentno: new FormControl(false),
+      fm_visa_issudate: new FormControl(false),
+      fm_traveltodiffcounty: new FormControl(false),
+      fm_travelbyself: new FormControl(false),
+      fm_acc_byfamily: new FormControl(false),
+      fm_familyno: new FormControl(false),
+      fm_specialaccomo: new FormControl(false),
+      fm_modeoftransport: new FormControl(false),
+      fm_airline: new FormControl(false),
+      fm_dptcountry: new FormControl(false),
+      fm_dptcity: new FormControl(false),
+      fm_dptdate: new FormControl(false),
+      fm_dpttime: new FormControl(false),
+      fm_connectflight: new FormControl(false),
+      fm_connectflightno: new FormControl(false),
+      fm_arri_country: new FormControl(false),
+      fm_arri_city: new FormControl(false),
+      fm_hotal_name: new FormControl(false),
+      fm_hotal_roomno: new FormControl(false),
+      fm_hotal_address: new FormControl(false),
+      fm_hotal_countycode: new FormControl(false),
+      fm_hotal_no: new FormControl(false),
+      fm_city_of_un: new FormControl(false),
+      fm_finaltransportmode: new FormControl(false),
+      fm_transportno: new FormControl(false),
+      fm_arri_date: new FormControl(false),
+      fm_arri_time: new FormControl(false),
+      fm_addtionalinfo: new FormControl(false),
     });
   }
 
@@ -232,8 +233,13 @@ export class AdminUniversitiesComponent implements OnInit {
     });
   }
 
+  createPlan(content: any){
+    this.planmode = "create";
+    this.open(content)
+  }
+
   addPlan() {
-    if (this.roleform.invalid) return;
+    if (this.roleform.invalid) return; 
 
     const plan = {
       plan_name: this.roleform.value.plan_name,
@@ -300,11 +306,23 @@ export class AdminUniversitiesComponent implements OnInit {
       fm_addtionalinfo: this.roleform.value.fm_addtionalinfo,
     };
 
-    this.Aservice.addPlan(plan).subscribe((data) => {
-      this.modalService.dismissAll('saved');
-      this.openSnackBar(data.error_msg);
-      this.roleform.reset();
-    });
+    console.log(plan);
+    
+    if(this.planmode == "update"){
+      this.Aservice.updatePlan(this.role_id, this.rolesform.value).subscribe(data=>{
+        this.modalService.dismissAll('saved');
+        this.openSnackBar(data.error_msg);
+        this.roleform.reset();
+      })
+    }else{
+      this.Aservice.addPlan(plan).subscribe((data) => {
+        this.modalService.dismissAll('saved');
+        this.openSnackBar(data.error_msg);
+        this.roleform.reset();
+      });
+    }
+
+  
   }
 
   addRole() {
@@ -332,84 +350,95 @@ export class AdminUniversitiesComponent implements OnInit {
 
   editPlan(id: number, content: any) {
     this.plan_id = id;
+    this.planmode = "update";
     this.Aservice.PlanbyId(id).subscribe((data) => {
+      console.log(typeof(data.data.un_profile));
+  
       this.roleform.setValue({
         plan_name: data.data.plan_name,
-        un_profile: data.data.un_profile,
-        un_updates: data.data.un_updates,
-        arrival_form: data.data.arrival_form,
-        chat: data.data.chat,
-        contact_support: data.data.contact_support,
-        send_alert: data.data.send_alert,
-        un_pro_overview: data.data.un_pro_overview,
-        un_pro_course: data.data.un_pro_course,
-        un_pro_contactun: data.data.un_pro_contactun,
-        un_pro_faq: data.data.un_pro_faq,
-        un_pro_apply: data.data.un_pro_apply,
-        un_up_service: data.data.un_up_service,
-        un_up_health: data.data.un_up_health,
-        un_up_news: data.data.un_up_news,
-        un_up_life: data.data.un_up_life,
-        fm_terms: data.data.fm_terms,
-        fm_first_name: data.data.fm_first_name,
-        fm_last_name: data.data.fm_last_name,
-        fm_email: data.data.fm_email,
-        fm_mobile: data.data.fm_mobile,
-        fm_gender: data.data.fm_gender,
-        fm_dob: data.data.fm_dob,
-        fm_per_add: data.data.fm_per_add,
-        fm_per_state: data.data.fm_per_state,
-        fm_per_city: data.data.fm_per_city,
-        fm_per_postcode: data.data.fm_per_postcode,
-        fm_cur_add: data.data.fm_cur_add,
-        fm_cur_state: data.data.fm_cur_state,
-        fm_cur_city: data.data.fm_cur_city,
-        fm_cur_postcode: data.data.fm_cur_postcode,
-        fm_campus: data.data.fm_campus,
-        fm_progappliedto: data.data.fm_progappliedto,
-        fm_intake: data.data.fm_intake,
-        fm_studentno: data.data.fm_studentno,
-        fm_visa_issudate: data.data.fm_visa_issudate,
-        fm_traveltodiffcounty: data.data.fm_traveltodiffcounty,
-        fm_travelbyself: data.data.fm_travelbyself,
-        fm_acc_byfamily: data.data.fm_acc_byfamily,
-        fm_familyno: data.data.fm_familyno,
-        fm_specialaccomo: data.data.fm_specialaccomo,
-        fm_modeoftransport: data.data.fm_modeoftransport,
-        fm_airline: data.data.fm_airline,
-        fm_dptcountry: data.data.fm_dptcountry,
-        fm_dptcity: data.data.fm_dptcity,
-        fm_dptdate: data.data.fm_dptdate,
-        fm_dpttime: data.data.fm_dpttime,
-        fm_connectflight: data.data.fm_connectflight,
-        fm_connectflightno: data.data.fm_connectflightno,
-        fm_arri_country: data.data.fm_arri_country,
-        fm_arri_city: data.data.fm_arri_city,
-        fm_hotal_name: data.data.fm_hotal_name,
-        fm_hotal_roomno: data.data.fm_hotal_roomno,
-        fm_hotal_address: data.data.fm_hotal_address,
-        fm_hotal_countycode: data.data.fm_hotal_countycode,
-        fm_hotal_no: data.data.fm_hotal_no,
-        fm_city_of_un: data.data.fm_city_of_un,
-        fm_finaltransportmode: data.data.fm_finaltransportmode,
-        fm_transportno: data.data.fm_transportno,
-        fm_arri_date: data.data.fm_arri_date,
-        fm_arri_time: data.data.fm_arri_time,
-        fm_addtionalinfo: data.data.fm_addtionalinfo,
+        un_profile: this.checkboolen(data.data.un_profile),
+        un_updates: this.checkboolen(data.data.un_updates),
+        arrival_form: this.checkboolen(data.data.arrival_form),
+        chat: this.checkboolen(data.data.chat),
+        contact_support: this.checkboolen(data.data.contact_support),
+        send_alert: this.checkboolen(data.data.send_alert),
+        un_pro_overview: this.checkboolen(data.data.un_pro_overview),
+        un_pro_course: this.checkboolen(data.data.un_pro_course),
+        un_pro_contactun: this.checkboolen(data.data.un_pro_contactun),
+        un_pro_faq: this.checkboolen(data.data.un_pro_faq),
+        un_pro_apply: this.checkboolen(data.data.un_pro_apply),
+        un_up_service: this.checkboolen(data.data.un_up_service),
+        un_up_health: this.checkboolen(data.data.un_up_health),
+        un_up_news: this.checkboolen(data.data.un_up_news),
+        un_up_life: this.checkboolen(data.data.un_up_life),
+        fm_terms: this.checkboolen(data.data.fm_terms),
+        fm_first_name: this.checkboolen(data.data.fm_first_name),
+        fm_last_name: this.checkboolen(data.data.fm_last_name),
+        fm_email: this.checkboolen(data.data.fm_email),
+        fm_mobile: this.checkboolen(data.data.fm_mobile),
+        fm_gender: this.checkboolen(data.data.fm_gender),
+        fm_dob: this.checkboolen(data.data.fm_dob),
+        fm_per_add: this.checkboolen(data.data.fm_per_add),
+        fm_per_state: this.checkboolen(data.data.fm_per_state),
+        fm_per_city: this.checkboolen(data.data.fm_per_city),
+        fm_per_postcode: this.checkboolen(data.data.fm_per_postcode),
+        fm_cur_add: this.checkboolen(data.data.fm_cur_add),
+        fm_cur_state: this.checkboolen(data.data.fm_cur_state),
+        fm_cur_city: this.checkboolen(data.data.fm_cur_city),
+        fm_cur_postcode: this.checkboolen(data.data.fm_cur_postcode),
+        fm_campus: this.checkboolen(data.data.fm_campus),
+        fm_progappliedto: this.checkboolen(data.data.fm_progappliedto),
+        fm_intake: this.checkboolen(data.data.fm_intake),
+        fm_studentno: this.checkboolen(data.data.fm_studentno),
+        fm_visa_issudate: this.checkboolen(data.data.fm_visa_issudate),
+        fm_traveltodiffcounty: this.checkboolen(data.data.fm_traveltodiffcounty),
+        fm_travelbyself: this.checkboolen(data.data.fm_travelbyself),
+        fm_acc_byfamily: this.checkboolen(data.data.fm_acc_byfamily),
+        fm_familyno: this.checkboolen(data.data.fm_familyno),
+        fm_specialaccomo: this.checkboolen(data.data.fm_specialaccomo),
+        fm_modeoftransport: this.checkboolen(data.data.fm_modeoftransport),
+        fm_airline: this.checkboolen(data.data.fm_airline),
+        fm_dptcountry: this.checkboolen(data.data.fm_dptcountry),
+        fm_dptcity: this.checkboolen(data.data.fm_dptcity),
+        fm_dptdate: this.checkboolen(data.data.fm_dptdate),
+        fm_dpttime: this.checkboolen(data.data.fm_dpttime),
+        fm_connectflight: this.checkboolen(data.data.fm_connectflight),
+        fm_connectflightno: this.checkboolen(data.data.fm_connectflightno),
+        fm_arri_country: this.checkboolen(data.data.fm_arri_country),
+        fm_arri_city: this.checkboolen(data.data.fm_arri_city),
+        fm_hotal_name: this.checkboolen(data.data.fm_hotal_name),
+        fm_hotal_roomno: this.checkboolen(data.data.fm_hotal_roomno),
+        fm_hotal_address: this.checkboolen(data.data.fm_hotal_address),
+        fm_hotal_countycode: this.checkboolen(data.data.fm_hotal_countycode),
+        fm_hotal_no: this.checkboolen(data.data.fm_hotal_no),
+        fm_city_of_un: this.checkboolen(data.data.fm_city_of_un),
+        fm_finaltransportmode: this.checkboolen(data.data.fm_finaltransportmode),
+        fm_transportno: this.checkboolen(data.data.fm_transportno),
+        fm_arri_date: this.checkboolen(data.data.fm_arri_date),
+        fm_arri_time: this.checkboolen(data.data.fm_arri_time),
+        fm_addtionalinfo: this.checkboolen(data.data.fm_addtionalinfo),
       });
-
+      
+ 
       this.open(content);
     });
   }
 
+  private checkboolen(value: any){
+    if(value == 'true') return true;
+    return false;
+  }
+
   editRole(id: number, content: any) {
     this.role_id = id;
+    
     this.Aservice.RolebyId(id).subscribe((data) => {  
       
       this.rolesform.setValue({
         name: data.data.role_name,
       });
 
+     
       
     this.open(content);
 
@@ -429,4 +458,7 @@ export class AdminUniversitiesComponent implements OnInit {
   deletePlan(id: number){
     this.Aservice.deletePlan(id);
   }
+
+ 
+
 }

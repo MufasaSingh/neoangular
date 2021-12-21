@@ -227,7 +227,7 @@
 
 
                     <div class="col-md-3 create-new-plan-btn-center">
-                        <button class="create-new-plan-btn-custom" (click)="open(content3)">
+                        <button class="create-new-plan-btn-custom" (click)="createPlan(content3)">
                             <img src="../../../assets/img/plus.svg">
                             <br>
                             CREATE <br>NEW PLAN
@@ -426,7 +426,7 @@
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <mat-checkbox formControlName="un_profile"> University Profile</mat-checkbox>
+                                <mat-checkbox formControlName="un_profile"  > University Profile</mat-checkbox>
                             </mat-panel-title>
                         </mat-expansion-panel-header>
 
@@ -435,7 +435,7 @@
                             <ul>
                                 <li>
                                     <p>Overview</p>
-                                    <input type="checkbox" value="" class="" formControlName="un_pro_overview">
+                                    <input type="checkbox" value="" class=""  formControlName="un_pro_overview">
                                 </li>
                                 <li>
                                     <p>Courses</p>
@@ -502,7 +502,7 @@
                             <ul>
                                 <li>
                                     <p>Terms and Conditon</p>
-                                    <input type="checkbox" value="" class="" formControlName="fm_terms">
+                                    <input type="checkbox" value=""  class="" formControlName="fm_terms">
                                 </li>
                                 <li>
                                     <p>First Name</p>
@@ -774,8 +774,7 @@
                             <div class="col-lg-12">
                                 <div class="checkbox select-roles-check-box">
                                     <label>
-                                        <input type="checkbox" value="" class="" formControlName="role_active" >
-                                       
+                                        <input type="checkbox" value="" class="" formControlName="role_active" > 
                                         {{roles[i]['role_name']}}
                                     </label>
                                 </div>
