@@ -23,6 +23,13 @@ export class UniversityService {
     return this.http.post<{ error: number, error_msg: string, data: UniversityList[] }>(`${this.url}/list`,"");
   }
 
+  universitytodayList(){
+    const dta = {
+      today: "1"
+    }
+    return this.http.post<{ error: number, error_msg: string, data: UniversityList[] }>(`${this.url}/list`,dta);
+  }
+
   deleteUniversity(id: number){ 
     this.http.delete(`${this.url}/${id}`).subscribe();
   }

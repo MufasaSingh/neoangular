@@ -347,7 +347,7 @@
  -->
 
                     <div class="col-md-3 create-new-plan-btn-center">
-                        <button class="create-new-plan-btn-custom" (click)="open(content)">
+                        <button class="create-new-plan-btn-custom" (click)="createRole(content)">
                             <img src="../../../assets/img/plus.svg">
                             <br>
                             CREATE <br>NEW ROLE
@@ -380,13 +380,13 @@
             <div class="modal-body">
                 <div ngClass="row">
                     <div class="col-md-2">
-                        <mat-checkbox>Student Add</mat-checkbox>
+                        <mat-checkbox formControlName="student_add" >Student Add</mat-checkbox>
                     </div>
                     <div class="col-md-2">
-                        <mat-checkbox>Student Delete</mat-checkbox>
+                        <mat-checkbox formControlName="student_delete" >Student Delete</mat-checkbox>
                     </div>
                     <div class="col-md-2">
-                        <mat-checkbox>Student Edit</mat-checkbox>
+                        <mat-checkbox formControlName="student_edit" >Student Edit</mat-checkbox>
                     </div>
                      
                 </div>

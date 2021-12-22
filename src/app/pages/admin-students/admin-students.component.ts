@@ -57,8 +57,8 @@ export class AdminStudentsComponent implements OnInit {
     });
 
     this.form = new FormGroup({
-      first_name: new FormControl(null),
-      last_name: new FormControl(null),
+      first_name: new FormControl(null, { validators: [Validators.required] }),
+      last_name: new FormControl(null, { validators: [Validators.required] }),
       mobile: new FormControl(null),
       email: new FormControl(null, { validators: [Validators.required] }),
       dob: new FormControl(null),
@@ -102,7 +102,15 @@ export class AdminStudentsComponent implements OnInit {
       mobile: data.mobile,
       country_code: '',
       university_id: data.university,
+      fname: data.first_name,
+      lname: data.last_name,
+      dob: data.dob,
+      address: data.address,
+      country: data.country,
+      state: data.city,
+
     };
+
 
     this.service.createStudent(values).subscribe((data) => {
       this.openSnackBar(data.error_msg);

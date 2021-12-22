@@ -42,6 +42,7 @@ export class AdminUniversitiesComponent implements OnInit {
   rolesform: FormGroup;
 
   private planmode: string = "create"; 
+  private rolemode: string = "create"; 
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
@@ -96,6 +97,9 @@ export class AdminUniversitiesComponent implements OnInit {
 
     this.rolesform = new FormGroup({
       name: new FormControl(null, { validators: Validators.required }),
+      student_add: new FormControl(false),
+      student_edit: new FormControl(false),
+      student_delete: new FormControl(false)
     });
 
    
@@ -206,13 +210,10 @@ export class AdminUniversitiesComponent implements OnInit {
 
   addUniversity() {
     if (this.form.invalid) return;
-
-  
+ 
     this.modalService.dismissAll('saved');
     const data = this.form.value;
-
-    
-
+ 
     const stt  = <{role_active: boolean, role_id: number, role_email: string}[]>data.universityRoles
 
     let rolarr =  stt.filter((items: any)=>{
@@ -222,6 +223,7 @@ export class AdminUniversitiesComponent implements OnInit {
     const values = {
       "name": data.name,
       "email": data.email,
+      "mobile": data.mobile,
       "country_id": data.country,
       "state_id": data.city,
       "plan_id": data.plans,
@@ -235,6 +237,11 @@ export class AdminUniversitiesComponent implements OnInit {
 
   createPlan(content: any){
     this.planmode = "create";
+    this.open(content)
+  }
+
+  createRole(content: any){
+    this.rolemode = "create";
     this.open(content)
   }
 
@@ -330,12 +337,28 @@ export class AdminUniversitiesComponent implements OnInit {
 
     const role = {
       name: this.rolesform.value.name,
+      student_add: this.rolesform.value.student_add,
+      student_delete: this.rolesform.value.student_delete,
+      student_edit: this.rolesform.value.student_edit,
     };
+ 
+    if(this.rolemode == "create"){
+      this.Aservice.addRole(role).subscribe((data) => {
+        this.modalService.dismissAll('ok');
+        this.openSnackBar(data.error_msg);
+      });
+    }else{ 
+      
 
-    this.Aservice.addRole(role).subscribe((data) => {
-      this.modalService.dismissAll('ok');
-      this.openSnackBar(data.error_msg);
-    });
+      this.Aservice.updateRole(this.role_id, role).subscribe(data=> {
+        this.modalService.dismissAll("ok");
+        this.openSnackBar(data.error_msg)
+      })
+    }
+    
+
+    
+
   }
 
   onchnage(id: any) {
@@ -430,11 +453,14 @@ export class AdminUniversitiesComponent implements OnInit {
 
   editRole(id: number, content: any) {
     this.role_id = id;
-    
+    this.rolemode = "update";
     this.Aservice.RolebyId(id).subscribe((data) => {  
       
       this.rolesform.setValue({
         name: data.data.role_name,
+        student_add: this.checkboolen(data.data.student_add),
+        student_delete: this.checkboolen(data.data.student_delete),
+        student_edit: this.checkboolen(data.data.student_edit),
       });
 
      

@@ -112,6 +112,10 @@ export class AdminService {
     return this.http.post<{error: string, error_msg: string, role_id: string}>(`${this.url}/role/create`, data)
   }
 
+  updateRole(id: number, data: any){
+    return this.http.put<{error: string, error_msg: string }>(`${this.url}/role/${id}`, data)
+  }
+
   PlanbyId(id: number){
     return this.http.get<{error: string, error_msg: string, data: plans}>(`${this.url}/plan/${id}`)
   }
