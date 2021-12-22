@@ -306,10 +306,10 @@ export class AdminUniversitiesComponent implements OnInit {
       fm_addtionalinfo: this.roleform.value.fm_addtionalinfo,
     };
 
-    console.log(plan);
     
-    if(this.planmode == "update"){
-      this.Aservice.updatePlan(this.role_id, this.rolesform.value).subscribe(data=>{
+    
+    if(this.planmode == "update"){ 
+      this.Aservice.updatePlan(this.plan_id, this.roleform.value).subscribe(data=>{
         this.modalService.dismissAll('saved');
         this.openSnackBar(data.error_msg);
         this.roleform.reset();
@@ -351,8 +351,7 @@ export class AdminUniversitiesComponent implements OnInit {
   editPlan(id: number, content: any) {
     this.plan_id = id;
     this.planmode = "update";
-    this.Aservice.PlanbyId(id).subscribe((data) => {
-      console.log(typeof(data.data.un_profile));
+    this.Aservice.PlanbyId(id).subscribe((data) => { 
   
       this.roleform.setValue({
         plan_name: data.data.plan_name,
