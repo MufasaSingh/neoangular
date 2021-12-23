@@ -24,7 +24,7 @@
 
                                 <div class="col ml-3">
                                     <div class="card-box-heading-text">Total Users</div>
-                                    <div class="h5 mb-0 font-weight-bold text-primary">1942</div>
+                                    <div class="h5 mb-0 font-weight-bold text-primary">{{t_signup}}</div>
                                 </div>
 
                             </div>
@@ -42,7 +42,7 @@
 
                                 <div class="col ml-3">
                                     <div class="card-box-heading-text">University Signups</div>
-                                    <div class="h5 mb-0 font-weight-bold text-primary">16</div>
+                                    <div class="h5 mb-0 font-weight-bold text-primary">{{t_un}}</div>
                                 </div>
 
                             </div>
@@ -60,7 +60,7 @@
 
                                 <div class="col ml-3">
                                     <div class="card-box-heading-text">Student Signups</div>
-                                    <div class="h5 mb-0 font-weight-bold text-primary">37</div>
+                                    <div class="h5 mb-0 font-weight-bold text-primary">{{t_student}}</div>
                                 </div>
 
                             </div>
@@ -71,10 +71,10 @@
             </div>
 
 
-            <div class="mb-4">
-                <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                </div>
+            <div class="mb-4" style="width:100%;">
+                <!-- <div class="chart-area"> -->
+                    <canvas id="mychart"></canvas>
+                <!-- </div> -->
             </div>
 
 
@@ -86,56 +86,54 @@
             <div class="row">
                 <div class="col-md-12 custom-recent-university-signups-main-bg">
 
-                    <ul class="custom-recent-university-ul"  > <!--working -->
+                    <ul class="custom-recent-university-ul" *ngFor="let item of un_list; let i='index'" > <!--working -->
 
                         <li class="custom-recent-university-date">
                             <span class="university-text-normal">
-                                07 May,<br>2021
+                                {{item.created_at}}
                             </span>
                         </li>
 
                         <li class="custom-recent-university">
 
                             <span class="university-text-bold">
-                                University of Toronto
+                                {{item.university_name}}
                             </span>
                             <br>
                             <span class="university-text-normal">
-                                Toronto, Ontario
+                                {{item.country_name}}, {{item.state_name}}
                             </span>
 
                         </li>
 
                         <li class="custom-recent-university-contact">
                             <span class="university-text-bold">Contact:</span> <span
-                                class="university-text-normal">+91-855-534-4025</span>
+                                class="university-text-normal">{{item.mobile}}</span>
                             <br>
                             <span class="university-text-bold">Email ID:</span> <span
-                                class="university-text-normal">university@university.com</span>
+                                class="university-text-normal">{{item.university_email}}</span>
                         </li>
 
                         <li class="custom-recent-manage">
                             <span class="university-text-bold">Roles:</span> <span
-                                class="university-text-normal">3</span>
+                                class="university-text-normal">{{item.roles}}</span>
                             <br>
                             <span class="university-text-normal-two">Manage</span>
                         </li>
 
                         <li class="custom-recent-subscription">
                             <span class="university-text-bold">Subscription:</span> <span
-                                class="university-text-normal">Plan 1</span>
+                                class="university-text-normal">{{item.subscription}}</span>
                             <br>
                             <span class="university-text-normal-two">Manage</span>
                         </li>
 
                         <li class="custom-recent-copy-icon">
-                            <span><img src="../../../assets/img/copy-icon.svg"></span>
+                            <span><img src="../../../assets/img/copy-icon.svg" [routerLink]="['/admin/universitydetails',item.university_id]" ></span>
                         </li>
 
                     </ul>
-
-                     
-
+ 
                 </div>
             </div>
 

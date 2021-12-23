@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { plans } from './interfaces/plan.modal';
 import { roles } from './interfaces/roles.modal';
+import { dashscore } from './interfaces/dashscore.modal';
 
 @Injectable({
   providedIn: 'root',
@@ -130,6 +131,10 @@ export class AdminService {
 
   deleteRole(id: number){
     this.http.delete(`${this.url}/role/${id}`).subscribe();
+  }
+
+  dashboardSrores(){
+    return this.http.get<{error: string, error_msg: string, data: dashscore}>(`${this.url}/dashboardval`)
   }
 
 }

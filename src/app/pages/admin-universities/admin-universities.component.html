@@ -74,15 +74,13 @@
 
                                     <td class="table-box-text-one">
                                         <span class="table-bold">{{item.university_name}}</span>
-                                        <br>
-                                        <span class="table-text-normal">Biochemistry (Bachelor)</span>
-                                        <br>
-                                        <span class="table-text-normal">University of Toronto</span>
+                                        <br> 
+                                        <span class="table-text-normal">{{item.country_name}} {{item.state_name}}</span>
                                     </td>
 
                                     <td class="table-box-text-two">
-                                        <span class="table-bold">Contact:</span> <span class="table-text-normal">+011
-                                            5643 7901</span>
+                                        <span class="table-bold">Contact:</span> <span class="table-text-normal"> 
+                                            {{item.mobile}}</span>
                                         <br>
                                         <span class="table-bold">Email ID:</span> <span
                                             class="table-text-normal">{{item.university_email}}</span>
@@ -91,12 +89,12 @@
                                     <td class="table-box-text-three">
                                         <span class="table-bold">Address:</span>
                                         <br>
-                                        <span class="table-text-normal">2972 Westheimer Rd. Santa Ana, Illinois 85486
+                                        <span class="table-text-normal">{{item.address}}
                                         </span>
                                     </td>
 
                                     <td class="table-box-roles-text">
-                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">3</span>
+                                        <span class="table-bold">Roles:</span> <span class="table-text-normal">{{item.roles}}</span>
                                     </td>
 
                                     <td class="table-box-delete-btn">
@@ -108,9 +106,7 @@
                                                 [routerLink]="['/admin/universitydetails',item.university_id]"></button>
                                     </td>
                                 </tr>
-
-
-
+ 
                             </tbody>
                         </table>
 
