@@ -93,48 +93,154 @@ export class AdminService {
     };
   }
 
-  addPlan(data: any){
-    return this.http.post<{error: string, error_msg: string, plan_id: string}>(`${this.url}/plan/create`, data) 
-  }
-  
-  updatePlan(id: number, data: any){
-    return this.http.put<{error: string, error_msg: string }>(`${this.url}/plan/${id}`, data)
-  }
-
-  listPlan(){
-    return this.http.get<{error: string, error_msg: string, data: plans[] }>(`${this.url}/plan/list`)
+  addPlan(data: any) {
+    return this.http.post<{
+      error: string;
+      error_msg: string;
+      plan_id: string;
+    }>(`${this.url}/plan/create`, data);
   }
 
-  listRole(){
-    return this.http.get<{error: string, error_msg: string, data: roles[]}>(`${this.url}/role/list`)
+  updatePlan(id: number, data: any) {
+    return this.http.put<{ error: string; error_msg: string }>(
+      `${this.url}/plan/${id}`,
+      data
+    );
   }
 
-  addRole(data: any){
-    return this.http.post<{error: string, error_msg: string, role_id: string}>(`${this.url}/role/create`, data)
+  listPlan() {
+    return this.http.get<{ error: string; error_msg: string; data: plans[] }>(
+      `${this.url}/plan/list`
+    );
   }
 
-  updateRole(id: number, data: any){
-    return this.http.put<{error: string, error_msg: string }>(`${this.url}/role/${id}`, data)
+  listRole() {
+    return this.http.get<{ error: string; error_msg: string; data: roles[] }>(
+      `${this.url}/role/list`
+    );
   }
 
-  PlanbyId(id: number){
-    return this.http.get<{error: string, error_msg: string, data: plans}>(`${this.url}/plan/${id}`)
+  addRole(data: any) {
+    return this.http.post<{
+      error: string;
+      error_msg: string;
+      role_id: string;
+    }>(`${this.url}/role/create`, data);
   }
 
-  RolebyId(id: number){
-    return this.http.get<{error: string, error_msg: string, data: roles}>(`${this.url}/role/${id}`)
+  updateRole(id: number, data: any) {
+    return this.http.put<{ error: string; error_msg: string }>(
+      `${this.url}/role/${id}`,
+      data
+    );
   }
 
-  deletePlan(id: number){
+  PlanbyId(id: number) {
+    return this.http.get<{ error: string; error_msg: string; data: plans }>(
+      `${this.url}/plan/${id}`
+    );
+  }
+
+  RolebyId(id: number) {
+    return this.http.get<{ error: string; error_msg: string; data: roles }>(
+      `${this.url}/role/${id}`
+    );
+  }
+
+  deletePlan(id: number) {
     this.http.delete(`${this.url}/plan/${id}`).subscribe();
   }
 
-  deleteRole(id: number){
+  deleteRole(id: number) {
     this.http.delete(`${this.url}/role/${id}`).subscribe();
   }
 
-  dashboardSrores(){
-    return this.http.get<{error: string, error_msg: string, data: dashscore}>(`${this.url}/dashboardval`)
+  dashboardSrores() {
+    return this.http.get<{ error: string; error_msg: string; data: dashscore }>(
+      `${this.url}/dashboardval`
+    );
   }
 
+  st_totol() {
+    return this.http.get<{
+      data: {
+        en_std: number;
+        not_enstd: number;
+        t_std: number;
+      };
+    }>(`${this.url}/st_totalstudents`);
+  }
+
+  st_signups() {
+    return this.http.get<{
+      data: {
+        t_signup: number;
+        en_signup: number;
+        not_ensignup: number;
+      };
+    }>(`${this.url}/st_totalsignups`);
+  }
+
+  st_intertrav() {
+    return this.http.get<{
+      data: {
+        trv_interstd: number;
+        trv_self: number;
+        trv_notself: number;
+      };
+    }>(`${this.url}/st_intertrav`);
+  }
+
+  st_ensignyp() {
+    return this.http.get<{
+      st_en: {
+        month_id: number;
+        total_count: number;
+      }[];
+      st_noten: {
+        month_id: number;
+        total_count: number;
+      }[];
+    }>(`${this.url}/st_ensignyp`);
+  }
+
+  st_weeksignup() {
+    return this.http.get<{
+      st_en: {
+        week_id: number;
+        total_count: number;
+      }[];
+      st_noten: {
+        week_id: number;
+        total_count: number;
+      }[];
+    }>(`${this.url}/st_weeksignup`);
+  }
+
+  un_blocks() {
+    return this.http.get<{
+      data: {
+        total_un: number;
+        signups: number;
+      };
+    }>(`${this.url}/un_bar`);
+  }
+
+  un_trends() {
+    return this.http.get<{
+      data: {
+        month_id: number;
+        total: number;
+      }[];
+    }>(`${this.url}/un_signuptrendyear`);
+  }
+
+  un_weektrend() {
+    return this.http.get<{
+      data: {
+        week_id: number;
+        total: number;
+      }[];
+    }>(`${this.url}/un_signuptrendweek`);
+  }
 }

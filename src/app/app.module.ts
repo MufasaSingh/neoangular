@@ -15,9 +15,8 @@ import { MatButtonModule } from "@angular/material/button"
 
 import { ErrormodalComponent } from './error/errormodal/errormodal.component'; 
 import { ErrorInterceptor } from './error/errormodal/error.interceptor';
-
-
-
+ 
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +24,7 @@ import { ErrorInterceptor } from './error/errormodal/error.interceptor';
     BlankComponent,
     HeaderComponent,
     FooterComponent,
-    ErrormodalComponent
+    ErrormodalComponent 
   ],
   imports: [
     BrowserModule,
@@ -33,7 +32,7 @@ import { ErrorInterceptor } from './error/errormodal/error.interceptor';
     BrowserAnimationsModule,
     HttpClientModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule 
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor,multi: true}],
   bootstrap: [AppComponent],

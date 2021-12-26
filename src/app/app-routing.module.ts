@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BasicComponent } from './layouts/basic/basic.component'; 
 import { BlankComponent } from './layouts/blank/blank.component';
 
-import { AuthGuard } from "./guard/auth.guard";
+import { AuthGuard } from "./guard/auth.guard"; 
+import { ChartsComponent } from './pages/charts/charts.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,9 @@ const routes: Routes = [
           path: "reports",
           loadChildren: ()=> import("./pages/admin-reports/admin-reports.module").then(m=> m.AdminReportsModule),
           canActivate: [AuthGuard]
+        },{
+          path: "test",
+          component: ChartsComponent
         }
     ]
   }

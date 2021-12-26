@@ -20,12 +20,12 @@
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                  <img src="../../../assets/img/graph.svg">
+                  <canvas id="totlastudnet" class="fixbox" ></canvas>
                 </div>
 
                 <div class="col ml-3">
                   <div class="student-ssers-heading-text">Total Student Users</div>
-                  <div class="h5 mb-0 font-weight-bold text-primary">1942</div>
+                  <div class="h5 mb-0 font-weight-bold text-primary">{{totalStudent}}</div>
                   <div class="row mt-3">
                     <div class="col-md-10">
                       <div class="non-enrolled-students">
@@ -52,12 +52,13 @@
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                  <img src="../../../assets/img/graph.svg">
+                  <canvas id="totalsignups" class="fixbox" ></canvas>
+
                 </div>
 
                 <div class="col ml-3">
                   <div class="student-ssers-heading-text">Total Signups</div>
-                  <div class="h5 mb-0 font-weight-bold text-primary">37</div>
+                  <div class="h5 mb-0 font-weight-bold text-primary">{{totalsignups}}</div>
                   <div class="row mt-3">
                     <div class="col-md-10">
                       <div class="non-enrolled-students">
@@ -83,7 +84,8 @@
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                  <img src="../../../assets/img/graph.svg">
+                  <canvas id="internationaltraveller" ></canvas>
+
                 </div>
 
                 <div class="col ml-3">
@@ -121,7 +123,7 @@
                 <span class="dashbord-main-heading-text">Trend in Signups</span>
               </div>
               <div>
-                <img class="img-fluid" src="../../../assets/img/report-graph1.png">
+               <canvas id="trends" class="fixbox" ></canvas>
               </div>
             </div>
           </div>
@@ -132,7 +134,7 @@
                 <span class="dashbord-main-heading-text">Percentage Users by Geography</span>
               </div>
               <div>
-                <img class="img-fluid" src="../../../assets/img/report-graph3.png" style="width:100%;">
+                <app-world-chart></app-world-chart>
               </div>
             </div>
           </div>
@@ -145,7 +147,18 @@
                 <span class="dashbord-main-heading-text">Number of Signups by days of the week</span>
               </div>
               <div>
-                <img class="img-fluid" src="../../../assets/img/report-graph2.png">
+                <canvas id="thisweekSign" ></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+             <div class="d-sm-flex align-items-center justify-content-between mb-2">
+                <span class="dashbord-main-heading-text">User Demographics</span>
+              </div>
+              <div>
+                <canvas id="demographics" ></canvas>
               </div>
             </div>
           </div>
@@ -219,7 +232,7 @@
                 <span class="dashbord-main-heading-text">Trend in Signups</span>
               </div>
               <div>
-                <img class="img-fluid" src="../../../assets/img/report-graph1.png">
+                <canvas id="un_trent" class="fixbox" ></canvas>
               </div>
             </div>
           </div>
@@ -230,7 +243,7 @@
                 <span class="dashbord-main-heading-text">Percentage Users by Geography</span>
               </div>
               <div>
-                <img class="img-fluid" src="../../../assets/img/report-graph3.png" style="width:100%;">
+                <app-world-chart></app-world-chart>
               </div>
             </div>
           </div>
@@ -243,7 +256,7 @@
                 <span class="dashbord-main-heading-text">Number of Signups by days of the week</span>
               </div>
               <div>
-                <img class="img-fluid" src="../../../assets/img/report-graph4.png">
+                <canvas id="un_signupperweek" ></canvas>
               </div>
             </div>
           </div>
@@ -372,7 +385,7 @@
                 <span class="dashbord-main-heading-text">User Growth Rate</span>
               </div>
               <div>
-                <img class="img-fluid" src="../../../assets/img/report-graph5.png">
+                <canvas id="growth" ></canvas>
               </div>
             </div>
           </div>
@@ -383,7 +396,7 @@
                 <span class="dashbord-main-heading-text">Percentage Users by Geography</span>
               </div>
               <div>
-                <img class="img-fluid" src="../../../assets/img/report-graph3.png" style="width:100%;">
+                <app-world-chart></app-world-chart>
               </div>
             </div>
           </div>
@@ -448,7 +461,7 @@
                 <span class="dashbord-main-heading-text">App usage by Days of the week</span>
               </div>
               <div>
-                <img class="img-fluid" src="../../../assets/img/report-graph6.png">
+                <canvas id="app_signupperweek" ></canvas>
               </div>
             </div>
           </div>
