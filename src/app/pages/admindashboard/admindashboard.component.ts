@@ -18,7 +18,14 @@ export class AdmindashboardComponent implements OnInit {
   t_student: number;
   t_un: number;
 
+
+  private t_enstd: number;
+  private t_notenstd: number;
+
+
   myChart: any;
+
+  
 
   months = [
     'Jan',
@@ -52,6 +59,53 @@ export class AdmindashboardComponent implements OnInit {
       this.t_student = data.data.t_student;
       this.t_un = data.data.t_un;
     });
+
+    this.Aservice.dashboardreport().subscribe(data=> {
+      this.t_enstd = data.en_std.entotal
+      this.t_notenstd = data.not_enstd.entotal
+
+      const plan_name = data.plan_data.map(item=>{
+        return item.plan_name
+      })
+
+      const plan_data = data.plan_data.map(items=> {
+        return items.plan_total
+      })
+
+      new Chart("donet",{
+        type: "doughnut",
+        data: { 
+          datasets: [{ 
+            data: [this.t_enstd,this.t_notenstd],
+            backgroundColor: [
+              'rgba(170, 182, 251, 0.6)',
+              'rgba(170, 182, 251, 1)'
+            ] 
+          }],
+          labels: ['General Students', 'Enrolled Sudents']
+        },
+        options: {
+          legend: {
+            display: false,
+          },
+        },
+      })
+      //dynamic colors
+      new Chart("pie", {
+        type: 'pie',
+        data: { 
+          datasets: [{ 
+            data: plan_data,
+            backgroundColor: [
+              'rgba(170, 182, 251, 0.6)',
+              'rgba(170, 182, 251, 1)'
+            ] 
+          }],
+          labels: plan_name
+        }
+    });
+
+    })
 
     new Chart('mychart', {
       type: 'line',
@@ -88,38 +142,6 @@ export class AdmindashboardComponent implements OnInit {
       },
       
     });
-
-    new Chart("donet",{
-      type: "doughnut",
-      data: { 
-        datasets: [{ 
-          data: [100,100],
-          backgroundColor: [
-            'rgba(170, 182, 251, 0.6)',
-            'rgba(170, 182, 251, 1)'
-          ] 
-        }]
-      }
-    })
-
-
-    new Chart("pie", {
-      type: 'doughnut',
-      data: { 
-        datasets: [{ 
-          data: [100,100],
-          backgroundColor: [
-            'rgba(170, 182, 251, 0.6)',
-            'rgba(170, 182, 251, 1)'
-          ] 
-        }],
-        labels: [
-          'Red',
-          'Yellow'
-          
-      ]
-      }
-  });
 
   }
 }

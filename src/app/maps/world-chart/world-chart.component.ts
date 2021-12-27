@@ -61,7 +61,7 @@ export class WorldChartComponent implements OnInit {
           ["us", 2],
           ["jp", 3],
           ["sc", 4],
-          ["in", 5],
+          ["in", 0],
           ["fr", 6],
           ["fm", 7],
           ["cn", 8],

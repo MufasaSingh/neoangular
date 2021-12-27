@@ -243,4 +243,24 @@ export class AdminService {
       }[];
     }>(`${this.url}/un_signuptrendweek`);
   }
+
+  dashboardreport() {
+    return this.http.get<{
+      bar: {
+        t_users: number;
+        t_signunv: number;
+        t_signstd: number;
+      };
+      en_std: {
+        entotal: number;
+      };
+      not_enstd: {
+        entotal: number;
+      };
+      plan_data: {
+        plan_name: string;
+        plan_total: number;
+      }[];
+    }>(`${this.url}/dashboard_report`);
+  }
 }
