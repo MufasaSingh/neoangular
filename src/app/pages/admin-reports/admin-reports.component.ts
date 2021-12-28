@@ -14,7 +14,7 @@ export class AdminReportsComponent implements OnInit {
 
   un_totaluser: number;
   un_totalsignup: number;
-
+ 
   private months = [
     'Jan',
     'Feb',
@@ -40,6 +40,10 @@ export class AdminReportsComponent implements OnInit {
 
   private un_trends = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   private un_trendsweek = [0, 0, 0, 0, 0, 0, 0];
+
+  private age : number[] = [];
+  private ageen: number[] = [];
+  private agenoten : number[] = [];
 
   constructor(private Aservice: AdminService) {}
 
@@ -194,24 +198,35 @@ export class AdminReportsComponent implements OnInit {
       });
     });
 
-    new Chart('demographics', {
-      type: 'bar',
-      data: {
-        datasets: [
-          {
-            label: 'Non Enrolled Students',
-            data: [231, 45, 123, 54, 12, 43, 45],
-            backgroundColor: 'rgba(31, 47, 152, 1)',
-          },
-          {
-            label: 'Enrolled Students',
-            data: [34, 73, 86, 45, 56, 34, 56],
-            backgroundColor: 'rgba(170, 182, 251, 1)',
-          },
-        ],
-        labels: this.weeks,
-      },
-    });
+    this.Aservice.getDemographics().subscribe(data=>{
+
+      data.data.forEach((item, index)=>{
+        this.age[index] = item.Age;
+        this.ageen[index] = item.en_std;
+        this.agenoten[index] = item.not_enstd;
+      })
+
+      new Chart('demographics', {
+        type: 'bar',
+        data: {
+          datasets: [
+            {
+              label: 'Non Enrolled Students',
+              data: this.agenoten,
+              backgroundColor: 'rgba(31, 47, 152, 1)',
+            },
+            {
+              label: 'Enrolled Students',
+              data: this.ageen,
+              backgroundColor: 'rgba(170, 182, 251, 1)',
+            },
+          ],
+          labels: this.age,
+        },
+      });
+    })
+
+    
 
     //End Student Chart
 

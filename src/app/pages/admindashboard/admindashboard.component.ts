@@ -24,6 +24,9 @@ export class AdmindashboardComponent implements OnInit {
   private t_enstd: number;
   private t_notenstd: number;
 
+  private newUser = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  private existingUser = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 
   myChart: any;
 
@@ -32,8 +35,8 @@ export class AdmindashboardComponent implements OnInit {
   months = [
     'Jan',
     'Feb',
-    'March',
-    'April',
+    'Mar',
+    'Apr',
     'May',
     'Jun',
     'July',
@@ -76,6 +79,50 @@ export class AdmindashboardComponent implements OnInit {
         return items.plan_total
       })
 
+      data.newuser.forEach(items=>{
+        this.newUser[items.month_id - 1] = items.total_count
+      })
+
+      data.existingUser.forEach(items=>{
+        this.existingUser[items.month_id - 1] = items.total_count
+      })
+
+      new Chart('mychart', {
+        type: 'line',
+        data: {
+          labels: this.months,
+          datasets: [
+            {
+              label: 'New Users',
+              data: this.newUser,
+              fill: false,
+              backgroundColor: 'rgb(31,47,152)',
+              borderColor: 'rgb(31,47,152)',
+            },
+            {
+              label: 'Existing Users',
+              data: this.existingUser,
+              fill: false,
+              backgroundColor: 'rgba(170, 182, 251, 1)',
+              borderColor: 'rgba(170, 182, 251, 1)',
+            },
+          ],
+        },
+        options: {
+          responsive: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+        
+      });
+
       new Chart("donet",{
         type: "doughnut",
         data: { 
@@ -113,41 +160,6 @@ export class AdmindashboardComponent implements OnInit {
 
     })
 
-    new Chart('mychart', {
-      type: 'line',
-      data: {
-        labels: this.months,
-        datasets: [
-          {
-            label: 'New Users',
-            data: this.values,
-            fill: false,
-            backgroundColor: 'rgb(31,47,152)',
-            borderColor: 'rgb(31,47,152)',
-          },
-          {
-            label: 'Existing Users',
-            data: this.values2,
-            fill: false,
-            backgroundColor: 'rgba(170, 182, 251, 1)',
-            borderColor: 'rgba(170, 182, 251, 1)',
-          },
-        ],
-      },
-      options: {
-        responsive: false,
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
-        },
-      },
-      
-    });
 
   }
 }

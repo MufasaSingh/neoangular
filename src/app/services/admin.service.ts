@@ -244,6 +244,16 @@ export class AdminService {
     }>(`${this.url}/un_signuptrendweek`);
   }
 
+  getDemographics() {
+    return this.http.get<{
+      data: {
+        en_std: number;
+        not_enstd: number;
+        Age: number;
+      }[]
+    }>(`${this.url}/getdemographics`);
+  }
+
   dashboardreport() {
     return this.http.get<{
       bar: {
@@ -260,6 +270,14 @@ export class AdminService {
       plan_data: {
         plan_name: string;
         plan_total: number;
+      }[];
+      newuser: {
+        total_count: number;
+        month_id: number;
+      }[];
+      existingUser: {
+        total_count: number;
+        month_id: number;
       }[];
     }>(`${this.url}/dashboard_report`);
   }
