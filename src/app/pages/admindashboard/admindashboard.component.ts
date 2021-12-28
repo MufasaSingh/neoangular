@@ -18,6 +18,8 @@ export class AdmindashboardComponent implements OnInit {
   t_student: number;
   t_un: number;
 
+  plans: string[] = [];
+
 
   private t_enstd: number;
   private t_notenstd: number;
@@ -44,6 +46,8 @@ export class AdmindashboardComponent implements OnInit {
   values = [12, 23, 34, 465, 456, 456, 34, 24, 234, 67, 90, 12];
   values2 = [23,23,123,457,89,24,367,234,123,456,345,121];
 
+   blueshades = ['rgb(0, 255, 255)','rgb(240, 255, 255)','rgb(137, 207, 240)','rgb(0, 0, 255)','rgb(115, 147, 179)','rgb(8, 143, 143)','rgb(0, 150, 255)','rgb(95, 158, 160)','rgb(0, 71, 171)','rgb(100, 149, 237)','rgb(0, 255, 255)','rgb(0, 0, 139)','rgb(111, 143, 175)','rgb(20, 52, 164)','rgb(125, 249, 255)','rgb(96, 130, 182)','rgb(0, 163, 108)','rgb(63, 0, 255)','rgb(93, 63, 211)','rgb(173, 216, 230)','rgb(25, 25, 112)','rgb(0, 0, 128)','rgb(31, 81, 255)','rgb(167, 199, 231)','rgb(204, 204, 255)','rgb(182, 208, 226)','rgb(150, 222, 209)','rgb(65, 105, 225)','rgb(15, 82, 186)','rgb(159, 226, 191)','rgb(135, 206, 235)','rgb(70, 130, 180)','rgb(0, 128, 128)','rgb(64, 224, 208)','rgb(4, 55, 242)','rgb(64, 181, 173)','rgb(8, 24, 168)']
+
   constructor(
     private Uservice: UniversityService,
     private Aservice: AdminService
@@ -64,7 +68,7 @@ export class AdmindashboardComponent implements OnInit {
       this.t_enstd = data.en_std.entotal
       this.t_notenstd = data.not_enstd.entotal
 
-      const plan_name = data.plan_data.map(item=>{
+      this.plans = data.plan_data.map(item=>{
         return item.plan_name
       })
 
@@ -96,13 +100,15 @@ export class AdmindashboardComponent implements OnInit {
         data: { 
           datasets: [{ 
             data: plan_data,
-            backgroundColor: [
-              'rgba(170, 182, 251, 0.6)',
-              'rgba(170, 182, 251, 1)'
-            ] 
+            backgroundColor: this.blueshades
           }],
-          labels: plan_name
-        }
+          labels: this.plans
+        },
+        options: {
+          legend: {
+            display: false,
+          },
+        },
     });
 
     })
