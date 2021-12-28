@@ -21,13 +21,13 @@
 
     <div class="row mt-4">
         <div class="col-md-6">
-            <h3 class="student-name">University of Toronto</h3>
+            <h3 class="student-name">{{mainUn.university_name}}</h3>
         </div>
         <div class="col-md-6 text-right">
             <button class="edit-student-details-btn"><img src="../../../assets/img/Edit.svg"></button>
         </div>
         <div class="col-md-12">
-            <p class="university-details-addres-text">27 King’s College Circle, <br>Toronto ON M5S 1A1</p>
+            <p class="university-details-addres-text">{{mainUn.address}} <br>Toronto ON M5S 1A1</p>
         </div>
     </div>
 
@@ -47,7 +47,7 @@
             <p class="university-details-bold-text">Contact:</p>
         </div>
         <div class="col-md-9">
-            <p>+91 76456 3390</p>
+            <p>{{mainUn.mobile}}</p>
         </div>
 
 
@@ -82,14 +82,14 @@
         data-appear-animation-delay="600">
 
         <div class="form-row">
-            <div class="col-md-7">
+            <div class="col-md-7" *ngFor="let item of subUn; let i = index" >
 
                 <div class="row m-0">
                     <div class="col-lg-12">
                         <div class="checkbox select-roles-check-box">
                             <label>
-                                <input type="checkbox" value="" class="">
-                                Director
+                                <input type="checkbox" checked value="" class="">
+                                {{item.un_role}}
                             </label>
                         </div>
                     </div>
@@ -102,43 +102,10 @@
                     </div>
                 </div>
 
-                <div class="row m-0">
-                    <div class="col-lg-12">
-                        <div class="checkbox select-roles-check-box">
-                            <label>
-                                <input type="checkbox" value="" class="">
-                                Asisstant Manager
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-lg-3 control-label text-lg-right pt-2">Assigned to</label>
-                    <div class="col-lg-9">
-                        <input class="form-control mb-3" type="text" placeholder="tim.jennings@example.com">
-                    </div>
-                </div>
-
-                <div class="row m-0">
-                    <div class="col-lg-12">
-                        <div class="checkbox select-roles-check-box">
-                            <label>
-                                <input type="checkbox" value="" class="">
-                                Team Lead
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-lg-3 control-label text-lg-right pt-2">Assigned to</label>
-                    <div class="col-lg-9">
-                        <input class="form-control mb-3" type="text" placeholder="alma.lawson@example.com">
-                    </div>
-                </div>
+                
 
             </div>
+            
         </div>
     </form>
 

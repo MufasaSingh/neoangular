@@ -1,35 +1,50 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http"
+import { HttpClient } from '@angular/common/http';
 import { UniversityList } from './interfaces/universitylist.modal';
 
-import { environment } from "src/environments/environment" 
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UniversityService {
-
   private url: string = `${environment.api_url}/university`;
 
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  createUniversity(data: any){
-    return this.http.post<{ error: number, error_msg: string }>(this.url + "/create", data);
+  createUniversity(data: any) {
+    return this.http.post<{ error: number; error_msg: string }>(
+      `${this.url}/create`,
+      data
+    );
   }
 
-  universityList(){
-    return this.http.post<{ error: number, error_msg: string, data: UniversityList[] }>(`${this.url}/list`,"");
+  universityList() {
+    return this.http.post<{
+      error: number;
+      error_msg: string;
+      data: UniversityList[];
+    }>(`${this.url}/list`, '');
   }
 
-  universitytodayList(){
-   
-    return this.http.post<{ error: number, error_msg: string, data: UniversityList[] }>(`${this.url}/recentSignup`, "");
+  universitytodayList() {
+    return this.http.post<{
+      error: number;
+      error_msg: string;
+      data: UniversityList[];
+    }>(`${this.url}/recentSignup`, '');
   }
 
-  deleteUniversity(id: number){ 
+  deleteUniversity(id: number) {
     this.http.delete(`${this.url}/${id}`).subscribe();
   }
-  
+
+  universitygetbyid(id: any) { 
+    return this.http.get<{
+      error: number;
+      error_msg: string;
+      un_data: UniversityList;
+      pa_data: UniversityList[];
+    }>(`${this.url}/${id}`);
+  }
 }

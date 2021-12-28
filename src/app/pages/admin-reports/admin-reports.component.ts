@@ -110,7 +110,7 @@ export class AdminReportsComponent implements OnInit {
               ],
             },
           ],
-          labels: ['Non-Enrolled Students', 'Enrolled Students'],
+          labels: ['Travelling by Self', 'Travelling with Someone'],
         },
         options: {
           legend: {
