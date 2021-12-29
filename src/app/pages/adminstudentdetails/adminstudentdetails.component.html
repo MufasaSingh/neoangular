@@ -1,4 +1,4 @@
-<div class="container-fluid" *ngFor="let items of form" >
+<div class="container-fluid">
 
     <div class="row">
         <div class="col-xl-12 col-lg-12">
@@ -24,7 +24,8 @@
             <h3 class="student-name">{{items.s_fname}} {{items.s_lname}} </h3>
         </div>
         <div class="col-md-6 text-right">
-            <button class="edit-student-details-btn"><img src="../../../assets/img/Edit.svg"></button>
+            <button class="edit-student-details-btn"><img src="../../../assets/img/Edit.svg"
+                    (click)="open(content)"></button>
         </div>
         <div class="col-md-12">
             <h4 class="details-sub-title">Personal Details</h4>
@@ -36,7 +37,7 @@
             <p>Name: </p>
         </div>
         <div class="col-md-9">
-            <p>  {{items.s_fname}} {{items.s_lname}}  </p>
+            <p> {{items.s_fname}} {{items.s_lname}} </p>
         </div>
 
         <div class="col-md-3">
@@ -50,7 +51,7 @@
             <p>Phone: </p>
         </div>
         <div class="col-md-9">
-            <p>{{items.s_country_code}}  {{items.s_mobile}}</p>
+            <p>{{items.s_country_code}} {{items.s_mobile}}</p>
         </div>
 
         <div class="col-md-3">
@@ -155,14 +156,14 @@
     <div class="mt-4">
         <mat-expansion-panel>
             <mat-expansion-panel-header>
-              <mat-panel-title>
-                <ul class="available-forms-ul-main m-0">
-                    <li class="available-forms-icon"><img src="../../../assets/img/form.svg"></li>
-                    <li class="available-forms-text">Arrival Form</li> 
-                  </ul>
-              </mat-panel-title> 
-            </mat-expansion-panel-header> 
-        
+                <mat-panel-title>
+                    <ul class="available-forms-ul-main m-0">
+                        <li class="available-forms-icon"><img src="../../../assets/img/form.svg"></li>
+                        <li class="available-forms-text">Arrival Form</li>
+                    </ul>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
             <div class="row mt-4 student-details-text-custom">
                 <div class="col-md-3">
                     <p>Are you travelling to a different country?:</p>
@@ -170,15 +171,15 @@
                 <div class="col-md-9">
                     <p>{{items.travelling}}</p>
                 </div>
-        
+
                 <div class="col-md-3">
-                    <p>Are you travelling by 
+                    <p>Are you travelling by
                         self? : </p>
                 </div>
                 <div class="col-md-9">
                     <p>{{items.self_travelling}}</p>
                 </div>
-        
+
                 <div class="col-md-3">
                     <p>Accompanied by family
                         members?: </p>
@@ -190,13 +191,13 @@
 
                 <!-- partents details start -->
                 <div class="col-md-3">
-                    <p>Number of family 
+                    <p>Number of family
                         members: </p>
                 </div>
                 <div class="col-md-9">
                     <p>2</p>
                 </div>
-                
+
                 <div class="col-md-3">
                     <p>Name: </p>
                 </div>
@@ -204,12 +205,13 @@
                     <p>Jameson</p>
                 </div>
                 <!-- partents details end -->
-                
+
                 <div class="col-md-12">
-                    <p>Do you or any co-arriving members require any special accomodations to address a documented disability , functional limitation, or special need? {{items.disability}}:</p>
+                    <p>Do you or any co-arriving members require any special accomodations to address a documented
+                        disability , functional limitation, or special need? {{items.disability}}:</p>
                 </div>
-                
-        
+
+
                 <div class="col-md-3">
                     <p>Departure Country :</p>
                 </div>
@@ -223,29 +225,29 @@
                 <div class="col-md-9">
                     <p>{{items.departure_city}}</p>
                 </div>
-         
-        
+
+
                 <div class="col-md-3">
                     <p>Departure Date:</p>
                 </div>
                 <div class="col-md-9">
                     <p>{{items.departure_date}}</p>
                 </div>
-        
+
                 <div class="col-md-3">
                     <p>Departure Time:</p>
                 </div>
                 <div class="col-md-9">
                     <p>{{items.deaprture_time}}</p>
                 </div>
-        
+
                 <div class="col-md-3">
                     <p>Airlines:</p>
                 </div>
                 <div class="col-md-9">
                     <p>Vistara</p>
                 </div>
-        
+
                 <div class="col-md-3">
                     <p>Number of Connecting Flights:</p>
                 </div>
@@ -306,7 +308,7 @@
                     <p>Final Arrival City:</p>
                 </div>
                 <div class="col-md-9">
-                    <p>{{items.university_city}}  </p>
+                    <p>{{items.university_city}} </p>
                 </div>
 
                 <div class="col-md-3">
@@ -315,26 +317,339 @@
                 <div class="col-md-9">
                     <p>{{items.final_transport}} </p>
                 </div>
-        
-        
-            </div>
-          </mat-expansion-panel>
-          </div>
-          <div class="mt-4">
 
-          <mat-expansion-panel >
+
+            </div>
+        </mat-expansion-panel>
+    </div>
+    <div class="mt-4">
+
+        <mat-expansion-panel>
             <mat-expansion-panel-header>
-              <mat-panel-title>
-                <ul class="available-forms-ul-main m-0">
-                    <li class="available-forms-icon"><img src="../../../assets/img/form.svg"></li>
-                    <li class="available-forms-text">Admission Form</li> 
-                  </ul>
-                
-              </mat-panel-title> 
+                <mat-panel-title>
+                    <ul class="available-forms-ul-main m-0">
+                        <li class="available-forms-icon"><img src="../../../assets/img/form.svg"></li>
+                        <li class="available-forms-text">Admission Form</li>
+                    </ul>
+
+                </mat-panel-title>
             </mat-expansion-panel-header>
-            <p>This is the primary content of the panel.</p>
-          </mat-expansion-panel>
+            <div class="row mt-4 student-details-text-custom" *ngFor="let item of normal_form">
+
+                <div class="col-md-3">
+                    <p>Full Name</p>
+                </div>
+                <div class="col-md-9">
+                    <p>{{item.name}} </p>
+                </div>
+
+                <div class="col-md-3">
+                    <p>Email</p>
+                </div>
+                <div class="col-md-9">
+                    <p>{{item.email}} </p>
+                </div>
+
+                <div class="col-md-3">
+                    <p>Country Code</p>
+                </div>
+                <div class="col-md-9">
+                    <p>{{item.country_code}} </p>
+                </div>
+
+                <div class="col-md-3">
+                    <p>Mobile</p>
+                </div>
+                <div class="col-md-9">
+                    <p>{{item.mobile}} </p>
+                </div>
+
+                <div class="col-md-3">
+                    <p>Course Applied To</p>
+                </div>
+                <div class="col-md-9">
+                    <p>{{item.course_name}} </p>
+                </div>
+
+            </div>
+        </mat-expansion-panel>
     </div>
 
 </div>
 <!-- /.container-fluid -->
+
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Update University</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="formUpdate" (submit)="updateUpdate()">
+            <div class="row">
+
+                <div class="form-group col-md-6">
+                    <label for="s_fname">First Name</label>
+                    <input type="text" class="form-control" id="s_fname" formControlName='s_fname'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_lname">Last Name</label>
+                    <input type="text" class="form-control" id="s_lname" formControlName='s_lname'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_email">Email</label>
+                    <input type="text" name="" class="form-control" id="s_email" formControlName='s_email'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_country_code">Country Code</label>
+                    <input type="text" name="" class="form-control" id="s_country_code"
+                        formControlName='s_country_code'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_mobile">Mobile</label>
+                    <input type="text" name="" class="form-control" id="s_mobile" formControlName='s_mobile'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_gender">Gender</label>
+                    <input type="text" name="" class="form-control" id="s_gender" formControlName='s_gender'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_dob">Date of Birth</label>
+                    <input type="text" name="" class="form-control" id="s_dob" formControlName='s_dob'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_country">County</label>
+                    <input type="text" name="" class="form-control" id="s_country" formControlName='s_country'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_p_address">Permanent Address</label>
+                    <input type="text" name="" class="form-control" id="s_p_address" formControlName='s_p_address'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_p_state">Permanent State</label>
+                    <input type="text" name="" class="form-control" id="s_p_state" formControlName='s_p_state'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_p_city">Permanent City</label>
+                    <input type="text" name="" class="form-control" id="s_p_city" formControlName='s_p_city'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_p_postcode">Permanent Postcode</label>
+                    <input type="text" name="" class="form-control" id="s_p_postcode" formControlName='s_p_postcode'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="same_address">Same Address</label>
+                    <input type="text" name="" class="form-control" id="same_address" formControlName='same_address'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_c_address">Current Address</label>
+                    <input type="text" name="" class="form-control" id="s_c_address" formControlName='s_c_address'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_c_state">Current State</label>
+                    <input type="text" name="" class="form-control" id="s_c_state" formControlName='s_c_state'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_c_city">Current City </label>
+                    <input type="text" name="" class="form-control" id="s_c_city" formControlName='s_c_city'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="s_c_postcode">Current PostCode</label>
+                    <input type="text" name="" class="form-control" id="s_c_postcode" formControlName='s_c_postcode'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="campus_address">Campus Address</label>
+                    <input type="text" name="" class="form-control" id="campus_address"
+                        formControlName='campus_address'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="campus_program">Campus Program</label>
+                    <input type="text" name="" class="form-control" id="campus_program"
+                        formControlName='campus_program'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="campus_intake">Campus Intake</label>
+                    <input type="text" name="" class="form-control" id="campus_intake" formControlName='campus_intake'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="student_number">Campus Student Number</label>
+                    <input type="text" name="" class="form-control" id="student_number"
+                        formControlName='student_number'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="visa_issue">Visa Issue</label>
+                    <input type="text" name="" class="form-control" id="visa_issue" formControlName='visa_issue'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="travelling">Travelling</label>
+                    <input type="text" name="" class="form-control" id="travelling" formControlName='travelling'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="self_travelling">Self Travelling</label>
+                    <input type="text" name="" class="form-control" id="self_travelling"
+                        formControlName='self_travelling'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="family_member">Family Member</label>
+                    <input type="text" name="" class="form-control" id="family_member" formControlName='family_member'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="disability">Disability</label>
+                    <input type="text" name="" class="form-control" id="disability" formControlName='disability'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="mode_of_transfer">Mode Of Transfer</label>
+                    <input type="text" name="" class="form-control" id="mode_of_transfer"
+                        formControlName='mode_of_transfer'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="airline">Airline</label>
+                    <input type="text" name="" class="form-control" id="airline" formControlName='airline'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="departure_contry">Departure Country</label>
+                    <input type="text" name="" class="form-control" id="departure_contry"
+                        formControlName='departure_contry'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="departure_city">Departure City</label>
+                    <input type="text" name="" class="form-control" id="departure_city"
+                        formControlName='departure_city'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="departure_date">Departure Date</label>
+                    <input type="text" name="" class="form-control" id="departure_date"
+                        formControlName='departure_date'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="deaprture_time">Departure Time</label>
+                    <input type="text" name="" class="form-control" id="deaprture_time"
+                        formControlName='deaprture_time'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="no_of_flights">No Of Flights</label>
+                    <input type="text" name="" class="form-control" id="no_of_flights" formControlName='no_of_flights'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="arrival_country">Arrival Country</label>
+                    <input type="text" name="" id="arrival_country" class="form-control"
+                        formControlName='arrival_country'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="arrival_city">Arrival City</label>
+                    <input type="text" name="" id="arrival_city" class="form-control" formControlName='arrival_city'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="hotal_name">Hotal Name</label>
+                    <input type="text" name="" id="hotal_name" class="form-control" formControlName='hotal_name'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="hotal_room">Hotal Room</label>
+                    <input type="text" name="" id="hotal_room" class="form-control" formControlName='hotal_room'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="hotal_address">Hotal Address</label>
+                    <input type="text" name="" id="hotal_address" class="form-control" formControlName='hotal_address'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="hotal_country_code">Hotal Country Code</label>
+                    <input type="text" name="" id="hotal_country_code" class="form-control"
+                        formControlName='hotal_country_code'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="hotal_number">Hotal Number</label>
+                    <input type="text" name="" id="hotal_number" class="form-control" formControlName='hotal_number'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="university_city">University City</label>
+                    <input type="text" name="" id="university_city" class="form-control"
+                        formControlName='university_city'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="final_transport">Final Transport</label>
+                    <input type="text" name="" id="final_transport" class="form-control"
+                        formControlName='final_transport'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="transport_number">Transport Number</label>
+                    <input type="text" name="" id="transport_number" class="form-control"
+                        formControlName='transport_number'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="arrival_date">Arrival Date</label>
+                    <input type="text" name="" id="arrival_date" class="form-control" formControlName='arrival_date'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="arrival_time">Arrival Time</label>
+                    <input type="text" name="" id="arrival_time" class="form-control" formControlName='arrival_time'>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="information">Information</label>
+                    <input type="text" name="" id="information" class="form-control" formControlName='information'>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="signature">Signature</label>
+                    <img [src]="items.signature" class="img-fluid" alt="No Signature">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="information">Information</label>
+                    <input type="text" name="" id="information" class="form-control" formControlName='information'>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="updateUpdate()">Save</button>
+    </div>
+</ng-template>

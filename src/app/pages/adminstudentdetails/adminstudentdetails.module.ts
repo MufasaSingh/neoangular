@@ -7,6 +7,9 @@ import { AdminstudentdetailsComponent } from "./adminstudentdetails.component"
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 
+import { ReactiveFormsModule } from '@angular/forms'
+
+
 @NgModule({
   declarations: [
     AdminstudentdetailsComponent
@@ -15,7 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     AdminstudentdetailsRoutingModule,
     MatExpansionModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminstudentdetailsModule { }

@@ -73,7 +73,7 @@
 
     <div class="row mt-4 mb-3">
         <div class="col-md-6">
-            <h3 class="student-name">Subscription: <span>Plan 1</span></h3>
+            <h3 class="student-name">Subscription: <span>{{mainUn.plan_name}}</span></h3>
         </div>
     </div>
 
@@ -89,7 +89,7 @@
                         <div class="checkbox select-roles-check-box">
                             <label>
                                 <input type="checkbox" checked value="" class="">
-                                {{item.un_role}}
+                                {{item.role_name}}
                             </label>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                 <div class="form-group row">
                     <label class="col-lg-3 control-label text-lg-right pt-2">Assigned to</label>
                     <div class="col-lg-9">
-                        <input class="form-control mb-3" type="text" placeholder="michelle.rivera@example.com">
+                        <input class="form-control mb-3" type="text" [value]="item.university_email" placeholder="example@gmail.com">
                     </div>
                 </div>
 

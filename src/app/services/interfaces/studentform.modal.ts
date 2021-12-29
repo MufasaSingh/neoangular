@@ -48,6 +48,7 @@ export interface studentform {
   arrival_date: string,
   arrival_time: string,
   information: string,
+  signature: string,
   form_status: string,
   updated_at: string,
   created_at: string,

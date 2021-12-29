@@ -250,7 +250,7 @@ export class AdminService {
         en_std: number;
         not_enstd: number;
         Age: number;
-      }[]
+      }[];
     }>(`${this.url}/getdemographics`);
   }
 
@@ -280,5 +280,12 @@ export class AdminService {
         month_id: number;
       }[];
     }>(`${this.url}/dashboard_report`);
+  }
+
+  getWorldreport() {
+    return this.http.get<{
+      university: { iso2: string; total_count: number }[];
+      student: { iso2: string; total_count: number }[];
+    }>(`${this.url}/worldreport`);
   }
 }

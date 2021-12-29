@@ -1,5 +1,5 @@
 export interface countries {
-  id: string;
+  id: number;
   name: string;
   iso3: string;
   numeric_code: string;
