@@ -179,6 +179,7 @@
                             <option [value]="0">Select Plan</option>
                             <option *ngFor="let item of plans" value="{{item.plan_id}}">{{item.plan_name}}</option>
                         </select>
+                        <input type="hidden" value="" formControlName="main_id">
                     </div>
                 </div>
 
@@ -208,6 +209,7 @@
                                     <div class="col-lg-9">
                                         <input class="form-control mb-3" value="" type="email" placeholder="Enter email ID"
                                             formControlName="role_email">
+                                        <input type="hidden" name="" formControlName="sub_id">
                                     </div>
                                 </div>
                             </div>
