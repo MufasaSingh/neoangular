@@ -83,9 +83,9 @@ export class AdminUniversitiesComponent implements OnInit {
 
     this.Aservice.listRole().subscribe((data) => {
       this.roles = data.data; 
+      const control = <FormArray>this.form.controls['universityRoles'];
 
       for (let index = 0; index < this.roles.length; index++) {
-        const control = <FormArray>this.form.controls['universityRoles'];
         const roles = <FormGroup>this._fb.group({ 
           role_active: [''],
           role_id: [`${this.roles[index]['role_id']}`],
@@ -93,6 +93,9 @@ export class AdminUniversitiesComponent implements OnInit {
         }); 
         control.push(roles);
       }
+
+      
+
     });
 
     this.rolesform = new FormGroup({
@@ -100,7 +103,7 @@ export class AdminUniversitiesComponent implements OnInit {
       student_add: new FormControl(false),
       student_edit: new FormControl(false),
       student_delete: new FormControl(false)
-    });
+    }); 
 
    
 

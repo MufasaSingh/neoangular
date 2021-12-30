@@ -451,11 +451,23 @@
                     <label for="s_p_postcode">Permanent Postcode</label>
                     <input type="text" name="" class="form-control" id="s_p_postcode" formControlName='s_p_postcode'>
                 </div>
-
+                <!-- working -->
                 <div class="form-group col-md-6">
                     <label for="same_address">Same Address</label>
-                    <input type="text" name="" class="form-control" id="same_address" formControlName='same_address'>
+                    <div class="form-check row">
+                        <input class="form-check-input " id="same_yes" type="radio" value="Yes"
+                            formControlName="same_address">
+                        <label class="form-check-label col-md-6" for="same_yes">
+                            Yes
+                        </label>
+                        <input class="form-check-input" type="radio" id="same_no" value="No"
+                            formControlName="same_address">
+                        <label class="form-check-label col-md-6" for="same_no">
+                            No
+                        </label>
+                    </div>
                 </div>
+
 
                 <div class="form-group col-md-6">
                     <label for="s_c_address">Current Address</label>
@@ -502,28 +514,72 @@
 
                 <div class="form-group col-md-6">
                     <label for="visa_issue">Visa Issue</label>
-                    <input type="text" name="" class="form-control" id="visa_issue" formControlName='visa_issue'>
+                    <input type="date" name="" class="form-control" id="visa_issue" formControlName='visa_issue'>
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="travelling">Travelling</label>
-                    <input type="text" name="" class="form-control" id="travelling" formControlName='travelling'>
+                    <div class="form-check row">
+                        <input class="form-check-input " id="same_yes" type="radio" value="Yes"
+                            formControlName="travelling">
+                        <label class="form-check-label col-md-6" for="same_yes">
+                            Yes
+                        </label>
+                        <input class="form-check-input" type="radio" id="same_no" value="No"
+                            formControlName="travelling">
+                        <label class="form-check-label col-md-6" for="same_no">
+                            No
+                        </label>
+                    </div>
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="self_travelling">Self Travelling</label>
-                    <input type="text" name="" class="form-control" id="self_travelling"
-                        formControlName='self_travelling'>
+                    <label for="self_travelling">Self Travelling</label> 
+                    <div class="form-check row">
+                        <input class="form-check-input " id="same_yes" type="radio" value="Yes"
+                            formControlName="self_travelling">
+                        <label class="form-check-label col-md-6" for="same_yes">
+                            Yes
+                        </label>
+                        <input class="form-check-input" type="radio" id="same_no" value="No"
+                            formControlName="self_travelling">
+                        <label class="form-check-label col-md-6" for="same_no">
+                            No
+                        </label>
+                    </div>
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="family_member">Family Member</label>
-                    <input type="text" name="" class="form-control" id="family_member" formControlName='family_member'>
+                     
+                    <div class="form-check row">
+                        <input class="form-check-input " id="same_yes" type="radio" value="Yes"
+                            formControlName="family_member">
+                        <label class="form-check-label col-md-6" for="same_yes">
+                            Yes
+                        </label>
+                        <input class="form-check-input" type="radio" id="same_no" value="No"
+                            formControlName="family_member">
+                        <label class="form-check-label col-md-6" for="same_no">
+                            No
+                        </label>
+                    </div>
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="disability">Disability</label>
-                    <input type="text" name="" class="form-control" id="disability" formControlName='disability'>
+                    <label for="disability">Disability</label> 
+                    <div class="form-check row">
+                        <input class="form-check-input " id="same_yes" type="radio" value="Yes"
+                            formControlName="disability">
+                        <label class="form-check-label col-md-6" for="same_yes">
+                            Yes
+                        </label>
+                        <input class="form-check-input" type="radio" id="same_no" value="No"
+                            formControlName="disability">
+                        <label class="form-check-label col-md-6" for="same_no">
+                            No
+                        </label>
+                    </div>
                 </div>
 
                 <div class="form-group col-md-6">
@@ -636,14 +692,19 @@
                     <input type="text" name="" id="information" class="form-control" formControlName='information'>
                 </div>
 
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                     <label for="signature">Signature</label>
                     <img [src]="items.signature" class="img-fluid" alt="No Signature">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="information">Information</label>
-                    <input type="text" name="" id="information" class="form-control" formControlName='information'>
+                    <label for="">Status</label>
+                    <select class="form-control" formControlName="form_status">
+                        <option value="Pending">Pending</option>
+                        <option value="Complete">Complete</option>
+                        <option value="Accepted">Accepted</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
                 </div>
 
             </div>

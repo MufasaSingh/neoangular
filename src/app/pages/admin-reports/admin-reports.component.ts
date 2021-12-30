@@ -45,8 +45,8 @@ export class AdminReportsComponent implements OnInit {
   private ageen: number[] = [];
   private agenoten : number[] = [];
 
-  worldUn: any[] = [];
-  worldStd: any[] = [];
+  worldUn: [string, number][] = [];
+  worldStd: [string, number][] = [];
 
   constructor(private Aservice: AdminService) {}
 
@@ -56,13 +56,13 @@ export class AdminReportsComponent implements OnInit {
     this.Aservice.getWorldreport().subscribe(data=>{
       
       data.university.forEach((item ,index)=>{ 
-        this.worldUn[index] = [item.iso2, item.total_count]
+        this.worldUn[index] = [item.iso2.toLowerCase(), item.total_count]
       })
 
       data.student.forEach((item ,index)=>{ 
         this.worldStd[index] = [item.iso2.toLowerCase(), item.total_count]
-      })
-      
+      }) 
+        
     })
 
     this.Aservice.st_totol().subscribe((data) => {
