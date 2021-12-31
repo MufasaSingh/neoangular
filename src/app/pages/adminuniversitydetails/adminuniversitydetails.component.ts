@@ -105,11 +105,15 @@ export class AdminuniversitydetailsComponent implements OnInit {
 
       for (let index = 0; index < this.roles.length; index++) {
         const control = <FormArray>this.form.controls['universityRoles'];
-        
+        let email = this.subUn.map(item=>{
+          if(item.un_role = this.roles[index]['role_id']){
+            return item.university_email
+          }
+        })
         const roles = <FormGroup>this._fb.group({
           role_active: [''],
           role_id: [`${this.roles[index]['role_id']}`],
-          role_email: [''] 
+          role_email: [email] 
         });
         control.push(roles);
       }
