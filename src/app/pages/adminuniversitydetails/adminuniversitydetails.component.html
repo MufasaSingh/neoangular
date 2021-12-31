@@ -27,20 +27,20 @@
             <button class="edit-student-details-btn"><img src="../../../assets/img/Edit.svg" (click)="open(content2)" ></button>
         </div>
         <div class="col-md-12">
-            <p class="university-details-addres-text">{{mainUn.address}} <br>Toronto ON M5S 1A1</p>
+            <p class="university-details-addres-text">{{mainUn.address}} <br>{{mainUn.country_name}} {{mainUn.state_name}}</p>
         </div>
     </div>
 
     <div class="row mt-4 student-details-text-custom">
         <div class="col-md-12">
-            <p class="university-details-bold-text">Toronto, Ontario</p>
+            <p class="university-details-bold-text">{{mainUn.country_name}}, {{mainUn.state_name}}</p>
         </div>
 
         <div class="col-md-3">
             <p class="university-details-bold-text">Website:</p>
         </div>
         <div class="col-md-9">
-            <p>www.universtytoronto.com</p>
+            <p>{{mainUn.website}}</p>
         </div>
 
         <div class="col-md-3">
@@ -64,11 +64,11 @@
         <li class="available-forms-text">Arrival Form</li>
         <li class="available-forms-btn"><button><img src="../../../assets/img/delete.svg"></button></li>
     </ul>
-    <ul class="available-forms-ul-main">
+    <!-- <ul class="available-forms-ul-main">
         <li class="available-forms-icon"><img src="../../../assets/img/form.svg"></li>
         <li class="available-forms-text">Arrival Form</li>
         <li class="available-forms-btn"><button><img src="../../../assets/img/delete.svg"></button></li>
-    </ul>
+    </ul> -->
 
 
     <div class="row mt-4 mb-3">

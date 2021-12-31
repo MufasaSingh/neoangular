@@ -92,13 +92,13 @@
               </span>
             </td>
 
-            <td class="table-box-status-text" *ngIf="item.form_status == 'Complete' " >
+            <td class="table-box-status-text" *ngIf="item.form_status == 'Complete' || item.form_status == 'Accepted' " >
               <span class="table-status-complete">
                 Form Complete
               </span>
             </td>
 
-            <td class="table-box-status-text"  *ngIf="item.form_status != 'Pending' && item.form_status != 'Complete'  " >
+            <td class="table-box-status-text"  *ngIf="item.form_status != 'Pending' && item.form_status != 'Complete' && item.form_status != 'Accepted' " >
               <span class="table-status-na">
                 NA
               </span>

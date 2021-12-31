@@ -260,7 +260,7 @@ export class WorldChartComponent implements OnInit {
       series: [
         {
           type: "map",
-          name: "Random data",
+          name: "Number of Users",
           states: {
             hover: {
               color: "#BADA55"

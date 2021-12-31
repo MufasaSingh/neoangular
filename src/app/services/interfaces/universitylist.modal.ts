@@ -22,4 +22,5 @@ export interface UniversityList {
   subscription: string;
   role_name: string;
   plan_name: string;
+  website: string;
 }
