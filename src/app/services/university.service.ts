@@ -19,6 +19,10 @@ export class UniversityService {
     );
   }
 
+  updateUnivesity(data: any){
+    return this.http.post<{ error: number; error_msg: string }>(`${this.url}/update`, data)
+  }
+
   universityList() {
     return this.http.post<{
       error: number;

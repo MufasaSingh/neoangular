@@ -56,6 +56,7 @@ export class AdminuniversitydetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this._fb.group({
+      main_id : [''],
       name: [''],
       email: [''],
       mobile: [''],
@@ -76,17 +77,16 @@ export class AdminuniversitydetailsComponent implements OnInit {
             this.subUn = data.pa_data;
 
             this.form.patchValue({
+              main_id : this.mainUn.university_id,
               name: this.mainUn.university_name,
               email: this.mainUn.university_email,
               mobile: this.mainUn.mobile,
               address: this.mainUn.address,
-              country:  this.mainUn.country_id,
+              country: this.mainUn.country_id,
               city: this.mainUn.state_id,
               plans: this.mainUn.un_plan,
             });
-            this.onchnage(this.mainUn.country_id)
-            console.log(this.subUn);
-            
+            this.onchnage(this.mainUn.country_id); 
           }
         );
       }
@@ -105,15 +105,19 @@ export class AdminuniversitydetailsComponent implements OnInit {
 
       for (let index = 0; index < this.roles.length; index++) {
         const control = <FormArray>this.form.controls['universityRoles'];
-        let email = this.subUn.map(item=>{
-          if(item.un_role = this.roles[index]['role_id']){
-            return item.university_email
-          }
+        let singlesubUn = this.subUn.find(item=>{
+          return item.un_role == this.roles[index]['role_id'] 
         })
+
+        let is_active = this.subUn.some(item=>{
+          return item.un_role == this.roles[index]['role_id'] 
+        })
+
         const roles = <FormGroup>this._fb.group({
-          role_active: [''],
+          sub_id: [singlesubUn?.university_id],
+          role_active: [is_active],
           role_id: [`${this.roles[index]['role_id']}`],
-          role_email: [email] 
+          role_email: [singlesubUn?.university_email],
         });
         control.push(roles);
       }
@@ -142,13 +146,16 @@ export class AdminuniversitydetailsComponent implements OnInit {
     this.modalService.dismissAll('saved');
     const data = this.form.value;
 
-    const stt = <{ role_active: boolean; role_id: number; role_email: string }[]>data.universityRoles;
+    const stt = <
+      { role_active: boolean; role_id: number; role_email: string }[]
+    >data.universityRoles;
 
     let rolarr = stt.filter((items: any) => {
       if (items.role_active === true) return items;
     });
 
     const values = {
+      un_id: data.main_id,
       name: data.name,
       email: data.email,
       mobile: data.mobile,
@@ -157,6 +164,12 @@ export class AdminuniversitydetailsComponent implements OnInit {
       plan_id: data.plans,
       roles: rolarr,
     };
+    
+    this.Uservice.updateUnivesity(values).subscribe(data=>{
+       this.openSnackBar(data.error_msg)
+    })
+    
+
   }
 
   onchnage(id: any) {
