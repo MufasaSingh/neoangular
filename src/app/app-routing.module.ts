@@ -54,7 +54,11 @@ const routes: Routes = [
           component: ChartsComponent
         }
     ]
+  },{
+    path: '**',
+    redirectTo: 'admin'
   }
+
 ];
 
 @NgModule({

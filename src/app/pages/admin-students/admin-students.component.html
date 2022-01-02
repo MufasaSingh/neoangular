@@ -23,7 +23,7 @@
           <button><img src="../../../assets/img/search.svg"></button>
         </li>
         <li class="search-box-custom">
-          <input type="text" id="search" placeholder="Search" name="search"  >
+          <input type="text" id="search" [(ngModel)]="search" placeholder="Search" name="search"  >
         </li>
         <li class="search-plus-btn-custom">
           <button (click)="open(content)"><img src="../../../assets/img/plus.svg"></button>
@@ -49,7 +49,7 @@
               </div>
             </td>
             <td class="table-box-text-one-filter">
-              Showing 37 of 37 entries
+              Showing {{formlist.length}} of {{formlist.length}} entries
             </td>
             <td class="table-box-controls">
               <button><img src="../../../assets/img/controls.svg" width="32px"></button>
@@ -59,7 +59,7 @@
             </td>
           </tr>
 
-          <tr *ngFor="let item of formlist let i=index">
+          <tr *ngFor="let item of formlist | tablefilter: search let i=index">
             <td class="table-box-checkbox-text">
               <div class="checkbox">
                 <input type="checkbox" value="">

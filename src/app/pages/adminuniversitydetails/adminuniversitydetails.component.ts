@@ -158,6 +158,7 @@ export class AdminuniversitydetailsComponent implements OnInit {
       un_id: data.main_id,
       name: data.name,
       email: data.email,
+      address: data.address,
       mobile: data.mobile,
       country_id: data.country,
       state_id: data.city,

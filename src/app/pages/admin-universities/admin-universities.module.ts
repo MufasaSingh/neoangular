@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
@@ -9,10 +9,12 @@ import { AdminUniversitiesRoutingModule } from './admin-universities-routing.mod
 import { AdminUniversitiesComponent } from './admin-universities.component';
 import { MatExpansionModule} from '@angular/material/expansion'; 
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { UniversityfilterPipe } from "../../pipes/universityfilter.pipe" 
 
 @NgModule({
   declarations: [
-    AdminUniversitiesComponent
+    AdminUniversitiesComponent,
+    UniversityfilterPipe
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatExpansionModule,
     ReactiveFormsModule,
     MatSnackBarModule ,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FormsModule
   ]
 })
 export class AdminUniversitiesModule { }

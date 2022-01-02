@@ -23,11 +23,14 @@ import { states } from 'src/app/services/interfaces/states.modal';
   styleUrls: ['./admin-students.component.css'],
 })
 export class AdminStudentsComponent implements OnInit {
+ 
+  search: string;
+
   closeResult = '';
   form: FormGroup;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-
+  
   
 
   formlist: formlist[] = [];

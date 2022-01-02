@@ -81,17 +81,42 @@ export class AdminService {
   private getAuthData() {
     const token = localStorage.getItem('token');
     const expirationDate = localStorage.getItem('expiration');
-    const userId = localStorage.getItem('userId');
+    const userId = <string>localStorage.getItem('userId');
+
+    
 
     if (!token || !expirationDate) {
       return;
     }
+    
     return {
       token: token,
       expirationDate: new Date(expirationDate),
       userId: userId,
     };
   }
+
+  autoAuthUser(){
+    const authInformation = this.getAuthData();
+ 
+    
+    if (!authInformation) {
+        return;
+    }
+    const now = new Date();
+    const expireIn = authInformation.expirationDate.getTime() - now.getTime();
+    console.log(expireIn);
+    
+    if (expireIn>0) {
+        this.setAuthTimer(expireIn/1000);
+        this.token = authInformation.token;
+        this.isAuthencated = true;
+        this.userId = authInformation.userId;
+        this.authServiceListern.next(true);
+    }
+    
+
+}
 
   addPlan(data: any) {
     return this.http.post<{

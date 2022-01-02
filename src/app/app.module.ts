@@ -14,8 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from "@angular/material/button"
 
 import { ErrormodalComponent } from './error/errormodal/errormodal.component'; 
-import { ErrorInterceptor } from './error/errormodal/error.interceptor';
- 
+import { ErrorInterceptor } from './error/errormodal/error.interceptor'; 
  
 @NgModule({
   declarations: [

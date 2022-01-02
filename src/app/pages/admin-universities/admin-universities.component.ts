@@ -34,6 +34,8 @@ export class AdminUniversitiesComponent implements OnInit {
   roles: roles[] = [];
   plans: plans[] = [];
 
+  search: string;
+
   role_id:number;
   plan_id:number;
 
@@ -227,6 +229,7 @@ export class AdminUniversitiesComponent implements OnInit {
       "name": data.name,
       "email": data.email,
       "mobile": data.mobile,
+      "address": data.mobile,
       "country_id": data.country,
       "state_id": data.city,
       "plan_id": data.plans,
